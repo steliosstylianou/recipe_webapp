@@ -21,4 +21,4 @@ app.post('/register', (req, res) => {
 });
 
 app.listen(process.env.PORT || 8000);
-console.log(process.env.PORT);
+console.log('Port started at 8000');

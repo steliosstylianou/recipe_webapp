@@ -41,9 +41,6 @@
 
             </form>
           </div>
-          <p class="has-text-grey">
-            <a href=".">Forgot Password</a>
-          </p>
         </div>
       </div>
     </div>

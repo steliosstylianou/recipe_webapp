@@ -26,7 +26,7 @@ export default {
             }
           },
           'color': {
-            'value': '#ffffff'
+            'value': '#000000'
           },
           'shape': {
             'type': 'circle',
@@ -35,7 +35,7 @@ export default {
               'color': '#000000'
             },
             'polygon': {
-              'nb_sides': 5
+              'nb_sides': 0
             },
             'image': {
               'src': 'img/github.svg',
