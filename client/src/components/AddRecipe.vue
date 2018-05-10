@@ -34,7 +34,8 @@
               </b-field>
 
               <b-field>
-                <b-select placeholder="Select a category">
+                <b-select placeholder="Select a category"
+                >
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
                 </b-select>

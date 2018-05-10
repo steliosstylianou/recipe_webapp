@@ -42,9 +42,8 @@
               </button>
               <br/>
               <div class="has-text-centered">
-                <a href="log-in.html"> Already have an account? Sign in!</a>
+                <router-link to="login">Already have an account? Sign in!</router-link>
               </div>
-
             </form>
           </div>
         </div>

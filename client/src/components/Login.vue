@@ -25,8 +25,12 @@
                 </b-input>
               </b-field>
 
-              <button @click="register" class="button is-block is-info is-medium is-fullwidth is-rounded">Login</button>
+              <button @click="login" class="button is-block is-info is-medium is-fullwidth is-rounded">Login</button>
               <br/>
+
+              <div class="has-text-centered">
+                <router-link to="register">Don't have an account? Register!</router-link>
+              </div>
 
             </form>
           </div>
