@@ -16,6 +16,11 @@
                 </b-input>
               </b-field>
 
+
+              <b-notification v-if="error" type="is-danger" @close="error = null">
+                <div v-html="error" ></div>
+              </b-notification>
+
               <b-field>
                 <b-input type="email"
                          v-model="email"
@@ -33,7 +38,8 @@
                 </b-input>
               </b-field>
 
-              <button @click="register" class="button is-block is-info is-medium is-fullwidth is-rounded">Register</button>
+              <button @click="register" class="button is-block is-info is-medium is-fullwidth is-rounded">Register
+              </button>
               <br/>
               <div class="has-text-centered">
                 <a href="log-in.html"> Already have an account? Sign in!</a>
@@ -58,21 +64,24 @@
       return {
         name: '',
         email: '',
-        password: ''
+        password: '',
+        error: null
       }
     },
 
-    methods:{
+    methods: {
 
-      async register (){
-        const response = await Authentication.register({
-          name: this.name,
-          email: this.email,
-          password: this.password
-        })
-        console.log(response.data);
+      async register() {
+        try {
+          await Authentication.register({
+            name: this.name,
+            email: this.email,
+            password: this.password
+          })
+        } catch (error) {
+          this.error = error.response.data.error;
+        }
       }
-
     }
   }
 </script>
