@@ -18,6 +18,7 @@
 
               <b-field>
                 <b-input type="email"
+                         v-model="email"
                          placeholder="Email Address"
                          rounded>
                 </b-input>
@@ -25,13 +26,14 @@
 
               <b-field>
                 <b-input type="password"
+                         v-model="password"
                          placeholder="Password"
                          rounded
                          password-reveal>
                 </b-input>
               </b-field>
 
-              <button class="button is-block is-info is-medium is-fullwidth is-rounded">Register</button>
+              <button @click="register" class="button is-block is-info is-medium is-fullwidth is-rounded">Register</button>
               <br/>
               <div class="has-text-centered">
                 <a href="log-in.html"> Already have an account? Sign in!</a>
@@ -51,13 +53,29 @@
 
 <script>
   import particlesJS from './ParticlesJS'
+  import Authentication from '@/services/Authentication'
 
   export default {
     components: {particlesJS},
     data() {
       return {
-        name: ''
+        name: '',
+        email: '',
+        password: ''
       }
+    },
+
+    methods:{
+
+      async register (){
+        const response = await Authentication.register({
+          name: this.name,
+          email: this.email,
+          password: this.password
+        })
+        console.log(response.data);
+      }
+
     }
   }
 </script>
