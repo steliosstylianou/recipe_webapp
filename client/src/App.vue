@@ -1,13 +1,22 @@
 <template>
   <div id="app">
+    <navigator />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import Navigator from '@/components/Navigator.vue'
+
+
   export default {
-  name: 'App'
+  name: 'app',
+    components: {
+      Navigator
+    }
   }
+
+
 </script>
 
 <style>
@@ -17,6 +26,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

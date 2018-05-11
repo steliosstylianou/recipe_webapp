@@ -1,5 +1,6 @@
 <template>
-  <section class="hero is-primary is-small">
+  <div id='navigator'>
+  <section class="hero is-primary is-small ">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
       <nav class="navbar">
@@ -38,7 +39,7 @@
     </div>
 
     <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
+    <div class="hero-body ">
       <div class="container has-text-centered">
         <h1 class="title">
           Sintagoulles
@@ -93,6 +94,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script>
@@ -111,5 +113,37 @@
 </script>
 
 <style scoped>
+  .button.is-primary {
+    background-color: #30cce7;
+  }
+  .button.is-primary:hover {
+    background-color: #4cdaf2;
+  }
+
+  .hero.is-primary a.navbar-item:hover {
+    background-color: #4cdaf2;
+    color: white;
+  }
+
+  .hero.is-primary a.navbar-item {
+    background-color: #30cce7;
+    color: white;
+  }
+
+  .hero-head, .hero-body, .hero-foot {
+    background-color: #30cce7;
+  }
+
+  .button.is-primary.is-inverted {
+
+    background-color: #30cce7;
+    color: white;
+  }
+
+  .button.is-primary.is-inverted:hover {
+    background-color: white;
+    color: #4cdaf2;
+  }
+
 
 </style>

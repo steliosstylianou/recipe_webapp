@@ -1,5 +1,6 @@
 <template>
   <body>
+  <navigator></navigator>
   <section class="hero is-success is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -57,6 +58,7 @@
 <script>
   import particlesJS from './ParticlesJS'
   import Authentication from '@/services/Authentication'
+  import navigator from './Navigator'
 
   export default {
     components: {particlesJS},
