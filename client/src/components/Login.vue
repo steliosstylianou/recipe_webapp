@@ -7,6 +7,11 @@
           <p class="subtitle has-text-grey">Please enter your details to log in</p>
           <div class="box">
             <form>
+
+              <b-notification v-if="error" type="is-danger" @close="error = null">
+                <div v-html="error" ></div>
+              </b-notification>
+
               <b-field>
                 <b-input type="email"
                          v-model="email"
@@ -67,7 +72,7 @@
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setUser', response.data.user)
         } catch (error) {
-          this.error = this.response.data.error
+          this.error = error.response.data.error
           }
       }
     }
