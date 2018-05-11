@@ -1,6 +1,6 @@
 <template>
     <figure id="Cookies" class="image">
-      <img src="./cookies.jpg">
+      <img src="../assets/cookies.jpg">
       <div class="text-block">
         <h4>Name of the food</h4>
         <p></p>
