@@ -12,11 +12,6 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
       path: '/register',
       name: 'register',
       component: Register
@@ -37,7 +32,7 @@ export default new Router({
       component: Recipe
     },
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home
     }
