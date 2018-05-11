@@ -19,6 +19,19 @@
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
               <a class="navbar-item">
+              <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Find a repository">
+                </div>
+                <div class="control">
+                  <a class="button is-info">
+                    Search
+                  </a>
+                </div>
+              </div>
+              </a>
+
+              <a class="navbar-item" @click="navigateTo({name: 'Home'})">
                 Home
               </a>
               <a class="navbar-item">
@@ -28,8 +41,12 @@
                 Favourites
               </a>
               <span class="navbar-item">
-              <a class="button is-primary is-inverted">
-                <span>Sign-In/Sign-Out</span>
+              <a v-if="$store.state.isUserLoggedIn" @click="logout" class="button is-primary is-inverted">
+                <span>Sign-Out</span>
+              </a>
+              <a v-else @click="navigateTo({name: 'Login'})"
+                 class="button is-primary is-inverted">
+                <span>Sign In/Register</span>
               </a>
             </span>
             </div>
@@ -99,14 +116,16 @@
 
 <script>
   export default {
-    name: 'home',
-    data () {
-      return {
-        title: 'Welcome Back',
-        user: {
-          firstName: 'Leni',
-          lastName: 'Belly'
-        }
+    methods: {
+      navigateTo (route) {
+        this.$router.push(route)
+      },
+      logout () {
+        this.$store.dispatch('setToken', null)
+        this.$store.dispatch('setUser', null)
+        this.$router.push({
+          name: 'Home'
+        })
       }
     }
   }

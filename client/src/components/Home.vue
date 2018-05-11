@@ -1,45 +1,34 @@
 <template>
   <div class="container">
-    <div class="columns">
-      <div class="column">
-        <!--First column-->
-        <image_home></image_home>
-      </div>
-      <div class="column">
-        <!--Second column-->
-        <image_home></image_home>
-      </div>
-      <div class="column">
-        <!--Third column-->
-        <image_home></image_home>
-      </div>
-    </div>
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <!--First column-->
-          <image_home></image_home>
-        </div>
-        <div class="column">
-          <!--Second column-->
-          <image_home></image_home>
-        </div>
-        <div class="column">
-          <!--Third column-->
-          <image_home></image_home>
-        </div>
-      </div>
+    <div class="columns" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
+      <image-home v-for="item in
+      recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)" :key="item.Id">
+      </image-home>
     </div>
   </div>
 </template>
 
-
 <script>
-  import image_home from './Image_home'
+  import imageHome from './imageHome'
+  import Recipes from '@/services/Recipes'
 
   export default {
-        name: "Home",
-    components: {image_home}
+    name: 'Home',
+    components: {
+      imageHome,
+      Recipes
+    },
+    data () {
+      return {
+        recipes: null,
+        itemsPerRow: 3
+      }
+    },
+    async mounted () {
+      // request to backend for all recipes
+      this.recipes = (await Recipes.getAllRecipes()).data
+    }
+
   }
 </script>
 
