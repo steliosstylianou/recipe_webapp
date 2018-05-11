@@ -1,40 +1,53 @@
 <template>
-  <div class='carousel carousel-animated carousel-animate-slide'>
-    <div class='carousel-container'>
-      <div class='carousel-item has-background is-active'>
-        <img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" width="640" height="310" />
-        <div class="title">Merry Christmas</div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <!--First column-->
+        <image_home></image_home>
       </div>
-      <div class='carousel-item has-background'>
-        <img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" width="640" height="310" />
-        <div class="title">Original Gift: Offer a song with <a href="https://lasongbox.com" target="_blank">La Song Box</a></div>
+      <div class="column">
+        <!--Second column-->
+        <image_home></image_home>
       </div>
-      <div class='carousel-item has-background'>
-        <img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" width="640" height="310" />
-        <div class="title">Sushi time</div>
-      </div>
-      <div class='carousel-item has-background'>
-        <img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" width="640" height="310" />
-        <div class="title">Life</div>
+      <div class="column">
+        <!--Third column-->
+        <image_home></image_home>
       </div>
     </div>
-    <div class="carousel-navigation is-overlay">
-      <div class="carousel-nav-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-      </div>
-      <div class="carousel-nav-right">
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <!--First column-->
+          <image_home></image_home>
+        </div>
+        <div class="column">
+          <!--Second column-->
+          <image_home></image_home>
+        </div>
+        <div class="column">
+          <!--Third column-->
+          <image_home></image_home>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
+
 <script>
-    export default {
-        name: "Home"
-    }
+  import image_home from './Image_home'
+
+  export default {
+        name: "Home",
+    components: {image_home}
+  }
 </script>
 
 <style scoped>
-
+  .container {
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
 </style>
