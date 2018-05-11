@@ -53,20 +53,26 @@
     data() {
       return {
         email: '',
-        password: ''
+        password: '',
+        error: null
       }
     },
 
     methods:{
 
       async login (){
-        const response = await Authentication.login({
-          email: this.email,
-          password: this.password
-        })
-        console.log(response.data);
-      }
+        try {
+          const response = await Authentication.login({
+            email: this.email,
+            password: this.password
+          })
+          this.$store.dispatch('setToken',response.data.token);
+          this.$store.dispatch('setUser',response.data.user);
 
+        } catch (error) {
+          this.error = this.response.data.error;
+          }
+      }
     }
   }
 </script>

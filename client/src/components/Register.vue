@@ -72,13 +72,16 @@
 
       async register() {
         try {
-          await Authentication.register({
-            name: this.name,
+          const response = await Authentication.login({
             email: this.email,
-            password: this.password
+            password: this.password,
+            name: this.name,
           })
+          this.$store.dispatch('setToken',response.data.token);
+          this.$store.dispatch('setUser',response.data.user);
+
         } catch (error) {
-          this.error = error.response.data.error;
+          this.error = this.response.data.error;
         }
       }
     }
