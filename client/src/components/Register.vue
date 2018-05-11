@@ -53,6 +53,7 @@
 <script>
   import particlesJS from './ParticlesJS'
   import Authentication from '@/services/Authentication'
+  import navigator from './Navigator'
 
   export default {
     components: {particlesJS},
