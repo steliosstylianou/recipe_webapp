@@ -1,5 +1,4 @@
 <template>
-  <body>
   <section class="hero is-success is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -41,7 +40,6 @@
       </div>
     </div>
   </section>
-  </body>
 </template>
 
 <script>
