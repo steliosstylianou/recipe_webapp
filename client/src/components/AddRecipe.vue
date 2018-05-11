@@ -22,7 +22,12 @@
                          v-model="Ingredients"
                          placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."
                          rounded>
+                  <a class="input is-large"></a>
                 </b-input>
+              </b-field>
+
+              <b-field>
+                <textarea class="input" rows="10" cols="10" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." rounded></textarea>
               </b-field>
 
               <b-field>
@@ -34,8 +39,7 @@
               </b-field>
 
               <b-field>
-                <b-select placeholder="Select a category"
-                >
+                <b-select placeholder="Select a category">
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
                 </b-select>
@@ -43,7 +47,7 @@
 
               <b-field class="file">
                 <b-upload v-model="files">
-                  <a class="button is-primary">
+                  <a class="button is-medium is-rounded">
                     <span>Click to upload image</span>
                   </a>
                 </b-upload>
@@ -53,7 +57,7 @@
                 </span>
               </b-field>
 
-              <button @click="upload" class="button is-block is-info is-medium is-fullwidth is-rounded">Upload</button>
+              <button @click="upload" class="button is-medium is-rounded">Upload</button>
               <br/>
 
             </form>
@@ -67,9 +71,10 @@
 
 <script>
   import particlesJS from './ParticlesJS'
+  import BField from "buefy/src/components/field/Field";
 
   export default {
-    components: {particlesJS},
+    components: {BField, particlesJS},
     data () {
       return {
         title: '',
@@ -93,10 +98,19 @@
 
   .box {
     margin-top: 2rem;
+    margin-left: -500px;
+    width: 1425px;
+    height: 500px;
   }
 
   input {
     font-weight: 300;
+
+  }
+
+  .button {
+    background-color: #30cce7;
+    color: white;
   }
 
   p {
