@@ -4,7 +4,7 @@
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
       <nav class="navbar">
-        <div class="container">
+        <div class="container is-fluid">
           <div class="navbar-brand">
             <a class="navbar-item">
               THE BEST RECIPES
@@ -41,12 +41,12 @@
     <!-- Hero content: will be in the middle -->
     <div class="hero-body ">
       <div class="container has-text-centered">
-        <h1 class="title">
-          Sintagoulles
-        </h1>
-        <h2 class="subtitle">
-          Probably the best recipes in the world...
-        </h2>
+        <!--<h1 class="title">-->
+          <!--Sintagoulles-->
+        <!--</h1>-->
+        <!--<h2 class="subtitle">-->
+          <!--Probably the best recipes in the world...-->
+        <!--</h2>-->
       </div>
     </div>
 
@@ -123,26 +123,32 @@
   .hero.is-primary a.navbar-item:hover {
     background-color: #4cdaf2;
     color: white;
+    text-align: center;
   }
 
   .hero.is-primary a.navbar-item {
     background-color: #30cce7;
     color: white;
+    text-align: center;
   }
 
   .hero-head, .hero-body, .hero-foot {
     background-color: #30cce7;
+    text-align: center;
+    height: 40px;
   }
 
   .button.is-primary.is-inverted {
 
     background-color: #30cce7;
     color: white;
+    text-align: center;
   }
 
   .button.is-primary.is-inverted:hover {
     background-color: white;
     color: #4cdaf2;
+    text-align: center;
   }
 
 </style>
