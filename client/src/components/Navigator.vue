@@ -100,7 +100,7 @@
 <script>
   export default {
     name: 'home',
-    data() {
+    data () {
       return {
         title: 'Welcome Back',
         user: {
@@ -144,6 +144,5 @@
     background-color: white;
     color: #4cdaf2;
   }
-
 
 </style>

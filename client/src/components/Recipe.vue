@@ -1,5 +1,4 @@
 <template>
-  <body>
     <section class="section">
       <div class="container">
         <h1 class="title is-left">Section</h1>
@@ -8,5 +7,4 @@
         </h2>
       </div>
     </section>
-  </body>
 </template>

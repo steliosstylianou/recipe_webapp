@@ -67,11 +67,10 @@
 
 <script>
   import particlesJS from './ParticlesJS'
-  import Authentication from '@/services/Authentication'
 
   export default {
     components: {particlesJS},
-    data() {
+    data () {
       return {
         title: '',
         ingredients: '',
@@ -109,5 +108,3 @@
   }
 
 </style>
-
-

@@ -48,7 +48,7 @@
 
   export default {
     components: {particlesJS},
-    data() {
+    data () {
       return {
         email: '',
         password: '',
@@ -56,19 +56,18 @@
       }
     },
 
-    methods:{
+    methods: {
 
-      async login (){
+      async login () {
         try {
           const response = await Authentication.login({
             email: this.email,
             password: this.password
           })
-          this.$store.dispatch('setToken',response.data.token);
-          this.$store.dispatch('setUser',response.data.user);
-
+          this.$store.dispatch('setToken', response.data.token)
+          this.$store.dispatch('setUser', response.data.user)
         } catch (error) {
-          this.error = this.response.data.error;
+          this.error = this.response.data.error
           }
       }
     }
@@ -102,5 +101,3 @@
   }
 
 </style>
-
-

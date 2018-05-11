@@ -15,7 +15,6 @@
                 </b-input>
               </b-field>
 
-
               <b-notification v-if="error" type="is-danger" @close="error = null">
                 <div v-html="error" ></div>
               </b-notification>
@@ -54,11 +53,10 @@
 <script>
   import particlesJS from './ParticlesJS'
   import Authentication from '@/services/Authentication'
-  import navigator from './Navigator'
 
   export default {
     components: {particlesJS},
-    data() {
+    data () {
       return {
         name: '',
         email: '',
@@ -69,18 +67,17 @@
 
     methods: {
 
-      async register() {
+      async register () {
         try {
           const response = await Authentication.login({
             email: this.email,
             password: this.password,
-            name: this.name,
+            name: this.name
           })
-          this.$store.dispatch('setToken',response.data.token);
-          this.$store.dispatch('setUser',response.data.user);
-
+          this.$store.dispatch('setToken', response.data.token)
+          this.$store.dispatch('setUser', response.data.user)
         } catch (error) {
-          this.error = this.response.data.error;
+          this.error = this.response.data.error
         }
       }
     }
@@ -114,5 +111,3 @@
   }
 
 </style>
-
-

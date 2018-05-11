@@ -12,7 +12,7 @@ import 'buefy/lib/buefy.css'
 Vue.use(Buefy)
 Vue.config.productionTip = false
 
-sync(store,router);
+sync(store, router)
 
 /* eslint-disable no-new */
 new Vue({
