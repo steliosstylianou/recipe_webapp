@@ -1,5 +1,7 @@
 const AuthenticationController =
     require('./controllers/AuthenticationController');
+const RecipesController =
+    require('./controllers/RecipesController');
 
 module.exports = (app) => {
     app.post('/register',
@@ -8,18 +10,24 @@ module.exports = (app) => {
     app.post('/login',
         AuthenticationController.login);
 
-    app.all('*', function(req, res) {
-        throw new Error('Bad request');
-    });
+    app.get('/recipes',
+        RecipesController.getAllRecipes);
 
-    app.use(function(e, req, res, next) {
-        if (e.message === 'Bad request') {
-            res.status(400).send({
-                error: {
-                    msg: e.message,
-                    // stack: e.stack,
-                },
-            });
-        }
-    });
+    app.post('/recipe',
+        RecipesController.createRecipe);
+
+    // app.all('*', function(req, res) {
+    //     throw new Error('Bad request');
+    // });
+    //
+    // app.use(function(e, req, res, next) {
+    //     if (e.message === 'Bad request') {
+    //         res.status(404).send({
+    //             error: {
+    //                 msg: e.message,
+    //                 // stack: e.stack,
+    //             },
+    //         });
+    //     }
+    // });
 };

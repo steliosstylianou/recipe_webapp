@@ -1,21 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import AddRecipe from '@/components/AddRecipe'
 import Recipe from '@/components/Recipe'
+import Home from '@/components/Home'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      title: 'Home',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
     {
       path: '/register',
       title: 'Register',
@@ -24,7 +18,7 @@ export default new Router({
     },
     {
       path: '/login',
-      name: 'login',
+      name: 'Login',
       component: Login
     },
     {
@@ -36,6 +30,11 @@ export default new Router({
       path: '/recipe',
       name: 'Recipe',
       component: Recipe
+    },
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
     }
   ]
 })

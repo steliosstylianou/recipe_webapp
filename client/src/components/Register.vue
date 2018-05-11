@@ -77,7 +77,7 @@
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setUser', response.data.user)
         } catch (error) {
-          this.error = this.response.data.error
+          this.error = error.response.data.error
         }
       }
     }

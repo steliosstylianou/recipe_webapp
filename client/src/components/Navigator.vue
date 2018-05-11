@@ -4,7 +4,7 @@
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
       <nav class="navbar">
-        <div class="container">
+        <div class="container is-fluid">
           <div class="navbar-brand">
             <a class="navbar-item">
               THE BEST RECIPES
@@ -19,6 +19,19 @@
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
               <a class="navbar-item">
+              <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Find a repository">
+                </div>
+                <div class="control">
+                  <a class="button is-info">
+                    Search
+                  </a>
+                </div>
+              </div>
+              </a>
+
+              <a class="navbar-item" @click="navigateTo({name: 'Home'})">
                 Home
               </a>
               <a class="navbar-item">
@@ -28,8 +41,12 @@
                 Favourites
               </a>
               <span class="navbar-item">
-              <a class="button is-primary is-inverted">
-                <span>Sign-In/Sign-Out</span>
+              <a v-if="$store.state.isUserLoggedIn" @click="logout" class="button is-primary is-inverted">
+                <span>Sign-Out</span>
+              </a>
+              <a v-else @click="navigateTo({name: 'Login'})"
+                 class="button is-primary is-inverted">
+                <span>Sign In/Register</span>
               </a>
             </span>
             </div>
@@ -41,12 +58,12 @@
     <!-- Hero content: will be in the middle -->
     <div class="hero-body ">
       <div class="container has-text-centered">
-        <h1 class="title">
-          Sintagoulles
-        </h1>
-        <h2 class="subtitle">
-          Probably the best recipes in the world...
-        </h2>
+        <!--<h1 class="title">-->
+          <!--Sintagoulles-->
+        <!--</h1>-->
+        <!--<h2 class="subtitle">-->
+          <!--Probably the best recipes in the world...-->
+        <!--</h2>-->
       </div>
     </div>
 
@@ -99,14 +116,16 @@
 
 <script>
   export default {
-    name: 'home',
-    data () {
-      return {
-        title: 'Welcome Back',
-        user: {
-          firstName: 'Leni',
-          lastName: 'Belly'
-        }
+    methods: {
+      navigateTo (route) {
+        this.$router.push(route)
+      },
+      logout () {
+        this.$store.dispatch('setToken', null)
+        this.$store.dispatch('setUser', null)
+        this.$router.push({
+          name: 'Home'
+        })
       }
     }
   }
@@ -123,26 +142,32 @@
   .hero.is-primary a.navbar-item:hover {
     background-color: #4cdaf2;
     color: white;
+    text-align: center;
   }
 
   .hero.is-primary a.navbar-item {
     background-color: #30cce7;
     color: white;
+    text-align: center;
   }
 
   .hero-head, .hero-body, .hero-foot {
     background-color: #30cce7;
+    text-align: center;
+    height: 40px;
   }
 
   .button.is-primary.is-inverted {
 
     background-color: #30cce7;
     color: white;
+    text-align: center;
   }
 
   .button.is-primary.is-inverted:hover {
     background-color: white;
     color: #4cdaf2;
+    text-align: center;
   }
 
 </style>
