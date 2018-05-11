@@ -1,6 +1,4 @@
 <template>
-  <body>
-  <navigator></navigator>
   <section class="hero is-success is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -43,16 +41,14 @@
               </button>
               <br/>
               <div class="has-text-centered">
-                <a href="log-in.html"> Already have an account? Sign in!</a>
+                <router-link to="login">Already have an account? Sign in!</router-link>
               </div>
-
             </form>
           </div>
         </div>
       </div>
     </div>
   </section>
-  </body>
 </template>
 
 <script>
@@ -75,13 +71,16 @@
 
       async register() {
         try {
-          await Authentication.register({
-            name: this.name,
+          const response = await Authentication.login({
             email: this.email,
-            password: this.password
+            password: this.password,
+            name: this.name,
           })
+          this.$store.dispatch('setToken',response.data.token);
+          this.$store.dispatch('setUser',response.data.user);
+
         } catch (error) {
-          this.error = error.response.data.error;
+          this.error = this.response.data.error;
         }
       }
     }

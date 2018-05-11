@@ -1,5 +1,4 @@
 <template>
-  <body>
   <section class="hero is-success is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -25,8 +24,12 @@
                 </b-input>
               </b-field>
 
-              <button @click="register" class="button is-block is-info is-medium is-fullwidth is-rounded">Login</button>
+              <button @click="login" class="button is-block is-info is-medium is-fullwidth is-rounded">Login</button>
               <br/>
+
+              <div class="has-text-centered">
+                <router-link to="register">Don't have an account? Register!</router-link>
+              </div>
 
             </form>
           </div>
@@ -37,7 +40,6 @@
       </div>
     </div>
   </section>
-  </body>
 </template>
 
 <script>
@@ -49,20 +51,26 @@
     data() {
       return {
         email: '',
-        password: ''
+        password: '',
+        error: null
       }
     },
 
     methods:{
 
       async login (){
-        const response = await Authentication.login({
-          email: this.email,
-          password: this.password
-        })
-        console.log(response.data);
-      }
+        try {
+          const response = await Authentication.login({
+            email: this.email,
+            password: this.password
+          })
+          this.$store.dispatch('setToken',response.data.token);
+          this.$store.dispatch('setUser',response.data.user);
 
+        } catch (error) {
+          this.error = this.response.data.error;
+          }
+      }
     }
   }
 </script>

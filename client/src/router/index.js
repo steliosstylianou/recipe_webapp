@@ -12,11 +12,13 @@ export default new Router({
   routes: [
     {
       path: '/',
+      title: 'Home',
       name: 'HelloWorld',
       component: HelloWorld
     },
     {
       path: '/register',
+      title: 'Register',
       name: 'register',
       component: Register
     },
