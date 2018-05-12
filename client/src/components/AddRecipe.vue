@@ -5,6 +5,7 @@
         <div class="column is-4 is-offset-4">
           <h3 class="title has-text-grey">Upload a new recipe</h3>
           <p class="subtitle has-text-grey">Please complete the recipe details.</p>
+
           <div class="box">
             <form>
 
@@ -15,7 +16,6 @@
                          rounded>
                 </b-input>
               </b-field>
-
 
               <b-field>
                 <textarea class="input" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." rounded></textarea>
@@ -74,10 +74,9 @@
 
 <script>
   import particlesJS from './ParticlesJS'
-  import BField from "buefy/src/components/field/Field";
 
   export default {
-    components: {BField, particlesJS},
+    components: { particlesJS},
     data () {
       return {
         title: '',
