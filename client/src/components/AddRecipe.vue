@@ -17,31 +17,36 @@
                 </b-input>
               </b-field>
 
+
               <b-field>
-                <b-input type="ingredients"
-                         v-model="Ingredients"
-                         placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."
-                         rounded>
-                  <a class="input is-large"></a>
-                </b-input>
+                <textarea class="input" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." rounded></textarea>
               </b-field>
 
               <b-field>
-                <textarea class="input" rows="10" cols="10" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." rounded></textarea>
-              </b-field>
-
-              <b-field>
-                <b-input type="method"
-                         v-model="Method"
-                         placeholder="Recipe Method"
-                         rounded>
-                </b-input>
+                <textarea class="input" placeholder="Method." rounded></textarea>
               </b-field>
 
               <b-field>
                 <b-select placeholder="Select a category">
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
+                  <option value="1">Food</option>
+                  <option value="2">Desserts</option>
+                  <option value="3">Beverages</option>
+                  <option value="4">Beverages</option>
+                  <option value="5">Beverages</option>
+                  <option value="6">Beverages</option>
+                  <option value="7">Beverages</option>
+                  <option value="8">Beverages</option>
+                  <option value="9">Beverages</option>
+                  <option value="10">Beverages</option>
+                  <option value="11">Beverages</option>
+                  <option value="12">Beverages</option>
+                  <option value="13">Beverages</option>
+                  <option value="14">Beverages</option>
+                  <option value="15">Beverages</option>
+                  <option value="16">Beverages</option>
+                  <option value="17">Beverages</option>
+                  <option value="18">Beverages</option>
+                  <option value="19">Beverages</option>
                 </b-select>
               </b-field>
 
