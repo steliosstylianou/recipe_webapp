@@ -2,13 +2,11 @@
   <section class="hero is-success is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <div class="column is-4 is-offset-4">
           <h3 class="title has-text-grey">Upload a new recipe</h3>
           <p class="subtitle has-text-grey">Please complete the recipe details.</p>
 
           <div class="box">
             <form>
-
               <b-field>
                 <b-input type="title"
                          v-model="Title"
@@ -18,35 +16,42 @@
               </b-field>
 
               <b-field>
-                <textarea class="input" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." rounded></textarea>
+                <textarea class="input" rows="100" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."></textarea>
               </b-field>
 
               <b-field>
-                <textarea class="input" placeholder="Method." rounded></textarea>
+                <textarea class="input" placeholder="Method."></textarea>
               </b-field>
 
               <b-field>
-                <b-select placeholder="Select a category">
-                  <option value="1">Food</option>
-                  <option value="2">Desserts</option>
-                  <option value="3">Beverages</option>
-                  <option value="4">Beverages</option>
-                  <option value="5">Beverages</option>
-                  <option value="6">Beverages</option>
-                  <option value="7">Beverages</option>
-                  <option value="8">Beverages</option>
-                  <option value="9">Beverages</option>
-                  <option value="10">Beverages</option>
-                  <option value="11">Beverages</option>
-                  <option value="12">Beverages</option>
-                  <option value="13">Beverages</option>
-                  <option value="14">Beverages</option>
-                  <option value="15">Beverages</option>
-                  <option value="16">Beverages</option>
-                  <option value="17">Beverages</option>
-                  <option value="18">Beverages</option>
-                  <option value="19">Beverages</option>
+                <b-select name="category" v-on:input="changeSelect(this.value)" placeholder="Select category">
+                  <option value="0">Food</option>
+                  <option value="1">Desserts</option>
+                  <option value="2">Beverages</option>
                 </b-select>
+
+                <div id="subcats">
+                  <b-select name="subcategory0" placeholder="select subcat0" style="display:none">
+                    <option value="0">Select Sub-Category</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">C</option>
+                  </b-select>
+
+                  <b-select name="subcategory1" placeholder="select subcat1" style="display:none">
+                    <option value="0">Select Sub-Category</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </b-select>
+
+                  <b-select name="subcategory2" placeholder="select subcat2" style="display:none">
+                    <option value="0">Select Sub-Category</option>
+                    <option value="1">a</option>
+                    <option value="2">b</option>
+                    <option value="3">c</option>
+                  </b-select>
+                </div>
               </b-field>
 
               <b-field class="file">
@@ -68,7 +73,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 </template>
 
@@ -76,7 +80,7 @@
   import particlesJS from './ParticlesJS'
 
   export default {
-    components: { particlesJS},
+    components: {particlesJS},
     data () {
       return {
         title: '',
@@ -86,6 +90,17 @@
       }
     }
   }
+
+  function changeSelect (selectNo) {
+    var sels = document.getElementById('subcats').getElementsByTagName('SELECT')
+    for (var j = 0; j < sels.length; j++) {
+      sels[j].style.display = 'none'
+      if (j === (selectNo - 1)) {
+        sels[j].style.display = ''
+      }
+    }
+  }
+
 </script>
 
 <style>
@@ -93,26 +108,28 @@
     background: #F2F6FA;
   }
 
-  .hero .nav, .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
   .box {
     margin-top: 2rem;
-    margin-left: -500px;
-    width: 1425px;
-    height: 500px;
   }
 
   input {
+    margin-bottom: 1rem;
     font-weight: 300;
 
   }
 
+  textarea {
+    margin-bottom: 1rem;
+  }
+
   .button {
+    margin-top: 1rem;
     background-color: #30cce7;
     color: white;
+  }
+
+  select {
+    margin-bottom: 1rem;
   }
 
   p {
