@@ -2,9 +2,12 @@ const AuthenticationController =
     require('./controllers/AuthenticationController');
 const RecipesController =
     require('./controllers/RecipesController');
+const Validator =
+    require('./controllers/AuthenticationValitor');
 
 module.exports = (app) => {
     app.post('/register',
+        Validator.register,
         AuthenticationController.register);
 
     app.post('/login',
