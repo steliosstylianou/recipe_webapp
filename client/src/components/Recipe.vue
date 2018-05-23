@@ -2,7 +2,7 @@
     <section class="section">
         <h1 class="title">Recipe Name</h1>
         <h2 class="subtitle">Author Name</h2>
-      <div class="columns is-multiline">
+      <div class="columns is-multiline is-mobile">
         <div class="column">
           <strong>Difficulty</strong>
           <br>
@@ -19,12 +19,12 @@
           5/5
         </div>
         <div class="column">
-          <button class="button is-medium is-rounded">
+          <button class="button is-large is-rounded">
             Favourite
           </button>
         </div>
       </div>
-      <div class="columns is-mobile">
+      <div id="context" class="columns is-mobile">
         <div class="column is-three-fifths">
           <figure class="media-left">
             <p class="image">
@@ -32,10 +32,9 @@
             </p>
           </figure>
           <br>
-          <div class="content-">
+          <div class="content">
+            <div class="title">Method</div>
             <p>
-              <strong>Method</strong>
-              <br>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat mattis. Donec vitae gravida augue. Aenean scelerisque metus ac erat accumsan, quis iaculis tellus pretium. Suspendisse ultrices semper odio, quis tristique lorem vulputate at. Quisque luctus nulla vel rhoncus lobortis. Vestibulum euismod ut ipsum in faucibus. Aenean fermentum vel ligula sed pulvinar. Suspendisse potenti. Donec et velit mattis, bibendum dui et, fermentum turpis.
 
               Maecenas vulputate neque eu imperdiet iaculis. Nunc in egestas mauris. Phasellus tellus lacus, volutpat sit amet eleifend sit amet, tempor a eros. Praesent efficitur in nunc eget interdum. Maecenas vitae interdum quam. Aenean sodales ac magna sed finibus. Aliquam pharetra placerat quam, a finibus sem fermentum sed. Praesent ac mi fermentum, fermentum ante vel, condimentum purus. Nunc vitae molestie orci. Cras gravida nulla semper, eleifend massa in, gravida est. Nam rhoncus elit vel nisi aliquet vestibulum. Cras pellentesque, sapien id molestie fermentum, eros felis facilisis lectus, nec pharetra orci magna a ligula. Maecenas volutpat porta eros, ut consequat libero posuere porta. Nam quis tortor ac justo egestas blandit. Pellentesque quis odio eu dolor dignissim hendrerit fringilla nec ipsum. Duis facilisis commodo ligula, id dignissim metus fringilla a.
@@ -46,15 +45,31 @@
         </div>
         <div class="column">
           <div class="content">
+            <div class="title">Ingredients</div>
             <p>
-              <strong>Ingredients</strong>
-              <br>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat mattis. Donec vitae gravida augue. Aenean scelerisque metus ac erat accumsan, quis iaculis tellus pretium. Suspendisse ultrices semper odio, quis tristique lorem vulputate at. Quisque luctus nulla vel rhoncus lobortis. Vestibulum euismod ut ipsum in faucibus. Aenean fermentum vel ligula sed pulvinar. Suspendisse potenti. Donec et velit mattis, bibendum dui et, fermentum turpis.
 
-              Maecenas vulputate neque eu imperdiet iaculis. Nunc in egestas mauris. Phasellus tellus lacus, volutpat sit amet eleifend sit amet, tempor a eros. Praesent efficitur in nunc eget interdum. Maecenas vitae interdum quam. Aenean sodales ac magna sed finibus. Aliquam pharetra placerat quam, a finibus sem fermentum sed. Praesent ac mi fermentum, fermentum ante vel, condimentum purus. Nunc vitae molestie orci. Cras gravida nulla semper, eleifend massa in, gravida est. Nam rhoncus elit vel nisi aliquet vestibulum. Cras pellentesque, sapien id molestie fermentum, eros felis facilisis lectus, nec pharetra orci magna a ligula. Maecenas volutpat porta eros, ut consequat libero posuere porta. Nam quis tortor ac justo egestas blandit. Pellentesque quis odio eu dolor dignissim hendrerit fringilla nec ipsum.
+              Maecenas vulputate neque eu imperdiet iaculis. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris. Nunc in egestas mauris.
             </p>
           </div>
         </div>
       </div>
     </section>
 </template>
+
+<style>
+
+  .column {
+    margin-left: 70px;
+    margin-right: 70px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .button {
+    outline: none;
+    border: none;
+    color: #dd1144;
+  }
+
+</style>
