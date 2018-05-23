@@ -3,14 +3,14 @@ const config = require('../config/config');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt-nodejs');
 
-
-function jwtSign (user) {
-    const ONE_DAY = 60 * 60 * 24;
+//Using one day as expiry
+function getJwt (user) {
     return jwt.sign(user, config.authentication.jwtSecret, {
-        expiresIn: ONE_DAY
+        expiresIn: 60 * 60 * 24
     });
 };
 
+//Hashing the password
 function hashPassword(password) {
     var salt = bcrypt.genSaltSync();
     return bcrypt.hashSync(password, salt);
@@ -62,7 +62,7 @@ module.exports = {
                 }
                 else res.send({
                     user: row,
-                    token: jwtSign(row)
+                    token: getJwt(row)
                 });
             });
         });

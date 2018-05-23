@@ -20,11 +20,11 @@
     },
     data () {
       return {
-        recipes: null,
+        recipes: [],
         itemsPerRow: 3
       }
     },
-    async mounted () {
+    async created () {
       // request to backend for all recipes
       this.recipes = (await Recipes.getAllRecipes()).data
     }
