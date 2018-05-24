@@ -97,7 +97,8 @@
     padding-top: 2rem;
   }
   .button{
-    border: none;
+    background-color: grey;
+    color: white;
   }
 
 </style>

@@ -106,40 +106,41 @@
 
 <style scoped>
   .button.is-primary {
-    background-color: #30cce7;
+    background-color: grey;
   }
   .button.is-primary:hover {
-    background-color: #4cdaf2;
+    background-color: white;
+    color: black;
   }
 
   .hero.is-primary a.navbar-item:hover {
-    background-color: #4cdaf2;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
   }
 
   .hero.is-primary a.navbar-item {
-    background-color: #30cce7;
+    background-color: grey;
     color: white;
     text-align: center;
   }
 
   .hero-head, .hero-body, .hero-foot {
-    background-color: #30cce7;
+    background-color: grey;
     text-align: center;
     height: 40px;
   }
 
   .button.is-primary.is-inverted {
 
-    background-color: #30cce7;
+    background-color: grey;
     color: white;
     text-align: center;
   }
 
   .button.is-primary.is-inverted:hover {
     background-color: white;
-    color: #4cdaf2;
+    color: black;
     text-align: center;
   }
 
