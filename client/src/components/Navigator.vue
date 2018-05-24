@@ -43,7 +43,7 @@
     <div class="hero-foot">
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
-          <img src="../assets/cutlery.svg">
+          <img id="cutlery" src="../assets/cutlery.svg">
           <span>Food Recipes</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -60,7 +60,7 @@
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
-          <img src="../assets/desserts.svg">
+          <img id="desserts" src="../assets/desserts.svg">
           <span>Desserts</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -75,7 +75,7 @@
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
-          <img src="../assets/beverages.svg">
+          <img id="beverages" src="../assets/beverages.svg">
           <span>Beverages</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -154,7 +154,21 @@
 
   img#logo{
     height: 70px;
-    margin-top: 10px;
+  }
+
+  img#cutlery{
+    height: 30px;
+    padding-right: 5px;
+  }
+
+  img#beverages{
+    height: 30px;
+    padding-right: 5px;
+  }
+
+  img#desserts{
+    height: 30px;
+    padding-right: 5px;
   }
 
 </style>
