@@ -6,7 +6,7 @@
           <div class="box">
             <h3 class="title has-text-black">LOGIN</h3>
             <figure class="avatar">
-              <img src="https://placehold.it/128x128">
+              <img src="../assets/welcomeback_chef.svg">
             </figure>
             <p class="subtitle has-text-grey">Please enter your details to log in</p>
             <form>

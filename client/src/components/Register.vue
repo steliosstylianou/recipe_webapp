@@ -6,9 +6,9 @@
           <div class="box">
             <h3 class="title has-text-black">REGISTER</h3>
             <figure class="avatar">
-              <img src="https://placehold.it/128x128">
+              <img src="../assets/welcome_chef.svg">
             </figure>
-            <p class="subtitle has-text-grey">Please enter your details to register to our website</p>
+            <p class="subtitle has-text-grey">Please enter your details to register</p>
 
             <form>
 
