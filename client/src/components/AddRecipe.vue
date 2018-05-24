@@ -40,12 +40,9 @@
                   drag-drop>
           <section class="section">
             <div class="content has-text-centered">
-              <p>
-                <b-icon
-                  icon="upload"
-                  size="is-large">
-                </b-icon>
-              </p>
+                <figure class="avatar">
+                  <img src="../assets/upload.svg">
+                </figure>
               <p>Drop your files here or click to upload</p>
             </div>
           </section>
