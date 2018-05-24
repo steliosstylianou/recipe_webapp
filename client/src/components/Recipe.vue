@@ -43,7 +43,7 @@
 
             <div class="columns">
               <div class="column is-three-fifths">
-                <div class="content article-body">
+                <div class="content article-body" id="method">
                   <h3>Method</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat
                   mattis.
@@ -61,7 +61,7 @@
                 </div>
               </div>
               <div class="column">
-                <div class="content">
+                <div class="content" id="ingredients">
                   <h3>Ingredients</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat
@@ -94,6 +94,10 @@
     line-height: 1.9;
   }
 
+  body{
+    background-color: grey;
+  }
+  
   .media-left {
     margin-bottom: 1rem;
   }
@@ -101,6 +105,16 @@
   div.column.is-10:first-child {
     padding-top: 0;
     margin-top: 0;
+  }
+
+  #ingredients{
+    text-align: left;
+    text-justify: inter-word;
+  }
+
+  #method{
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .article-title {
