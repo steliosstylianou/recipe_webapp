@@ -3,16 +3,21 @@
     <h1 class="title">Uploading a new recipe? How exciting!</h1>
     <div class="columns is-mobile is-multiline">
       <div class="column">
+
         <b-field>
-          <b-input placeholder="Recipe Title"></b-input>
+          <b-input placeholder="Recipe Title"
+                   v-model="recipe.title">
+          </b-input>
         </b-field>
 
         <b-field>
-          <b-input placeholder="How long will you recipe need? (in minutes)"></b-input>
+          <b-input placeholder="How long will you recipe need? (in minutes)"
+                   v-model="recipe.time"
+          ></b-input>
         </b-field>
 
         <b-field>
-          <b-select name="difficulty" placeholder="Select difficulty">
+          <b-select name="difficulty" placeholder="Select difficulty" v-model="recipe.difficulty">
             <option value="0">Beginner</option>
             <option value="1">Intermediate</option>
             <option value="2">Expert</option>
@@ -20,34 +25,15 @@
         </b-field>
 
         <b-field>
-          <b-select name="category" v-on:input="changeSelect()" placeholder="Select category" v-model="selected">
-            <option value="0">Food</option>
-            <option value="1">Desserts</option>
-            <option value="2">Beverages</option>
+          <b-select name="category" placeholder="Select category"
+                    v-model="recipe.category">
+            <option v-for="(category_obj, category) in categories" :key="category">{{category}}</option>
           </b-select>
 
-          <div id="subcats">
-            <b-select name="subcategory0" placeholder="select subcat0" v-show="selected === 0">
-              <option value="0">Select Sub-Category</option>
-              <option value="1">A</option>
-              <option value="2">B</option>
-              <option value="3">C</option>
-            </b-select>
+          <b-select name="subcategory" placeholder="select sub-category" v-model="recipe.subcategory">
+            <option v-for="(sub_cat, subcat) in subcats" :key="subcat">{{sub_cat}}</option>
+          </b-select>
 
-            <b-select name="subcategory1" placeholder="select subcat1" v-show="selected === 1">
-              <option value="0">Select Sub-Category</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </b-select>
-
-            <b-select name="subcategory2" placeholder="select subcat2" v-show="showSubcats2">
-              <option value="0">Select Sub-Category</option>
-              <option value="1">a</option>
-              <option value="2">b</option>
-              <option value="3">c</option>
-            </b-select>
-          </div>
         </b-field>
 
         <b-field>
@@ -75,35 +61,86 @@
                 </button>
             </span>
         </div>
+
       </div>
       <div class="column">
         <b-field>
-          <textarea class="input" id="ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."></textarea>
+          <textarea class="input"
+                    id="ingredients"
+                    placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."
+                    v-model="recipe.ingredients">
+
+          </textarea>
         </b-field>
+
         <b-field>
-          <textarea class="input" id="method" placeholder="Please describe the method in steps e.g.: 1: Preheat the oven. 2: Mix the ingredients together. etc."></textarea>
+          <textarea class="input"
+                    id="method"
+                    placeholder="Please describe the method in steps e.g.: 1: Preheat the oven.
+                    2: Mix the ingredients together. etc."
+                    v-model="recipe.method">
+
+          </textarea>
         </b-field>
 
       </div>
     </div>
-    <button @click="upload" class="button is-medium" id="upload">Upload your lovely recipe!</button>
+    <button class="button is-medium" id="upload">Upload your lovely recipe!</button>
   </section>
 </template>
 
 <script>
-  import BField from "buefy/src/components/field/Field";
+  import BField from 'buefy/src/components/field/Field'
+
   export default {
     components: {BField},
-    data() {
+
+    data () {
       return {
-        dropFiles: []
+        recipe: {
+          title: '',
+          author: '',
+          category: '',
+          subcategory: '',
+          difficulty: '',
+          ingredients: '',
+          time: '',
+          method: ''
+        },
+
+        dropFiles: [],
+
+        categories: {
+          'Food': [
+            'thisF',
+            'andthisF',
+            'andthisF'
+          ],
+          'Desserts': [
+            'thisD',
+            'andthisD',
+            'andthisD'
+          ],
+          'Beverages': [
+            'thisB',
+            'andthisB',
+            'andthisB'
+          ]
+        },
+        subcats: []
       }
     },
-    methods: {
-      deleteDropFile(index) {
-        this.dropFiles.splice(index, 1)
+    watch: {
+    'recipe.category': function () {
+        // Clear previously selected values
+        this.subcats = []
+        // Populate list of countries in the second dropdown
+        if (this.recipe.category.length > 0) {
+          this.subcats = this.categories[this.recipe.category]
+        }
       }
     }
+
   }
 </script>
 
@@ -125,4 +162,5 @@
     background-color: #30cce7;
     color: white;
   }
+
 </style>
