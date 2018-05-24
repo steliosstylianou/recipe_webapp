@@ -19,14 +19,19 @@ module.exports = {
 
         var recipe = req.body;
 
-        db.run('INSERT INTO recipe(Title,Author_Id,Category,Ingredients,Method,Date_Created) ' +
-                    'VALUES ($title,$author,$category,$ingredients,$method,$date)', {
+        db.run('INSERT INTO recipe(Title,Author_Id,Category,Ingredients,Method,Date_Created, ' +
+                'Difficulty, Time, File, SubCategory) VALUES ' +
+                '($title,$author,$category,$ingredients,$method,$date,$difficulty,$time,$file,$subcategory)', {
             $title: recipe.title,
             $author: recipe.author,
             $category: recipe.category,
             $ingredients: recipe.ingredients,
             $method: recipe.method,
-            $date: new Date().toISOString()
+            $date: new Date().toISOString(),
+            $difficulty: recipe.difficulty,
+            $time: recipe.time,
+            $file: recipe.file,
+            $subcategory: recipe.subcategory
         }, err => {
             if (err) {
                 console.log(err);
@@ -35,7 +40,7 @@ module.exports = {
                 });
             }
             else {
-                res.send(this.row);
+                res.send(recipe);
             }
         });
     },
