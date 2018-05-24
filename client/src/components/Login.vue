@@ -71,12 +71,12 @@
   }
 </script>
 
-<style>
+<style scoped>
   .hero.is-success {
     background: #F2F6FA;
   }
 
-  .hero , .hero.is-success {
+  .hero .nav, .hero.is-success .nav {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
@@ -95,6 +95,9 @@
 
   p.subtitle {
     padding-top: 2rem;
+  }
+  .button{
+    border: none;
   }
 
 </style>

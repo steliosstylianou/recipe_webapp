@@ -79,7 +79,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .hero.is-success {
     background: #F2F6FA;
   }
@@ -103,6 +103,9 @@
 
   p.subtitle {
     padding-top: 2rem;
+  }
+  .button{
+    border: none;
   }
 
 </style>
