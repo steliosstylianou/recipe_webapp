@@ -24,7 +24,9 @@
               </a>
               <a class="navbar-item">
                 Favourites
+                <img id="heart" src="../assets/heart.svg">
               </a>
+
               <span class="navbar-item">
               <a v-if="$store.state.isUserLoggedIn" @click="logout" class="button is-primary is-inverted">
                 <span>Sign-Out</span>
@@ -44,6 +46,7 @@
     <div class="hero-foot">
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
+          <img src="../assets/cutlery.svg">
           <span>Food Recipes</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -60,6 +63,7 @@
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
+          <img src="../assets/desserts.svg">
           <span>Desserts</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -74,6 +78,7 @@
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
+          <img src="../assets/beverages.svg">
           <span>Beverages</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -106,7 +111,7 @@
 
 <style scoped>
   .button.is-primary {
-    background-color: grey;
+    background-color: darkgrey;
   }
   .button.is-primary:hover {
     background-color: white;
@@ -120,20 +125,20 @@
   }
 
   .hero.is-primary a.navbar-item {
-    background-color: grey;
+    background-color: darkgrey;
     color: white;
     text-align: center;
   }
 
   .hero-head, .hero-body, .hero-foot {
-    background-color: grey;
+    background-color: darkgrey;
     text-align: center;
     height: 40px;
   }
 
   .button.is-primary.is-inverted {
 
-    background-color: grey;
+    background-color: darkgrey;
     color: white;
     text-align: center;
   }
@@ -142,6 +147,10 @@
     background-color: white;
     color: black;
     text-align: center;
+  }
+  img#heart{
+    height: 20px;
+    margin-left: 5px;
   }
 
 </style>
