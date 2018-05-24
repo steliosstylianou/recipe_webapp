@@ -18,22 +18,7 @@
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
-              <a class="navbar-item">
-              <div class="field has-addons">
-                <div class="control">
-                  <input class="input" type="text" placeholder="Find a repository">
-                </div>
-                <div class="control">
-                  <a class="button is-info">
-                    Search
-                  </a>
-                </div>
-              </div>
-              </a>
 
-              <a class="navbar-item" @click="navigateTo({name: 'Home'})">
-                Home
-              </a>
               <a class="navbar-item">
                 Profile
               </a>
@@ -55,34 +40,23 @@
       </nav>
     </div>
 
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body ">
-      <div class="container has-text-centered">
-        <!--<h1 class="title">-->
-          <!--Sintagoulles-->
-        <!--</h1>-->
-        <!--<h2 class="subtitle">-->
-          <!--Probably the best recipes in the world...-->
-        <!--</h2>-->
-      </div>
-    </div>
-
     <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
       <b-dropdown>
-      <button class="button is-primary" slot="trigger">
-        <span>Food Recipes</span>
-        <b-icon icon="menu-down"></b-icon>
-      </button>
-      <b-dropdown-item>Appetizers</b-dropdown-item>
-      <b-dropdown-item>Meat & Poultry</b-dropdown-item>
-      <b-dropdown-item>Fish</b-dropdown-item>
-      <b-dropdown-item>Fish</b-dropdown-item>
-      <b-dropdown-item>Salads</b-dropdown-item>
-      <b-dropdown-item>Pasta</b-dropdown-item>
-      <b-dropdown-item>Soups</b-dropdown-item>
-      <b-dropdown-item>Light Meals</b-dropdown-item>
-    </b-dropdown>
+        <button class="button is-primary" slot="trigger">
+          <span>Food Recipes</span>
+          <b-icon icon="menu-down"></b-icon>
+        </button>
+
+        <b-dropdown-item>Appetizers</b-dropdown-item>
+        <b-dropdown-item>Meat & Poultry</b-dropdown-item>
+        <b-dropdown-item>Fish</b-dropdown-item>
+        <b-dropdown-item>Fish</b-dropdown-item>
+        <b-dropdown-item>Salads</b-dropdown-item>
+        <b-dropdown-item>Pasta</b-dropdown-item>
+        <b-dropdown-item>Soups</b-dropdown-item>
+        <b-dropdown-item>Light Meals</b-dropdown-item>
+      </b-dropdown>
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
@@ -108,7 +82,6 @@
         <b-dropdown-item>Milkshakes</b-dropdown-item>
         <b-dropdown-item>Smoothies</b-dropdown-item>
       </b-dropdown>
-
     </div>
   </section>
   </div>
