@@ -16,7 +16,10 @@ module.exports = (app) => {
     app.get('/recipes',
         RecipesController.getAllRecipes);
 
-    app.post('/recipe',
+    app.get('/recipes/:id',
+        RecipesController.getRecipe);
+
+    app.post('/recipes',
         RecipesController.createRecipe);
 
     // app.all('*', function(req, res) {
