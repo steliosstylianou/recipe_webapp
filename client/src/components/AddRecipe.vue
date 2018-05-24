@@ -1,49 +1,62 @@
 <template>
-  <body>
   <section class="hero is-success is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <div class="column is-4 is-offset-4">
           <h3 class="title has-text-grey">Upload a new recipe</h3>
           <p class="subtitle has-text-grey">Please complete the recipe details.</p>
-          <div class="box">
-            <form>
 
+          <div class="article">
+            <form>
               <b-field>
                 <b-input type="title"
-                         v-model="Title"
+                         v-model="title"
                          placeholder="Recipe Title"
                          rounded>
                 </b-input>
               </b-field>
 
               <b-field>
-                <b-input type="ingredients"
-                         v-model="Ingredients"
-                         placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."
-                         rounded>
-                </b-input>
+                <textarea class="input" rows="100" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."></textarea>
               </b-field>
 
               <b-field>
-                <b-input type="method"
-                         v-model="Method"
-                         placeholder="Recipe Method"
-                         rounded>
-                </b-input>
+                <textarea class="input" placeholder="Method."></textarea>
               </b-field>
 
               <b-field>
-                <b-select placeholder="Select a category"
-                >
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
+                <b-select name="category" v-on:input="changeSelect()" placeholder="Select category" v-model="selected">
+                  <option value="0">Food</option>
+                  <option value="1">Desserts</option>
+                  <option value="2">Beverages</option>
                 </b-select>
+
+                <div id="subcats">
+                  <b-select name="subcategory0" placeholder="select subcat0" v-show="selected === 0">
+                    <option value="0">Select Sub-Category</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">C</option>
+                  </b-select>
+
+                  <b-select name="subcategory1" placeholder="select subcat1" v-show="selected === 1">
+                    <option value="0">Select Sub-Category</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </b-select>
+
+                  <b-select name="subcategory2" placeholder="select subcat2" v-show="showSubcats2">
+                    <option value="0">Select Sub-Category</option>
+                    <option value="1">a</option>
+                    <option value="2">b</option>
+                    <option value="3">c</option>
+                  </b-select>
+                </div>
               </b-field>
 
               <b-field class="file">
                 <b-upload v-model="files">
-                  <a class="button is-primary">
+                  <a class="button is-medium is-rounded">
                     <span>Click to upload image</span>
                   </a>
                 </b-upload>
@@ -53,16 +66,14 @@
                 </span>
               </b-field>
 
-              <button @click="upload" class="button is-block is-info is-medium is-fullwidth is-rounded">Upload</button>
+              <!--<button @click="upload" class="button is-medium is-rounded">Upload</button>-->
               <br/>
 
             </form>
           </div>
         </div>
       </div>
-    </div>
   </section>
-  </body>
 </template>
 
 <script>
@@ -75,10 +86,36 @@
         title: '',
         ingredients: '',
         description: '',
-        files: []
+        files: [],
+        selected: 0
+      }
+    },
+    methods: {
+      changeSelect () {
+        // this.selected = this.selected
+        this.$set(this.selected, 1)
+        // var sels = document.getElementById('subcats').getElementsByTagName('SELECT')
+        // for (var j = 0; j < sels.length; j++) {
+        //   sels[j].style.display = 'none'
+        // if (j === (selectNo - 1)) {
+        //   sels[j].style.display = ''
+        // }
+        console.log(this.selected)
+      }
+    },
+    computed: {
+      showSubcats0: function () {
+        return this.selected === 0
+      },
+      showSubcats1: function () {
+        return this.selected === 1
+      },
+      showSubcats2: function () {
+        return this.selected === 2
       }
     }
   }
+
 </script>
 
 <style>
@@ -86,17 +123,28 @@
     background: #F2F6FA;
   }
 
-  .hero .nav, .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
   .box {
     margin-top: 2rem;
   }
 
   input {
+    margin-bottom: 1rem;
     font-weight: 300;
+
+  }
+
+  textarea {
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    margin-top: 1rem;
+    background-color: #30cce7;
+    color: white;
+  }
+
+  select {
+    margin-bottom: 1rem;
   }
 
   p {

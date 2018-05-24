@@ -3,9 +3,9 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
-          <h3 class="title has-text-grey">Login</h3>
-          <p class="subtitle has-text-grey">Please enter your details to log in</p>
           <div class="box">
+            <h3 class="title has-text-grey">Login</h3>
+            <p class="subtitle has-text-grey">Please enter your details to log in</p>
             <form>
 
               <b-notification v-if="error" type="is-danger" @close="error = null">
@@ -38,9 +38,6 @@
 
             </form>
           </div>
-          <p class="has-text-grey">
-            <a href=".">Forgot Password</a>
-          </p>
         </div>
       </div>
     </div>
@@ -62,7 +59,6 @@
     },
 
     methods: {
-
       async login () {
         try {
           const response = await Authentication.login({
@@ -84,7 +80,7 @@
     background: #F2F6FA;
   }
 
-  .hero .nav, .hero.is-success .nav {
+  .hero , .hero.is-success {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
