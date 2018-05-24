@@ -66,7 +66,7 @@
                 </span>
               </b-field>
 
-              <!--<button @click="upload" class="button is-medium is-rounded">Upload</button>-->
+              <button @click="upload" class="button is-medium is-rounded">Upload</button>
               <br/>
 
             </form>

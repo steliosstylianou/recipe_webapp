@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import AddRecipe from '@/components/AddRecipe'
+import NewAddRecipe from '@/components/NewAddRecipe'
 import Recipe from '@/components/Recipe'
 import Home from '@/components/Home'
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/addrecipe',
       name: 'AddRecipe',
       component: AddRecipe
+    },
+    {
+      path: '/newaddrecipe',
+      name: 'NewAddRecipe',
+      component: NewAddRecipe
     },
     {
       path: '/recipe',
