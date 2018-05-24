@@ -29,7 +29,7 @@
                 <button class="button is-medium">
                   Favourite
                   <figure class="avatar">
-                    <img src="../assets/heart.svg">
+                    <img id="heart" src="../assets/heart.svg">
                   </figure>
                 </button>
               </div>
@@ -121,4 +121,10 @@
   .button{
     border: none;
   }
+
+  img#heart {
+    padding-left: 10px;
+    height: 25px;
+  }
+
 </style>
