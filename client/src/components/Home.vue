@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import imageHome from './ImageHome'
+  import recipeBox from './recipeBox'
   import Recipes from '@/services/Recipes'
 
   export default {
@@ -28,7 +28,6 @@
       // request to backend for all recipes
       this.recipes = (await Recipes.getAllRecipes()).data
     }
-
   }
 </script>
 
