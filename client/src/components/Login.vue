@@ -25,7 +25,7 @@
                 </b-input>
               </b-field>
 
-              <button @click="login" class="button is-block is-medium is-fullwidth">Login</button>
+              <button @click="login" class="button is-medium">Login</button>
               <br/>
 
               <div class="has-text-centered">
@@ -108,6 +108,8 @@
   .button{
     background-color: grey;
     color: white;
+    width: fit-content;
+
   }
 
 </style>
