@@ -3,7 +3,7 @@
     <section class="articles">
       <div class="column is-10 is-offset-1">
 
-        <div class="card article">
+        <div class="card article" id="card">
           <div class="card-content">
             <p class="title article-title">TITLE</p>
             <p class="subtitle article-subtitle">Author Name</p>
@@ -86,18 +86,20 @@
 
 <style scoped>
 
+  #card {
+    opacity: .95;
+  }
+
   .articles {
-    margin: 5rem 0;
+    margin-top: 4rem;
+    padding-bottom: 3rem;
   }
 
   .articles .content p {
     line-height: 1.9;
   }
 
-  body{
-    background-color: grey;
-  }
-  
+
   .media-left {
     margin-bottom: 1rem;
   }
