@@ -26,8 +26,11 @@
                 5/5
               </div>
               <div class="column">
-                <button class="button is-medium is-rounded">
+                <button class="button is-medium">
                   Favourite
+                  <figure class="avatar">
+                    <img src="../assets/heart.svg">
+                  </figure>
                 </button>
               </div>
             </div>
@@ -114,5 +117,8 @@
   .article-body {
     line-height: 1.4;
     text-align: left;
+  }
+  .button{
+    border: none;
   }
 </style>
