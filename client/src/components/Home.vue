@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import imageHome from './imageHome'
+  import imageHome from './ImageHome'
   import Recipes from '@/services/Recipes'
 
   export default {

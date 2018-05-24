@@ -84,7 +84,7 @@
     background: #F2F6FA;
   }
 
-  .hero .nav, .hero.is-success .nav {
+  .hero , .hero.is-success {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
