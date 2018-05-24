@@ -81,7 +81,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 
   .articles {
     margin: 5rem 0;

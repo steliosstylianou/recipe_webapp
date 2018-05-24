@@ -1,18 +1,19 @@
 <template>
-  <section class="hero is-success is-fullheight">
+  <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box">
-            <h3 class="title has-text-grey">Register</h3>
-            <p class="subtitle has-text-grey">Please enter your details to register to our website.</p>
+            <h3 class="title has-text-black">REGISTER</h3>
+            <figure class="avatar">
+              <img src="../assets/welcome_chef.svg">
+            </figure>
+            <p class="subtitle has-text-grey">Please enter your details to register</p>
 
             <form>
 
               <b-field>
-                <b-input v-model="name"
-                         placeholder="Name"
-                         rounded>
+                <b-input v-model="name" placeholder="Name">
                 </b-input>
               </b-field>
 
@@ -21,23 +22,16 @@
               </b-notification>
 
               <b-field>
-                <b-input type="email"
-                         v-model="email"
-                         placeholder="Email Address"
-                         rounded>
+                <b-input type="email" v-model="email" placeholder="Email Address">
                 </b-input>
               </b-field>
 
               <b-field>
-                <b-input type="password"
-                         v-model="password"
-                         placeholder="Password"
-                         rounded
-                         password-reveal>
+                <b-input type="password" v-model="password" placeholder="Password" password-reveal>
                 </b-input>
               </b-field>
 
-              <button @click="register" class="button is-block is-info is-medium is-fullwidth is-rounded">Register
+              <button @click="register" class="button is-block is-medium is-fullwidth ">Register
               </button>
               <br/>
               <div class="has-text-centered">
@@ -85,7 +79,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .hero.is-success {
     background: #F2F6FA;
   }
@@ -109,6 +103,9 @@
 
   p.subtitle {
     padding-top: 2rem;
+  }
+  .button{
+    border: none;
   }
 
 </style>
