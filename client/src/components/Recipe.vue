@@ -24,7 +24,7 @@
           </button>
         </div>
       </div>
-      <div id="context" class="columns is-mobile">
+      <div id="context" class="columns is-mobile is-gapless">
         <div class="column is-three-fifths">
           <figure class="media-left">
             <p class="image">
@@ -60,12 +60,14 @@
 <style>
 
   .column {
-    margin-left: 70px;
-    margin-right: 70px;
+
+  }
+  p{
+    padding-left: 70px;
+    padding-right: 70px;
     text-align: justify;
     text-justify: inter-word;
   }
-
   .button {
     outline: none;
     border: none;
