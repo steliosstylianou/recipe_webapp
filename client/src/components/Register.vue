@@ -91,6 +91,7 @@
 
   .box {
     margin-top: 2rem;
+    opacity: 0.95;
   }
 
   input {

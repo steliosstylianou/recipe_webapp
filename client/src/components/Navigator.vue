@@ -3,7 +3,7 @@
   <section class="hero is-primary is-small ">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
-      <nav class="navbar">
+      <nav class="navbar" >
         <div class="container is-fluid">
           <div class="navbar-brand">
               <img id="logo" src="../assets/logo_chef.svg">
@@ -21,7 +21,6 @@
               </a>
               <a class="navbar-item">
                 Favourites
-                <img id="heart" src="../assets/heart.svg">
               </a>
 
               <span class="navbar-item">
@@ -128,12 +127,17 @@
     text-align: center;
   }
 
+
+
   .hero-head, .hero-body, .hero-foot {
     background-color: white;
     color: black;
     text-align: center;
     height: 40px;
+
   }
+
+
 
   .button.is-primary.is-inverted {
 
@@ -147,13 +151,11 @@
     color: black;
     text-align: center;
   }
-  img#heart{
-    height: 20px;
-    margin-left: 5px;
-  }
+
 
   img#logo{
     height: 70px;
+
   }
 
   img#cutlery{
@@ -170,5 +172,8 @@
     height: 30px;
     padding-right: 5px;
   }
+
+
+
 
 </style>
