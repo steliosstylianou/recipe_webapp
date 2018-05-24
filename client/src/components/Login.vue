@@ -81,6 +81,10 @@
     box-shadow: none;
   }
 
+  .hero{
+    background-color: lightgrey;
+  }
+
   .box {
     margin-top: 2rem;
   }

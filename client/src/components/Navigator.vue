@@ -6,10 +6,7 @@
       <nav class="navbar">
         <div class="container is-fluid">
           <div class="navbar-brand">
-            <a class="navbar-item">
-              THE BEST RECIPES
-              <!--<img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">-->
-            </a>
+              <img id="logo" src="../assets/logo_chef.svg">
             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
@@ -111,46 +108,53 @@
 
 <style scoped>
   .button.is-primary {
-    background-color: darkgrey;
+    background-color: white;
+    color: black;
   }
   .button.is-primary:hover {
-    background-color: white;
+    background-color: lightgrey;
     color: black;
   }
 
   .hero.is-primary a.navbar-item:hover {
-    background-color: white;
+    background-color: lightgrey;
     color: black;
     text-align: center;
   }
 
   .hero.is-primary a.navbar-item {
-    background-color: darkgrey;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
   }
 
   .hero-head, .hero-body, .hero-foot {
-    background-color: darkgrey;
+    background-color: white;
+    color: black;
     text-align: center;
     height: 40px;
   }
 
   .button.is-primary.is-inverted {
 
-    background-color: darkgrey;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
   }
 
   .button.is-primary.is-inverted:hover {
-    background-color: white;
+    background-color: lightgrey;
     color: black;
     text-align: center;
   }
   img#heart{
     height: 20px;
     margin-left: 5px;
+  }
+
+  img#logo{
+    height: 70px;
+    margin-top: 10px;
   }
 
 </style>
