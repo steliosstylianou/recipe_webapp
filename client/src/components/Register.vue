@@ -3,9 +3,10 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
-          <h3 class="title has-text-grey">Register</h3>
-          <p class="subtitle has-text-grey">Please enter your details to register to our website.</p>
           <div class="box">
+            <h3 class="title has-text-grey">Register</h3>
+            <p class="subtitle has-text-grey">Please enter your details to register to our website.</p>
+
             <form>
 
               <b-field>

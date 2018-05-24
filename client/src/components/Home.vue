@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="columns" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
-      <image-home v-for="item in
+      <recipe-box v-for="item in
       recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)" :key="item.Id">
-      </image-home>
+        </recipe-box>
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@
   export default {
     name: 'Home',
     components: {
-      imageHome,
+      recipeBox,
       Recipes
     },
     data () {
@@ -34,7 +34,7 @@
 
 <style scoped>
   .container {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;
