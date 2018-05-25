@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="home-container">
     <div class="columns" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
       <recipe-box v-for="item in
       recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
@@ -33,13 +33,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .container {
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 20px;
-  }
-
-</style>
