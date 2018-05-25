@@ -14,6 +14,14 @@ body{
 }
 .button:hover{
   background: lightgrey;
+  color: black;
+}
+//.dropdown{
+//  padding-top: 30px;
+//  padding-bottom: 30px;
+//}
+.dropdown-item{
+  text-align: left;
 }
 .dropdown-item:hover{
   background: $primary;
@@ -22,7 +30,7 @@ body{
   height: 100px;
 }
 .navbar-item:hover{
-  background: lightgrey;
+  background: none;
   color: black;
 }
 #nav-item{
