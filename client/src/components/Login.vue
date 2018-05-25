@@ -25,7 +25,7 @@
                 </b-input>
               </b-field>
 
-              <button @click="login" class="button is-block is-medium is-fullwidth">Login</button>
+              <button @click="login" class="button is-medium">Login</button>
               <br/>
 
               <div class="has-text-centered">
@@ -81,6 +81,15 @@
     box-shadow: none;
   }
 
+  .hero{
+    background-color: lightgrey;
+    /*-webkit-filter: blur(2px);*/
+    /*-moz-filter: blur(2px);*/
+    /*-o-filter: blur(2px);*/
+    /*-ms-filter: blur(2px);*/
+    /*filter: blur(2px);*/
+  }
+
   .box {
     margin-top: 2rem;
   }
@@ -97,7 +106,10 @@
     padding-top: 2rem;
   }
   .button{
-    border: none;
+    background-color: grey;
+    color: white;
+    width: fit-content;
+
   }
 
 </style>

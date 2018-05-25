@@ -91,6 +91,7 @@
 
   .box {
     margin-top: 2rem;
+    opacity: 0.95;
   }
 
   input {
@@ -105,7 +106,8 @@
     padding-top: 2rem;
   }
   .button{
-    border: none;
+    background-color: grey;
+    color: white;
   }
 
 </style>

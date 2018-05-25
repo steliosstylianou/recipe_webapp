@@ -3,13 +3,10 @@
   <section class="hero is-primary is-small ">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
-      <nav class="navbar">
+      <nav class="navbar" >
         <div class="container is-fluid">
           <div class="navbar-brand">
-            <a class="navbar-item">
-              THE BEST RECIPES
-              <!--<img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">-->
-            </a>
+              <img id="logo" src="../assets/logo_chef.svg">
             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
@@ -25,6 +22,7 @@
               <a class="navbar-item">
                 Favourites
               </a>
+
               <span class="navbar-item">
               <a v-if="$store.state.isUserLoggedIn" @click="logout" class="button is-primary is-inverted">
                 <span>Sign-Out</span>
@@ -44,6 +42,7 @@
     <div class="hero-foot">
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
+          <img id="cutlery" src="../assets/cutlery.svg">
           <span>Food Recipes</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -60,6 +59,7 @@
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
+          <img id="desserts" src="../assets/desserts.svg">
           <span>Desserts</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -74,6 +74,7 @@
 
       <b-dropdown>
         <button class="button is-primary" slot="trigger">
+          <img id="beverages" src="../assets/beverages.svg">
           <span>Beverages</span>
           <b-icon icon="menu-down"></b-icon>
         </button>
@@ -106,41 +107,73 @@
 
 <style scoped>
   .button.is-primary {
-    background-color: #30cce7;
+    background-color: white;
+    color: black;
   }
   .button.is-primary:hover {
-    background-color: #4cdaf2;
+    background-color: lightgrey;
+    color: black;
   }
 
   .hero.is-primary a.navbar-item:hover {
-    background-color: #4cdaf2;
-    color: white;
+    background-color: lightgrey;
+    color: black;
     text-align: center;
   }
 
   .hero.is-primary a.navbar-item {
-    background-color: #30cce7;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
   }
 
+
+
   .hero-head, .hero-body, .hero-foot {
-    background-color: #30cce7;
+    background-color: white;
+    color: black;
     text-align: center;
     height: 40px;
+
   }
+
+
 
   .button.is-primary.is-inverted {
 
-    background-color: #30cce7;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
   }
 
   .button.is-primary.is-inverted:hover {
-    background-color: white;
-    color: #4cdaf2;
+    background-color: lightgrey;
+    color: black;
     text-align: center;
   }
+
+
+  img#logo{
+    height: 70px;
+
+  }
+
+  img#cutlery{
+    height: 30px;
+    padding-right: 5px;
+  }
+
+  img#beverages{
+    height: 30px;
+    padding-right: 5px;
+  }
+
+  img#desserts{
+    height: 30px;
+    padding-right: 5px;
+  }
+
+
+
 
 </style>
