@@ -57,6 +57,14 @@
               </a>
             </div>
             <div class="navbar-end">
+                  <div class="field has-addons" id="search">
+                    <div class="control" id="box">
+                      <input class="input has-text-centered" type="search" placeholder="Looking for a recipe?">
+                    </div>
+                    <div class="control">
+                      <a class="button">Search</a>
+                    </div>
+                  </div>
               <a class="navbar-item">
                 Profile
               </a>
@@ -109,6 +117,14 @@
   #item{
     background: none;
     border: none;
+  }
+
+  #search{
+    padding-top: 33px;
+  }
+
+  #box{
+    width: 200px;
   }
 
   img#logo {
