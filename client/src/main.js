@@ -11,10 +11,6 @@ Vue.use(Buefy)
 
 Vue.config.productionTip = false
 
-Vue.filter('truncate', function (text, stop, clamp) {
-  return text.slice(0, stop) + (stop < text.length ? clamp || '...' : '')
-})
-
 sync(store, router)
 
 /* eslint-disable no-new */

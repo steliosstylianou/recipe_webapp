@@ -25,7 +25,6 @@ module.exports = {
     createRecipe(req, res) {
         var recipe = req.body;
         const host = req.hostname;
-        console.log(req.hostname)
 
         db.run('INSERT INTO recipe(Title,Author_Id,Category,Ingredients,Method,Date_Created, ' +
             'Difficulty, Time, File, SubCategory) VALUES ' +

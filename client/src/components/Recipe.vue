@@ -84,6 +84,12 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'Recipe'
+  }
+</script>
+
 <style scoped>
 
   #card {
@@ -98,7 +104,6 @@
   .articles .content p {
     line-height: 1.9;
   }
-
 
   .media-left {
     margin-bottom: 1rem;
@@ -148,8 +153,6 @@
   #card_image{
     max-width: 100%;
     height: auto;
-
   }
-
 
 </style>
