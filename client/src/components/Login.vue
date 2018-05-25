@@ -1,6 +1,6 @@
 <template>
   <section class="hero is-fullheight">
-    <div class="hero-body">
+    <div class="hero-body" id="login_herobody">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box">
@@ -72,23 +72,16 @@
 </script>
 
 <style scoped>
+
   .hero.is-success {
     background: #F2F6FA;
   }
 
-  .hero .nav, .hero.is-success .nav {
+  .hero, .hero.is-success .nav {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
 
-  .hero{
-    background-color: lightgrey;
-    /*-webkit-filter: blur(2px);*/
-    /*-moz-filter: blur(2px);*/
-    /*-o-filter: blur(2px);*/
-    /*-ms-filter: blur(2px);*/
-    /*filter: blur(2px);*/
-  }
 
   .box {
     margin-top: 2rem;
@@ -111,5 +104,6 @@
     width: fit-content;
 
   }
+
 
 </style>

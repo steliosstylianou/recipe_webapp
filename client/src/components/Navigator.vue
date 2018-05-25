@@ -7,7 +7,7 @@
         <div class="container is-fluid">
           <div class="navbar-brand">
               <img id="logo" src="../assets/logo_chef.svg">
-            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span class="navbar-burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
             <span></span>
@@ -41,7 +41,7 @@
     <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
       <b-dropdown>
-        <button class="button is-primary" slot="trigger">
+        <button class="button is-primary" slot="trigger" id="primary-buttons">
           <img id="cutlery" src="../assets/cutlery.svg">
           <span>Food Recipes</span>
           <b-icon icon="menu-down"></b-icon>
@@ -102,12 +102,15 @@
         })
       }
     }
+
+
+
   }
 </script>
 
 <style scoped>
   .button.is-primary {
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
   }
   .button.is-primary:hover {
@@ -122,15 +125,15 @@
   }
 
   .hero.is-primary a.navbar-item {
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     text-align: center;
   }
 
 
 
-  .hero-head, .hero-body, .hero-foot {
-    background-color: white;
+  .hero-head, .hero-foot {
+    background-color: whitesmoke;
     color: black;
     text-align: center;
     height: 40px;
@@ -138,10 +141,9 @@
   }
 
 
-
   .button.is-primary.is-inverted {
 
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     text-align: center;
   }
@@ -151,6 +153,8 @@
     color: black;
     text-align: center;
   }
+
+
 
 
   img#logo{

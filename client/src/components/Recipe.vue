@@ -36,7 +36,7 @@
             </div>
 
             <figure class="media-left">
-              <div class="media-content has-text-centered">
+              <div class="media-content has-text-centered" id="card_image">
                 <img src="@/assets/recipe_main_mydia_pane.jpg"/>
               </div>
             </figure>
@@ -87,7 +87,7 @@
 <style scoped>
 
   #card {
-    opacity: .95;
+    opacity: .93;
   }
 
   .articles {
@@ -110,11 +110,13 @@
   }
 
   #ingredients{
+    margin-right: 40px;
     text-align: left;
     text-justify: inter-word;
   }
 
   #method{
+    margin-left: 40px;
     text-align: justify;
     text-justify: inter-word;
   }
@@ -142,5 +144,12 @@
     padding-left: 10px;
     height: 25px;
   }
+
+  #card_image{
+    max-width: 100%;
+    height: auto;
+
+  }
+
 
 </style>
