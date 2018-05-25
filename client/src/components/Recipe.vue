@@ -1,12 +1,12 @@
 <template>
   <div class="container is-mobile">
-    <section class="articles">
+    <section class="articles" id="rec-article">
       <div class="column is-10 is-offset-1">
 
-        <div class="card article" id="card">
-          <div class="card-content">
-            <p class="title article-title">TITLE</p>
-            <p class="subtitle article-subtitle">Author Name</p>
+        <div class="card article">
+          <div class="card-content" id="rec-card-content">
+            <p class="title article-title" id="rec-article-title">TITLE</p>
+            <p class="subtitle article-subtitle" id="rec-article-subtitle">Author Name</p>
 
             <div class="columns is-multiline">
 
@@ -29,21 +29,21 @@
                 <button class="button is-medium">
                   Favourite
                   <figure class="avatar">
-                    <img id="heart" src="../assets/heart.svg">
+                    <img id="rec-heart" src="../assets/heart.svg">
                   </figure>
                 </button>
               </div>
             </div>
 
-            <figure class="media-left">
-              <div class="media-content has-text-centered" id="card_image">
+            <figure class="media-left" id="rec-media-left">
+              <div class="media-content has-text-centered" id="rec-card_image">
                 <img src="@/assets/recipe_main_mydia_pane.jpg"/>
               </div>
             </figure>
 
             <div class="columns">
               <div class="column is-three-fifths">
-                <div class="content article-body" id="method">
+                <div class="content article-body" id="rec-method">
                   <h3>Method</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat
                   mattis.
@@ -62,7 +62,7 @@
                 </div>
               </div>
               <div class="column">
-                <div class="content" id="ingredients">
+                <div class="content" id="rec-ingredients">
                   <h3>Ingredients</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat
@@ -86,33 +86,11 @@
 </template>
 
 <style lang="scss" scoped>
-
+  .container{
+    opacity: 0.95;
+  }
   div.column.is-10:first-child {
     padding-top: 0;
     margin-top: 0;
   }
-
-  #ingredients{
-    margin-right: 40px;
-    text-align: left;
-    text-justify: inter-word;
-  }
-
-  #method{
-    margin-left: 40px;
-    text-align: justify;
-    text-justify: inter-word;
-  }
-
-  #heart {
-    padding-top: 5px;
-    padding-left: 10px;
-    height: 25px;
-  }
-
-  #card_image{
-    max-width: 100%;
-    height: auto;
-  }
-
 </style>

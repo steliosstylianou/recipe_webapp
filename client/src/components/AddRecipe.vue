@@ -58,12 +58,12 @@
 
       <div class="column" id="add-column">
         <b-field>
-          <textarea class="input" id="ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." v-model="recipe.ingredients">
+          <textarea class="input" id="add-ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." v-model="recipe.ingredients">
           </textarea>
         </b-field>
 
         <b-field>
-          <textarea class="input" id="method"
+          <textarea class="input" id="add-method"
                     placeholder="Please describe the method in steps e.g.: 1: Preheat the oven.
                     2: Mix the ingredients together. etc."
                     v-model="recipe.method">

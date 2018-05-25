@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight is-mobile">
+  <section class="hero is-fullheight is-mobile" id="body">
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
@@ -26,7 +26,7 @@
                 <b-input required type="password" v-model="password" placeholder="Password" password-reveal></b-input>
               </b-field>
 
-              <button @click="register" class="button is-medium is-fullwidth" id="register">Register</button>
+              <button @click="register" class="button is-medium is-fullwidth" id="reg-register">Register</button>
               <br/>
 
               <div class="has-text-centered">
@@ -76,9 +76,7 @@
 </script>
 
 <style lang="scss" scoped>
-
-  #register{
-    background: lightgrey;
+  #body{
+    opacity: 0.95;
   }
-
 </style>

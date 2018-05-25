@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight is-mobile">
+  <section class="hero is-fullheight is-mobile" id="body">
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
@@ -24,7 +24,7 @@
                 </b-input>
               </b-field>
 
-              <button @click="login" class="button is-medium is-fullwidth" id="login">Login</button>
+              <button @click="login" class="button is-medium is-fullwidth" id="log-login">Login</button>
               <br/>
 
               <div class="has-text-centered">
@@ -71,9 +71,7 @@
 </script>
 
 <style lang="scss" scoped>
-
-  #login{
-    background: lightgrey;
+  #body{
+    opacity: 0.95;
   }
-
 </style>

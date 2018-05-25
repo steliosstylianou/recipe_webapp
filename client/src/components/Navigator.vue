@@ -4,15 +4,15 @@
       <nav class="navbar">
         <div class="container is-fluid">
           <div class="navbar-brand">
-            <img id="logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Login'})">
+            <img id="nav-logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Login'})">
             <span class="navbar-burger burger" data-target="navbarMenuHeroA"></span>
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-start">
               <a class="navbar-item">
                 <b-dropdown hoverable>
-                  <button class="button" slot="trigger" id="item">
-                    <img id="cutlery" src="../assets/cutlery.svg">
+                  <button class="button" slot="trigger" id="nav-item">
+                    <img id="nav-cutlery" src="../assets/cutlery.svg">
                     <span>Food</span>
                   </button>
 
@@ -28,8 +28,8 @@
               </a>
               <a class="navbar-item">
                 <b-dropdown hoverable>
-                  <button class="button" slot="trigger" id="item">
-                    <img id="desserts" src="../assets/desserts.svg">
+                  <button class="button" slot="trigger" id="nav-item">
+                    <img id="nav-desserts" src="../assets/desserts.svg">
                     <span>Desserts</span>
                   </button>
 
@@ -44,8 +44,8 @@
               </a>
               <a class="navbar-item">
                 <b-dropdown hoverable>
-                  <button class="button" slot="trigger" id="item">
-                    <img id="beverages" src="../assets/beverages.svg">
+                  <button class="button" slot="trigger" id="nav-item">
+                    <img id="nav-beverages" src="../assets/beverages.svg">
                     <span>Beverages</span>
                   </button>
 
@@ -57,8 +57,8 @@
               </a>
             </div>
             <div class="navbar-end">
-                  <div class="field has-addons" id="search">
-                    <div class="control" id="box">
+                  <div class="field has-addons" id="nav-search">
+                    <div class="control" id="nav-box">
                       <input class="input has-text-centered" type="search" placeholder="Looking for a recipe?">
                     </div>
                     <div class="control">
@@ -75,7 +75,7 @@
                 <a v-if="$store.state.isUserLoggedIn" @click="logout" class="button">
                   <span>Sign-Out</span>
                 </a>
-                <a v-else @click="navigateTo({name: 'Login'})" class="button" id="item">
+                <a v-else @click="navigateTo({name: 'Login'})" class="button" id="nav-item">
                   <span>Sign In/Register</span>
                 </a>
               </span>
@@ -105,41 +105,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+  @import "../scss/styles.scss";
   #body{
     background: rgba(255, 255, 255, 0.2);
-  }
-
-  #item{
-    background: none;
-    border: none;
-  }
-
-  #search{
-    padding-top: 33px;
-  }
-
-  #box{
-    width: 200px;
-  }
-
-  img#logo {
-    height: 70px;
-    margin-top: 10px;
-  }
-
-  img#cutlery {
-    height: 30px;
-    padding-right: 5px;
-  }
-
-  img#beverages {
-    height: 30px;
-    padding-right: 5px;
-  }
-
-  img#desserts {
-    height: 30px;
-    padding-right: 5px;
   }
 </style>
