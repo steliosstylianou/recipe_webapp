@@ -2,12 +2,12 @@ const AuthenticationController =
     require('./controllers/AuthenticationController');
 const RecipesController =
     require('./controllers/RecipesController');
-const Validator =
+const loginValidator =
     require('./controllers/AuthenticationValitor');
 
 module.exports = (app) => {
     app.post('/register',
-        Validator.register,
+        loginValidator.register,
         AuthenticationController.register);
 
     app.post('/login',
@@ -18,9 +18,6 @@ module.exports = (app) => {
 
     app.get('/recipes/:id',
         RecipesController.getRecipe);
-
-    app.post('/recipes',
-        RecipesController.createRecipe);
 
     // app.all('*', function(req, res) {
     //     throw new Error('Bad request');

@@ -1,6 +1,6 @@
 <template>
   <section class="hero is-fullheight">
-    <div class="hero-body">
+    <div class="hero-body" id="login_herobody">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box">
@@ -16,16 +16,16 @@
               </b-notification>
 
               <b-field>
-                <b-input type="email" v-model="email" placeholder="Email Address">
+                <b-input type="email" required v-model="email" placeholder="Email Address">
                 </b-input>
               </b-field>
 
               <b-field>
-                <b-input type="password" v-model="password" placeholder="Password" password-reveal>
+                <b-input type="password" required v-model="password" placeholder="Password" password-reveal>
                 </b-input>
               </b-field>
 
-              <button @click="login" class="button is-block is-medium is-fullwidth">Login</button>
+              <button @click="login" class="button is-medium">Login</button>
               <br/>
 
               <div class="has-text-centered">
@@ -72,14 +72,16 @@
 </script>
 
 <style scoped>
+
   .hero.is-success {
     background: #F2F6FA;
   }
 
-  .hero .nav, .hero.is-success .nav {
+  .hero, .hero.is-success .nav {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+
 
   .box {
     margin-top: 2rem;
@@ -97,7 +99,11 @@
     padding-top: 2rem;
   }
   .button{
-    border: none;
+    background-color: grey;
+    color: white;
+    width: fit-content;
+
   }
+
 
 </style>
