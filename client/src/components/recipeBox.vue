@@ -16,7 +16,7 @@
         </div>
 
         <div class="content">
-          {{description | truncate 50}}
+          {{description}}
         </div>
       </div>
     </div>

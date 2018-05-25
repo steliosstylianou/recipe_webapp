@@ -20,8 +20,6 @@
       recipeBox,
       Recipes
     },
-    methods () {
-    },
     data () {
       return {
         recipes: [],
