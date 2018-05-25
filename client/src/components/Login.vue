@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight">
+  <section class="hero is-fullheight is-mobile">
     <div class="hero-body" id="body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
