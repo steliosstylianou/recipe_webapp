@@ -1,6 +1,6 @@
 <template>
   <div id='navigator'>
-    <section class="hero is-primary is-small ">
+    <section class="hero is-small" id="bod">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <nav class="navbar">
@@ -107,53 +107,59 @@
   }
 </script>
 
-<style scoped>
-  .button.is-primary {
-    background-color: whitesmoke;
-    color: black;
+<style lang="scss" scoped>
+
+  @import "../scss/_colors.scss";
+
+  #bod{
+    background: rgba(255, 255, 255, 0.5);
   }
 
-  .button.is-primary:hover {
-    background-color: lightgrey;
-    color: black;
-  }
+  /*.button.is-primary {*/
+    /*background-color: whitesmoke;*/
+    /*color: black;*/
+  /*}*/
 
-  .hero.is-primary a.navbar-item:hover {
-    background-color: lightgrey;
-    color: black;
-    text-align: center;
-  }
+  /*.button.is-primary:hover {*/
+    /*background-color: lightgrey;*/
+    /*color: black;*/
+  /*}*/
 
-  .hero.is-primary a.navbar-item {
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-  }
+  /*.hero.is-primary a.navbar-item:hover {*/
+    /*background-color: lightgrey;*/
+    /*color: black;*/
+    /*text-align: center;*/
+  /*}*/
 
-  .hero-head, .hero-foot {
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    height: 40px;
+  /*.hero.is-primary a.navbar-item {*/
+    /*background-color: whitesmoke;*/
+    /*color: black;*/
+    /*text-align: center;*/
+  /*}*/
 
-  }
+  /*.hero-head, .hero-foot {*/
+    /*background-color: whitesmoke;*/
+    /*color: black;*/
+    /*text-align: center;*/
+    /*height: 40px;*/
 
-  .button.is-primary.is-inverted {
+  /*}*/
 
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-  }
+  /*.button.is-primary.is-inverted {*/
 
-  .button.is-primary.is-inverted:hover {
-    background-color: lightgrey;
-    color: black;
-    text-align: center;
-  }
+    /*background-color: whitesmoke;*/
+    /*color: black;*/
+    /*text-align: center;*/
+  /*}*/
+
+  /*.button.is-primary.is-inverted:hover {*/
+    /*background-color: lightgrey;*/
+    /*color: black;*/
+    /*text-align: center;*/
+  /*}*/
 
   img#logo {
     height: 70px;
-
   }
 
   img#cutlery {
