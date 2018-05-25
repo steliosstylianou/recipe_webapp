@@ -5,8 +5,8 @@
 
         <div class="card article">
           <div class="card-content" id="rec-card-content">
-            <p class="title article-title">{{recipe.Title}}</p>
-            <p class="subtitle article-subtitle">{{recipe.Author_Id}}</p>
+            <p class="title article-title" id="rec-article-title">{{recipe.Title}}</p>
+            <p class="subtitle article-subtitle" id="rec-article-subtitle">{{recipe.Author_Id}}</p>
 
             <div class="columns is-multiline">
 

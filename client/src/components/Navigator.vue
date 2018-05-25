@@ -113,14 +113,14 @@
   })
   export default {
     methods: {
-      logout() {
+      logout () {
         this.$store.dispatch('setToken', null)
         this.$store.dispatch('setUser', null)
         this.$router.push({
           name: 'Home'
         })
       },
-      navigateTo(route) {
+      navigateTo (route) {
         this.$router.push(route)
       }
     }
