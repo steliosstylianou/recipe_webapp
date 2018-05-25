@@ -1,0 +1,129 @@
+$primary: whitesmoke;
+$danger: red;
+
+body{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+
+//NAVIGATOR
+.button{
+  background: $primary;
+}
+.button:hover{
+  background: lightgrey;
+  color: black;
+}
+//.dropdown{
+//  padding-top: 30px;
+//  padding-bottom: 30px;
+//}
+.dropdown-item{
+  text-align: left;
+}
+.dropdown-item:hover{
+  background: $primary;
+}
+.navbar{
+  height: 100px;
+}
+.navbar-item:hover{
+  background: lightgrey;
+  color: black;
+}
+#nav-item{
+  background: none;
+  border: none;
+}
+#nav-search{
+  padding-top: 33px;
+}
+#nav-box{
+  width: 200px;
+}
+#nav-logo {
+  height: 70px;
+  margin-top: 10px;
+}
+#nav-cutlery {
+  height: 30px;
+  padding-right: 5px;
+}
+#nav-beverages {
+  height: 30px;
+  padding-right: 5px;
+}
+#nav-desserts {
+  height: 30px;
+  padding-right: 5px;
+}
+
+//LOGIN
+#log-login{
+  background: lightgrey;
+}
+
+//REGISTER
+#reg-register{
+  background: lightgrey;
+}
+
+//RECIPE
+#rec-card_image{
+  max-width: 100%;
+  height: auto;
+}
+#rec-heart {
+  padding-top: 5px;
+  padding-left: 10px;
+  height: 25px;
+}
+#rec-method{
+  margin-left: 40px;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.4;
+}
+#rec-ingredients{
+  margin-right: 40px;
+  text-align: left;
+  text-justify: inter-word;
+}
+#rec-article{
+  margin-top: 4rem;
+  padding-bottom: 3rem;
+  opacity: 0.95;
+}
+#rec-card-content {
+  line-height: 1.9;
+}
+#rec-article-title {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 2;
+}
+#rec-article-subtitle {
+  color: #909AA0;
+  margin-bottom: 3rem;
+}
+#rec-media-left {
+  margin-bottom: 1rem;
+}
+
+//ADD RECIPE
+#add-column{
+  margin-top: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+#add-ingredients {
+  height: 100px;
+  width: 500px;
+}
+#add-method{
+  height: 300px;
+  width: 500px;
+}
+

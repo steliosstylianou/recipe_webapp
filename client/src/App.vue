@@ -16,16 +16,11 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+  @import "scss/styles.scss";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   background: url("assets/image2.png");
   background-size: cover;
-
 }
 
 </style>
