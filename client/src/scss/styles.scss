@@ -1,0 +1,21 @@
+$primary: whitesmoke;
+
+body{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+button{
+  background: $primary;
+}
+button:hover{
+  background: lightgrey;
+}
+.dropdown-item:hover{
+  background: $primary;
+}
+.navbar-item:hover{
+  background: lightgrey;
+  color: black;
+}
