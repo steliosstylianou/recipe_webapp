@@ -24,7 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: url("assets/image2.jpg");
+  background: url("assets/image2.png");
   background-size: cover;
 
 }

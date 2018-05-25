@@ -1,9 +1,9 @@
 <template>
   <section class="hero is-fullheight">
-    <div class="hero-body">
+    <div class="hero-body" id="register-herobody">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
-          <div class="box">
+          <div class="box" id="register-box">
             <h3 class="title has-text-black">REGISTER</h3>
             <figure class="avatar">
               <img src="../assets/welcome_chef.svg">
@@ -80,16 +80,13 @@
 </script>
 
 <style scoped>
-  .hero.is-success {
-    background: #F2F6FA;
-  }
 
-  .hero .nav, .hero.is-success .nav {
+  .hero , .hero.is-success .nav {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
 
-  .box {
+  #register-box {
     margin-top: 2rem;
     opacity: 0.95;
   }
@@ -109,5 +106,7 @@
     background-color: grey;
     color: white;
   }
+
+
 
 </style>
