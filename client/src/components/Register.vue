@@ -1,20 +1,17 @@
 <template>
-  <section class="hero is-fullheight">
-    <div class="hero-body" id="register-herobody">
+  <section class="hero is-fullheight is-mobile">
+    <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box" id="register-box">
+
             <h3 class="title has-text-black">REGISTER</h3>
-            <figure class="avatar">
-              <img src="../assets/welcome_chef.svg">
-            </figure>
+            <img src="../assets/welcome_chef.svg">
             <p class="subtitle has-text-grey">Please enter your details to register</p>
 
             <form>
-
               <b-field>
-                <b-input required v-model="name" placeholder="Name">
-                </b-input>
+                <b-input required v-model="name" placeholder="Name"></b-input>
               </b-field>
 
               <b-notification v-if="error" type="is-danger" @close="error = null">
@@ -22,22 +19,21 @@
               </b-notification>
 
               <b-field>
-                <b-input required type="email" v-model="email" placeholder="Email Address">
-                </b-input>
+                <b-input required type="email" v-model="email" placeholder="Email Address"></b-input>
               </b-field>
 
               <b-field>
-                <b-input required type="password" v-model="password" placeholder="Password" password-reveal>
-                </b-input>
+                <b-input required type="password" v-model="password" placeholder="Password" password-reveal></b-input>
               </b-field>
 
-              <button @click="register" class="button is-block is-medium is-fullwidth ">Register
-              </button>
+              <button @click="register" class="button is-medium is-fullwidth" id="register">Register</button>
               <br/>
+
               <div class="has-text-centered">
                 <router-link to="login">Already have an account? Sign in!</router-link>
               </div>
             </form>
+
           </div>
         </div>
       </div>
@@ -79,34 +75,11 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "../scss/styles.scss";
 
-  .hero , .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  #register{
+    background: lightgrey;
   }
-
-  #register-box {
-    margin-top: 2rem;
-    opacity: 0.95;
-  }
-
-  input {
-    font-weight: 300;
-  }
-
-  p {
-    font-weight: 700;
-  }
-
-  p.subtitle {
-    padding-top: 2rem;
-  }
-  .button{
-    background-color: grey;
-    color: white;
-  }
-
-
 
 </style>

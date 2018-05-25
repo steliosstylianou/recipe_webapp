@@ -1,22 +1,20 @@
 <template>
-  <section class="section">
+  <section class="section is-mobile">
     <h1 class="title">Uploading a new recipe? How exciting!</h1>
     <b-notification v-if="error" type="is-danger" @close="error = null">
       <div v-html="error" ></div>
     </b-notification>
 
-    <div class="columns is-mobile is-multiline">
-      <div class="column">
+    <div class="columns is-multiline">
+      <div class="column" id="add-column">
 
         <b-field>
-          <b-input required placeholder="Recipe Title"
-                   v-model="recipe.title">
+          <b-input required placeholder="Recipe Title" v-model="recipe.title">
           </b-input>
         </b-field>
 
         <b-field>
-          <b-input required placeholder="How long will you recipe need? (in minutes)"
-                   v-model="recipe.time"
+          <b-input required placeholder="How long will you recipe need? (in minutes)" v-model="recipe.time"
           ></b-input>
         </b-field>
 
@@ -29,15 +27,13 @@
         </b-field>
 
         <b-field>
-          <b-select required name="category" placeholder="Select category"
-                    v-model="recipe.category">
+          <b-select required name="category" placeholder="Select category" v-model="recipe.category">
             <option v-for="(category_obj, category) in categories" :key="category">{{category}}</option>
           </b-select>
 
           <b-select required name="subcategory" placeholder="select sub-category" v-model="recipe.subcategory">
             <option v-for="(sub_cat, subcat) in subcats" :key="subcat">{{sub_cat}}</option>
           </b-select>
-
         </b-field>
 
         <picture-input
@@ -51,7 +47,7 @@
           :removable="true"
           :custom-strings="{
             upload: '<h1>Upload!</h1>',
-            drag: 'Upload the picture of the recipe!'
+            drag: 'Upload a picture of the recipe!'
          }"
           @change="onChange"
           @remove="onRemoved"
@@ -60,18 +56,14 @@
 
       </div>
 
-      <div class="column">
+      <div class="column" id="add-column">
         <b-field>
-          <textarea class="input"
-                    id="ingredients"
-                    placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc."
-                    v-model="recipe.ingredients">
+          <textarea class="input" id="ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." v-model="recipe.ingredients">
           </textarea>
         </b-field>
 
         <b-field>
-          <textarea class="input"
-                    id="method"
+          <textarea class="input" id="method"
                     placeholder="Please describe the method in steps e.g.: 1: Preheat the oven.
                     2: Mix the ingredients together. etc."
                     v-model="recipe.method">
@@ -176,32 +168,15 @@
     },
     computed: {
       isComplete () {
-        return this.recipe.title && this.recipe.category && this.recipe.subcategory
-          && this.recipe.difficulty && this.recipe.ingredients && this.recipe.time && this.recipe.method
-          && this.recipe.file;
+        return this.recipe.title && this.recipe.category && this.recipe.subcategory &&
+          this.recipe.difficulty && this.recipe.ingredients && this.recipe.time && this.recipe.method &&
+          this.recipe.file
       }
     }
 
   }
 </script>
 
-<style>
-  .column{
-    margin-top: 20px;
-    margin-right: 100px;
-    margin-left: 100px;
-  }
-  textarea#ingredients {
-    height: 100px;
-    width: 500px;
-  }
-  textarea#method{
-    height: 300px;
-    width: 500px;
-  }
-  button#upload{
-    background-color: #30cce7;
-    color: white;
-  }
-
+<style lang="scss" scoped>
+  @import "../scss/styles.scss";
 </style>
