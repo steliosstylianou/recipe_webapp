@@ -23,3 +23,43 @@ body{
   background: lightgrey;
   color: black;
 }
+.articles{
+  margin-top: 4rem;
+  padding-bottom: 3rem;
+  opacity: 0.95;
+}
+.articles .content p {
+  line-height: 1.9;
+}
+.container{
+  opacity: 0.95;
+}
+.media-left {
+  margin-bottom: 1rem;
+}
+.article-title {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 2;
+}
+.article-subtitle {
+  color: #909AA0;
+  margin-bottom: 3rem;
+}
+.article-body {
+  line-height: 1.4;
+  text-align: left;
+}
+#add-column{
+  margin-top: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+textarea#ingredients {
+  height: 100px;
+  width: 500px;
+}
+textarea#method{
+  height: 300px;
+  width: 500px;
+}

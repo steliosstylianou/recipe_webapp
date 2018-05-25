@@ -1,6 +1,6 @@
 <template>
   <section class="hero is-fullheight is-mobile">
-    <div class="hero-body" id="body">
+    <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box">
@@ -73,10 +73,6 @@
 <style lang="scss" scoped>
 
   @import "../scss/styles.scss";
-
-  #body{
-    opacity: 0.9;
-  }
 
   #login{
     background: lightgrey;
