@@ -82,4 +82,25 @@
     background: lightgrey;
   }
 
+  #register-box {
+    margin-top: 2rem;
+    opacity: 0.95;
+  }
+
+  input {
+    font-weight: 300;
+  }
+
+  p {
+    font-weight: 700;
+  }
+
+  p.subtitle {
+    padding-top: 2rem;
+  }
+  .button{
+    background-color: grey;
+    color: white;
+  }
+
 </style>

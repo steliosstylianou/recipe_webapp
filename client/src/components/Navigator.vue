@@ -124,6 +124,9 @@
         this.$router.push({
           name: 'Home'
         })
+      },
+      navigateTo(route) {
+        this.$router.push(route)
       }
     }
   }
