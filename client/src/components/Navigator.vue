@@ -8,6 +8,54 @@
             <span class="navbar-burger burger" data-target="navbarMenuHeroA"></span>
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item">
+                <b-dropdown hoverable>
+                  <button class="button" slot="trigger" id="item">
+                    <img id="cutlery" src="../assets/cutlery.svg">
+                    <span>Food</span>
+                  </button>
+
+                  <b-dropdown-item>Appetizers</b-dropdown-item>
+                  <b-dropdown-item>Meat & Poultry</b-dropdown-item>
+                  <b-dropdown-item>Fish</b-dropdown-item>
+                  <b-dropdown-item>Fish</b-dropdown-item>
+                  <b-dropdown-item>Salads</b-dropdown-item>
+                  <b-dropdown-item>Pasta</b-dropdown-item>
+                  <b-dropdown-item>Soups</b-dropdown-item>
+                  <b-dropdown-item>Light Meals</b-dropdown-item>
+                </b-dropdown>
+              </a>
+              <a class="navbar-item">
+                <b-dropdown hoverable>
+                  <button class="button" slot="trigger" id="item">
+                    <img id="desserts" src="../assets/desserts.svg">
+                    <span>Desserts</span>
+                  </button>
+
+                  <b-dropdown-item>Chocolate</b-dropdown-item>
+                  <b-dropdown-item>Cakes</b-dropdown-item>
+                  <b-dropdown-item>Cookies</b-dropdown-item>
+                  <b-dropdown-item>Creams</b-dropdown-item>
+                  <b-dropdown-item>Tarts</b-dropdown-item>
+                  <b-dropdown-item>Cheesecakes</b-dropdown-item>
+                  <b-dropdown-item>Ice Creams</b-dropdown-item>
+                </b-dropdown>
+              </a>
+              <a class="navbar-item">
+                <b-dropdown hoverable>
+                  <button class="button" slot="trigger" id="item">
+                    <img id="beverages" src="../assets/beverages.svg">
+                    <span>Beverages</span>
+                  </button>
+
+                  <b-dropdown-item>Alcoholic</b-dropdown-item>
+                  <b-dropdown-item>Non-Alcoholic</b-dropdown-item>
+                  <b-dropdown-item>Milkshakes</b-dropdown-item>
+                  <b-dropdown-item>Smoothies</b-dropdown-item>
+                </b-dropdown>
+              </a>
+            </div>
             <div class="navbar-end">
               <a class="navbar-item">
                 Profile
@@ -19,7 +67,7 @@
                 <a v-if="$store.state.isUserLoggedIn" @click="logout" class="button">
                   <span>Sign-Out</span>
                 </a>
-                <a v-else @click="navigateTo({name: 'Login'})" class="button" id="sign">
+                <a v-else @click="navigateTo({name: 'Login'})" class="button" id="item">
                   <span>Sign In/Register</span>
                 </a>
               </span>
@@ -27,51 +75,6 @@
           </div>
         </div>
       </nav>
-    </div>
-
-    <div class="hero-foot">
-      <b-dropdown>
-        <button class="button" slot="trigger" id="drop">
-          <img id="cutlery" src="../assets/cutlery.svg">
-          <span>Food</span>
-        </button>
-
-        <b-dropdown-item>Appetizers</b-dropdown-item>
-        <b-dropdown-item>Meat & Poultry</b-dropdown-item>
-        <b-dropdown-item>Fish</b-dropdown-item>
-        <b-dropdown-item>Fish</b-dropdown-item>
-        <b-dropdown-item>Salads</b-dropdown-item>
-        <b-dropdown-item>Pasta</b-dropdown-item>
-        <b-dropdown-item>Soups</b-dropdown-item>
-        <b-dropdown-item>Light Meals</b-dropdown-item>
-      </b-dropdown>
-
-      <b-dropdown>
-        <button class="button" slot="trigger" id="drop">
-          <img id="desserts" src="../assets/desserts.svg">
-          <span>Desserts</span>
-        </button>
-
-        <b-dropdown-item>Chocolate</b-dropdown-item>
-        <b-dropdown-item>Cakes</b-dropdown-item>
-        <b-dropdown-item>Cookies</b-dropdown-item>
-        <b-dropdown-item>Creams</b-dropdown-item>
-        <b-dropdown-item>Tarts</b-dropdown-item>
-        <b-dropdown-item>Cheesecakes</b-dropdown-item>
-        <b-dropdown-item>Ice Creams</b-dropdown-item>
-      </b-dropdown>
-
-      <b-dropdown>
-        <button class="button" slot="trigger" id="drop">
-          <img id="beverages" src="../assets/beverages.svg">
-          <span>Beverages</span>
-        </button>
-
-        <b-dropdown-item>Alcoholic</b-dropdown-item>
-        <b-dropdown-item>Non-Alcoholic</b-dropdown-item>
-        <b-dropdown-item>Milkshakes</b-dropdown-item>
-        <b-dropdown-item>Smoothies</b-dropdown-item>
-      </b-dropdown>
     </div>
   </section>
 </template>
@@ -100,15 +103,11 @@
   @import "../scss/styles.scss";
 
   #body{
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
   }
 
-  #sign{
+  #item{
     background: none;
-    border: none;
-  }
-
-  #drop{
     border: none;
   }
 
