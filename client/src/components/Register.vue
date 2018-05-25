@@ -13,7 +13,7 @@
             <form>
 
               <b-field>
-                <b-input v-model="name" placeholder="Name">
+                <b-input required v-model="name" placeholder="Name">
                 </b-input>
               </b-field>
 
@@ -22,12 +22,12 @@
               </b-notification>
 
               <b-field>
-                <b-input type="email" v-model="email" placeholder="Email Address">
+                <b-input required type="email" v-model="email" placeholder="Email Address">
                 </b-input>
               </b-field>
 
               <b-field>
-                <b-input type="password" v-model="password" placeholder="Password" password-reveal>
+                <b-input required type="password" v-model="password" placeholder="Password" password-reveal>
                 </b-input>
               </b-field>
 

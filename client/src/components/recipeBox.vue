@@ -16,8 +16,7 @@
         </div>
 
         <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris.
+          {{description}}
         </div>
       </div>
     </div>
@@ -28,10 +27,10 @@
     export default {
       name: 'recipeBox',
       props: [
-        'title'
-      // ,'author',
-      // 'description',
-      // 'img'
+        'title',
+        'author',
+        'description',
+        'img'
       ]
     }
 </script>

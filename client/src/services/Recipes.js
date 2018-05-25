@@ -10,6 +10,12 @@ export default {
   },
 
   createRecipe (recipe) {
-    return Api().post('recipes', recipe)
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
+
+    return Api().post('recipes', recipe, config)
   }
 }

@@ -16,12 +16,12 @@
               </b-notification>
 
               <b-field>
-                <b-input type="email" v-model="email" placeholder="Email Address">
+                <b-input type="email" required v-model="email" placeholder="Email Address">
                 </b-input>
               </b-field>
 
               <b-field>
-                <b-input type="password" v-model="password" placeholder="Password" password-reveal>
+                <b-input type="password" required v-model="password" placeholder="Password" password-reveal>
                 </b-input>
               </b-field>
 
