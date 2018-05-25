@@ -1,4 +1,20 @@
 const multer = require('multer');
+const path = require('path');
+
+function checkFileType(file, cb){
+
+    const filetypes = /jpeg|jpg|png|gif/;
+
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+
+    const mimetype = filetypes.test(file.mimetype);
+
+    if(mimetype && extname){
+        return cb(null,true);
+    } else {
+        cb('Error: Images Only!');
+    }
+}
 
 module.exports = {
     port: process.env.PORT || 8000,
@@ -22,20 +38,9 @@ module.exports = {
                 next(null, file.fieldname + '-' + Date.now() + '.' + ext);
             }
         }),
-
-        fileFilter: function (req, file, next) {
-            if (!file) {
-                next();
-            }
-
-            const image = file.mimetype.startsWith('image/');
-            if (image) {
-                console.log('photo uploaded');
-                next(null, true);
-            } else {
-                return next(null, false,
-                    (null, false, new Error('Unsupported File Format')));
-            }
+        limits:{fileSize: 1000000},
+        fileFilter: function(req, file, cb){
+            checkFileType(file, cb);
         }
     }
 };

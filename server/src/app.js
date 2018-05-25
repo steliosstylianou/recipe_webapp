@@ -4,7 +4,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const config = require('./config/config');
 const multer = require('multer');
-// const RecipesController = require('./controllers/RecipesController');
+const RecipesController = require('./controllers/RecipesController');
+const RecipeValidator = require('./controllers/RecipeValidation');
 
 const upload = multer(config.multer).single('recipe');
 
@@ -24,10 +25,11 @@ console.log('Server started on port ' + config.port);
 
 app.post('/recipes', (req, res) => {
     upload(req, res, (err) => {
-        if (err) {
+        if (err || req.file == null) {
             return res.send({error: 'invalid_file'});
         }
-        console.log('Ok');
+        RecipeValidator.create(req, res, (error) =>{
+            RecipesController.createRecipe(req, res);
+        });
     });
-    console.log(req.body); // form fields
 });
