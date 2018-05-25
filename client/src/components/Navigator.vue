@@ -4,7 +4,7 @@
       <nav class="navbar">
         <div class="container is-fluid">
           <div class="navbar-brand">
-            <img id="logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Login'})">
+            <img id="logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Home'})">
             <span class="navbar-burger burger" data-target="navbarMenuHeroA"></span>
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
@@ -59,7 +59,7 @@
             <div class="navbar-end">
                   <div class="field has-addons" id="search">
                     <div class="control" id="box">
-                      <input class="input has-text-centered" type="search" placeholder="Looking for a recipe?">
+                      <input v-model="search" class="input has-text-centered" type="search" placeholder="Looking for a recipe?">
                     </div>
                     <div class="control">
                       <a class="button">Search</a>
@@ -89,6 +89,31 @@
 
 <script>
   export default {
+    data () {
+      return {
+        search: ''
+      }
+    },
+    watch: {
+      search (value) {
+        const route = {
+          name: 'recipes'
+        }
+        if (this.search !== ''){
+          route.query = {
+            search: this.search
+          }
+        }
+        this.$router.push(route)
+      },
+      '$route.query.search': {
+        immediate: true,
+        handler (value) {
+          this.search = value
+        }
+      }
+    },
+
     methods: {
       navigateTo (route) {
         this.$router.push(route)
