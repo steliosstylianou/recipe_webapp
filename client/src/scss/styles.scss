@@ -7,22 +7,6 @@ body{
   -webkit-font-smoothing: antialiased;
   text-align: center;
 }
-.button{
-  background: $primary;
-}
-.button:hover{
-  background: lightgrey;
-}
-.dropdown-item:hover{
-  background: $primary;
-}
-.navbar{
-  height: 100px;
-}
-.navbar-item:hover{
-  background: lightgrey;
-  color: black;
-}
 .articles{
   margin-top: 4rem;
   padding-bottom: 3rem;
@@ -63,3 +47,20 @@ textarea#method{
   height: 300px;
   width: 500px;
 }
+.button{
+  background: $primary;
+}
+.button:hover{
+  background: lightgrey;
+}
+.dropdown-item:hover{
+  background: $primary;
+}
+.navbar{
+  height: 100px;
+}
+.navbar-item:hover{
+  background: lightgrey;
+  color: black;
+}
+

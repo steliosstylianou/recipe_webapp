@@ -87,8 +87,6 @@
 
 <style lang="scss" scoped>
 
-  @import "../scss/styles.scss";
-
   div.column.is-10:first-child {
     padding-top: 0;
     margin-top: 0;

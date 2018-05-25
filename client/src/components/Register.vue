@@ -76,7 +76,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../scss/styles.scss";
 
   #register{
     background: lightgrey;

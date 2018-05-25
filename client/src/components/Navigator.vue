@@ -106,8 +106,6 @@
 
 <style lang="scss" scoped>
 
-  @import "../scss/styles.scss";
-
   #body{
     background: rgba(255, 255, 255, 0.2);
   }

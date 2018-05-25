@@ -72,8 +72,6 @@
 
 <style lang="scss" scoped>
 
-  @import "../scss/styles.scss";
-
   #login{
     background: lightgrey;
   }
