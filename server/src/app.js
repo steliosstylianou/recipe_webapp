@@ -24,12 +24,12 @@ app.listen(config.port);
 console.log('Server started on port ' + config.port);
 
 app.post('/recipes', (req, res) => {
-    upload(req, res, (err) => {
-        if (err || req.file == null) {
-            return res.send({error: 'invalid_file'});
+    upload(req, res, function(err) {
+        if (req.file == null || err) {
+            return res.send({error: 'Please upload a valid file'});
         }
-        RecipeValidator.create(req, res, (error) =>{
-            RecipesController.createRecipe(req, res);
+        RecipeValidator.create(req, res, function(error) {
+            if (error == null) RecipesController.createRecipe(req, res);
         });
     });
 });
