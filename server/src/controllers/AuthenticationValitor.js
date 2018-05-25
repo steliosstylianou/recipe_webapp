@@ -3,11 +3,11 @@ const Joi = require('joi')
 module.exports = {
     register (req, res, next){
         const schema = {
-            name: Joi.string().min(2).max(32),
-            email: Joi.string().email(),
+            name: Joi.string().min(2).max(32).required(),
+            email: Joi.string().email().required(),
             password: Joi.string().regex(
                 new RegExp('^[a-zA-Z0-9]{6,32}$')
-            )
+            ).required()
         }
 
         const {error, value} = Joi.validate(req.body,schema)

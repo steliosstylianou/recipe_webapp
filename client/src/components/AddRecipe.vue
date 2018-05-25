@@ -101,9 +101,11 @@
           formData.append('ingredients', this.recipe.ingredients)
           formData.append('method', this.recipe.method)
 
-          Recipes.createRecipe(formData)
+          await Recipes.createRecipe(formData)
         } catch (error) {
-          // this.error = error.response.data.error
+          console.log('This is the error')
+          console.log(error)
+          this.error = error.response.data.error
         }
       },
       onChange () {
@@ -168,9 +170,9 @@
     },
     computed: {
       isComplete () {
-        return this.recipe.title && this.recipe.category && this.recipe.subcategory &&
-          this.recipe.difficulty && this.recipe.ingredients && this.recipe.time && this.recipe.method &&
-          this.recipe.file
+        return (this.recipe.title && this.recipe.category && this.recipe.subcategory &&
+          this.recipe.difficulty && this.recipe.ingredients && this.recipe.time &&
+          this.recipe.method && this.recipe.file)
       }
     }
 

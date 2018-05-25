@@ -5,26 +5,28 @@
 
         <div class="card article">
           <div class="card-content" id="rec-card-content">
-            <p class="title article-title" id="rec-article-title">TITLE</p>
-            <p class="subtitle article-subtitle" id="rec-article-subtitle">Author Name</p>
+            <p class="title article-title">{{recipe.Title}}</p>
+            <p class="subtitle article-subtitle">{{recipe.Author_Id}}</p>
 
             <div class="columns is-multiline">
 
               <div class="column">
                 <strong>Difficulty</strong>
                 <br/>
-                Beginner
+                {{recipe.Difficulty}}
               </div>
               <div class="column">
                 <strong>Total Time</strong>
                 <br/>
-                35'
+                {{recipe.Time}} Minutes
               </div>
+
               <div class="column">
-                <strong>Rating</strong>
+                <strong>Category</strong>
                 <br/>
-                5/5
+                {{recipe.Category}}, {{recipe.SubCategory}}
               </div>
+
               <div class="column">
                 <button class="button is-medium">
                   Favourite
@@ -37,43 +39,32 @@
 
             <figure class="media-left" id="rec-media-left">
               <div class="media-content has-text-centered" id="rec-card_image">
-                <img src="@/assets/recipe_main_mydia_pane.jpg"/>
+                <img :src="recipe.File">
               </div>
             </figure>
 
             <div class="columns">
+
               <div class="column is-three-fifths">
                 <div class="content article-body" id="rec-method">
                   <h3>Method</h3>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat
-                  mattis.
-                  Donec vitae gravida augue. Aenean scelerisque metus ac erat accumsan, quis iaculis tellus pretium.
-                  Suspendisse ultrices semper odio, quis tristique lorem vulputate at. Quisque luctus nulla vel rhoncus
-                  lobortis. Vestibulum euismod ut ipsum in faucibus. Aenean fermentum vel ligula sed pulvinar.
-                  Suspendisse
-                  potenti. Donec et velit mattis, bibendum dui et, fermentum turpis.
-                  <p>Non arcu risus quis varius quam quisque. Dictum varius duis at consectetur lorem. Posuere
-                    sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. </p>
-                  <p>Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. In hac habitasse platea
-                    dictumst vestibulum rhoncus est pellentesque elit. Accumsan lacus vel facilisis volutpat. Non
-                    sodales neque sodales ut etiam.
-                    Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus.</p>
-
+                  <ol>
+                    <li v-for="(methodline,index) in recipe.Method.split('\n')" :key="index" >
+                      {{methodline}}
+                    </li>
+                  </ol>
                 </div>
               </div>
+
               <div class="column">
                 <div class="content" id="rec-ingredients">
                   <h3>Ingredients</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget urna enim. Ut cursus feugiat
-                    mattis.
-                    Donec vitae gravida augue. Aenean scelerisque metus ac erat accumsan, quis iaculis tellus pretium.
-                    Suspendisse ultrices semper odio, quis tristique lorem vulputate at. Quisque luctus nulla vel
-                    rhoncus
-                    lobortis. Vestibulum euismod ut ipsum in faucibus. Aenean fermentum vel ligula sed pulvinar.
-                    Suspendisse
-                    potenti. Donec et velit mattis, bibendum dui et, fermentum turpis.
-                  </p>
+                  <section>
+                    <div class="field" v-for="(ingredient,index) in recipe.Ingredients.split(',')"
+                         :key="index" >
+                      <b-checkbox>{{ingredient}}</b-checkbox>
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>
@@ -84,6 +75,31 @@
     </section>
   </div>
 </template>
+
+<script>
+  import RecipeAPI from '@/services/Recipes'
+
+  export default {
+    name: 'Recipe',
+    data () {
+      return {
+        recipe: {
+          Ingredients: '',
+          Method: ''
+        }
+      }
+    },
+    async created () {
+      try {
+        const recipeId = this.$store.state.route.params.recipeId
+        const response = await RecipeAPI.getRecipe(recipeId)
+        this.recipe = response.data
+      } catch (e) {
+        console.log('ERROR WHILE FETCHING' + e)
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   .container{

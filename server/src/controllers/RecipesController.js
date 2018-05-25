@@ -25,7 +25,6 @@ module.exports = {
     createRecipe(req, res) {
         var recipe = req.body;
         const host = req.hostname;
-        console.log(req.hostname)
 
         db.run('INSERT INTO recipe(Title,Author_Id,Category,Ingredients,Method,Date_Created, ' +
             'Difficulty, Time, File, SubCategory) VALUES ' +
@@ -54,23 +53,21 @@ module.exports = {
         });
     },
 
-getRecipe(req, res)
-{
-
-    db.get('SELECT * FROM recipe WHERE Id = $id)', {
-        $id: req.params.id
-    }, (err, row) => {
-        if (err) {
-            console.log(err);
-            return res.status(500).send({
-                error: "Error while fetching recipe with id " + req.params.id
-            });
-        }
-        else {
-            res.send(row);
-        }
-    });
-}
+    getRecipe(req, res) {
+        db.get('SELECT * FROM recipe WHERE Id = $id', {
+            $id: req.params.recipeId
+        }, (err, row) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).send({
+                    error: "Error while fetching recipe with id " + req.params.recipeId
+                });
+            }
+            else {
+                res.send(row);
+            }
+        });
+    }
 // updateRecipe (req, res) {
 //
 //     db.run('UPDATE recipe SET $field WHERE $value)', {
@@ -88,5 +85,4 @@ getRecipe(req, res)
 //     });
 // },
 
-}
-;
+};

@@ -38,7 +38,6 @@ module.exports = {
                 next(null, file.fieldname + '-' + Date.now() + '.' + ext);
             }
         }),
-        limits:{fileSize: 1000000},
         fileFilter: function(req, file, cb){
             checkFileType(file, cb);
         }
