@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import AddRecipe from '@/components/AddRecipe'
 import Recipe from '@/components/Recipe'
 import Home from '@/components/Home'
+import Favorites from '@/components/Favorites'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/favorites',
+      name: 'Favorites',
+      component: Favorites
     }
   ]
 })
