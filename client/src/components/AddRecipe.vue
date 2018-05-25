@@ -168,9 +168,9 @@
     },
     computed: {
       isComplete () {
-        return this.recipe.title && this.recipe.category && this.recipe.subcategory
-          && this.recipe.difficulty && this.recipe.ingredients && this.recipe.time && this.recipe.method
-          && this.recipe.file;
+        return this.recipe.title && this.recipe.category && this.recipe.subcategory &&
+          this.recipe.difficulty && this.recipe.ingredients && this.recipe.time && this.recipe.method &&
+          this.recipe.file
       }
     }
 
@@ -179,6 +179,4 @@
 
 <style lang="scss" scoped>
   @import "../scss/styles.scss";
-
-
 </style>
