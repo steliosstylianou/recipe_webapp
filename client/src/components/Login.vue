@@ -1,16 +1,15 @@
 <template>
   <section class="hero is-fullheight">
-    <div class="hero-body" id="login_herobody">
+    <div class="hero-body" id="body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box">
-            <h3 class="title has-text-black">LOGIN</h3>
-            <figure class="avatar">
-              <img src="../assets/welcomeback_chef.svg">
-            </figure>
-            <p class="subtitle has-text-grey">Please enter your details to log in</p>
-            <form>
 
+            <h3 class="title">LOGIN</h3>
+            <img src="../assets/welcomeback_chef.svg">
+            <p class="subtitle has-text-grey">Please enter your details to log in</p>
+
+            <form>
               <b-notification v-if="error" type="is-danger" @close="error = null">
                 <div v-html="error" ></div>
               </b-notification>
@@ -25,7 +24,7 @@
                 </b-input>
               </b-field>
 
-              <button @click="login" class="button is-medium">Login</button>
+              <button @click="login" class="button is-medium is-fullwidth" id="login">Login</button>
               <br/>
 
               <div class="has-text-centered">
@@ -71,39 +70,16 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-  .hero.is-success {
-    background: #F2F6FA;
+  @import "../scss/styles.scss";
+
+  #body{
+    opacity: 0.9;
   }
 
-  .hero, .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  #login{
+    background: lightgrey;
   }
-
-
-  .box {
-    margin-top: 2rem;
-  }
-
-  input {
-    font-weight: 300;
-  }
-
-  p {
-    font-weight: 700;
-  }
-
-  p.subtitle {
-    padding-top: 2rem;
-  }
-  .button{
-    background-color: grey;
-    color: white;
-    width: fit-content;
-
-  }
-
 
 </style>
