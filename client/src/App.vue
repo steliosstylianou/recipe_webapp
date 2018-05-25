@@ -14,7 +14,6 @@
       Navigator
     }
   }
-
 </script>
 
 <style>

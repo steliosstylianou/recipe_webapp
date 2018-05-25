@@ -15,7 +15,6 @@ export default {
         'content-type': 'multipart/form-data'
       }
     }
-
     return Api().post('recipes', recipe, config)
   }
 }

@@ -14,9 +14,7 @@ module.exports = {
         }
 
         Joi.validate(req.body, schema, function(error,val) {
-            console.log(val)
             if (error){
-                console.log(error)
                 switch (error.details[0].context.key) {
                     case 'title':
                         res.status(400).send({
@@ -29,6 +27,7 @@ module.exports = {
                         })
                         break
                     case 'author':
+                        console.log('Author failed')
                         res.status(400).send({
                             error: 'You must provide a valid author'
                         })
