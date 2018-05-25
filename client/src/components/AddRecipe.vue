@@ -111,8 +111,8 @@
 
           await Recipes.createRecipe(formData)
         } catch (error) {
-          console.log("This is the error" )
-          console.log(error )
+          console.log('This is the error')
+          console.log(error)
           this.error = error.response.data.error
         }
       },

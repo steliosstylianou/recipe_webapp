@@ -82,7 +82,6 @@
     box-shadow: none;
   }
 
-
   .box {
     margin-top: 2rem;
   }
@@ -104,6 +103,5 @@
     width: fit-content;
 
   }
-
 
 </style>

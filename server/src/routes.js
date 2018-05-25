@@ -16,7 +16,7 @@ module.exports = (app) => {
     app.get('/recipes',
         RecipesController.getAllRecipes);
 
-    app.get('/recipes/:id',
+    app.get('/recipes/:recipeId',
         RecipesController.getRecipe);
 
     // app.all('*', function(req, res) {
