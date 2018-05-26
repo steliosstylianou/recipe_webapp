@@ -37,6 +37,10 @@ $colors: (
   background: lightgrey;
 }
 
+#nav-sign-in {
+  padding-left: 0px;
+}
+
 .navbar {
   height: 100px;
 }
@@ -59,7 +63,6 @@ $colors: (
   width: 225px;
   margin-top: 0px;
   cursor: pointer;
-
 }
 
 #nav-cutlery {

@@ -96,7 +96,7 @@
               <a class="navbar-item">
                 Favourites
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" id="nav-sign-in">
                 <a v-if="$store.state.isUserLoggedIn" @click="logout" class="navbar-item">
                   <span>Sign-Out</span>
                 </a>
