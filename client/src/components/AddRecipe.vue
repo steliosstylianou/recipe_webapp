@@ -1,6 +1,7 @@
 <template>
-  <section class="section is-mobile">
-    <h1 class="title">Uploading a new recipe? How exciting!</h1>
+  <section class="section is-mobile content-is-centered">
+    <div class="container has-text-centered">
+    <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
     <b-notification v-if="error" type="is-danger" @close="error = null">
       <div v-html="error" ></div>
     </b-notification>
@@ -72,7 +73,8 @@
 
       </div>
     </div>
-    <button class="button is-medium" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
+    <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
+    </div>
   </section>
 </template>
 
@@ -139,19 +141,22 @@
 
         categories: {
           'Food': [
-            'thisF',
-            'andthisF',
-            'andthisF'
+            'Appetizers',
+            'Meat & Poultry',
+            'Fish',
+            'Pasta'
           ],
           'Desserts': [
-            'thisD',
-            'andthisD',
-            'andthisD'
+            'Chocolates',
+            'Cakes',
+            'Cookies',
+            'Ice Creams'
           ],
           'Beverages': [
-            'thisB',
-            'andthisB',
-            'andthisB'
+            'Alcoholic',
+            'Non-Alcoholic',
+            'Milkshakes',
+            'Smoothies'
           ]
         },
         subcats: []
