@@ -35,7 +35,10 @@ module.exports = {
                 });
             }
             else {
-                res.send(user);
+                res.send({
+                    user: user,
+                    token: getJwt(user)
+                });
             }
         });
     },
