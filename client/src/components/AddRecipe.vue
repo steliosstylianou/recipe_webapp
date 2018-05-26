@@ -1,12 +1,13 @@
 <template>
-  <section class="section is-mobile">
-    <h1 class="title">Uploading a new recipe? How exciting!</h1>
+  <section class="section">
+    <div class="container has-text-centered">
+    <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
     <b-notification v-if="error" type="is-danger" @close="error = null">
       <div v-html="error" ></div>
     </b-notification>
 
-    <div class="columns is-multiline">
-      <div class="column" id="add-column">
+    <div class="columns is-multiline is-mobile">
+      <div class="column add-column">
 
         <b-field>
           <b-input required placeholder="Recipe Title" v-model="recipe.title">
@@ -14,8 +15,7 @@
         </b-field>
 
         <b-field>
-          <b-input required placeholder="How long will you recipe need? (in minutes)" v-model="recipe.time"
-          ></b-input>
+          <b-input required placeholder="Time needed? (in minutes)" v-model="recipe.time"></b-input>
         </b-field>
 
         <b-field>
@@ -56,7 +56,7 @@
 
       </div>
 
-      <div class="column" id="add-column">
+      <div class="column add-column">
         <b-field>
           <textarea class="input" id="add-ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." v-model="recipe.ingredients">
           </textarea>
@@ -64,15 +64,15 @@
 
         <b-field>
           <textarea class="input" id="add-method"
-                    placeholder="Please describe the method in steps e.g.: 1: Preheat the oven.
-                    2: Mix the ingredients together. etc."
+                    placeholder="Please describe the method in steps e.g.: 1: Preheat the oven. 2: Mix the ingredients together. etc."
                     v-model="recipe.method">
           </textarea>
         </b-field>
 
       </div>
     </div>
-    <button class="button is-medium" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
+    <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
+    </div>
   </section>
 </template>
 
@@ -139,19 +139,22 @@
 
         categories: {
           'Food': [
-            'thisF',
-            'andthisF',
-            'andthisF'
+            'Appetizers',
+            'Meat & Poultry',
+            'Fish',
+            'Pasta'
           ],
           'Desserts': [
-            'thisD',
-            'andthisD',
-            'andthisD'
+            'Chocolates',
+            'Cakes',
+            'Cookies',
+            'Ice Creams'
           ],
           'Beverages': [
-            'thisB',
-            'andthisB',
-            'andthisB'
+            'Alcoholic',
+            'Non-Alcoholic',
+            'Milkshakes',
+            'Smoothies'
           ]
         },
         subcats: []

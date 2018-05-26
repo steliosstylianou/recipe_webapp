@@ -2,10 +2,6 @@
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
-//.body {
-//  opacity: 0.95;
-//}
-
 $colors: (
   "white": ($white, $black),
   "black": ($black, $white),
@@ -24,7 +20,7 @@ $colors: (
 }
 
 .button:hover {
-  background: lightblue;
+  background: lightgrey;
   color: black;
 }
 
@@ -34,7 +30,11 @@ $colors: (
 }
 
 .dropdown-item:hover {
-  background: $primary;
+  background: lightgrey;
+}
+
+#nav-sign-in {
+  padding-left: 0px;
 }
 
 .navbar {
@@ -44,12 +44,6 @@ $colors: (
 .navbar-item:hover {
   background: lightgrey;
   color: black;
-}
-
-#nav-item {
-  background: none;
-  border: none;
-  padding-bottom: 10px;
 }
 
 #nav-search {
@@ -65,7 +59,6 @@ $colors: (
   width: 225px;
   margin-top: 0px;
   cursor: pointer;
-
 }
 
 #nav-cutlery {
@@ -91,10 +84,18 @@ $colors: (
 #log-login {
   background: lightgrey;
 }
+.subtitle-login{
+  padding-bottom: 3%;
+}
 
 //REGISTER
 #reg-register {
   background: lightgrey;
+}
+
+.body-register{
+  margin-right: 0%;
+  margin-left: 0%;
 }
 
 //RECIPE
@@ -110,21 +111,25 @@ $colors: (
 }
 
 #rec-method {
-  margin-left: 40px;
+  margin-left: 7%;
+  margin-right: 7%;
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.4;
 }
 
 #rec-ingredients {
-  margin-right: 40px;
+  margin-right: 7%;
+  margin-left: 7%;
   text-align: left;
   text-justify: inter-word;
 }
 
 #rec-article {
-  margin-top: 4rem;
-  padding-bottom: 3rem;
+  margin-top: 3%;
+  padding-bottom: 4%;
+  margin-left: 0%;
+  margin-right: 0%;
   opacity: 0.95;
 }
 
@@ -148,10 +153,10 @@ $colors: (
 }
 
 //ADD RECIPE
-#add-column {
-  margin-top: 20px;
-  margin-right: 100px;
-  margin-left: 100px;
+.add-column {
+  margin-top: 2%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 #container-home {
@@ -159,20 +164,21 @@ $colors: (
 }
 
 #add-ingredients {
+  width: 100%;
   height: 100px;
-  width: 500px;
+
 }
 
 #add-method {
   height: 300px;
-  width: 500px;
+  width: 100%;
 }
 
 #im {
   color: black;
-
 }
 
+//IMAGE HOME
 .text-block {
 
   position: absolute;

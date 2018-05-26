@@ -6,22 +6,21 @@
         <div class="container" id="container-navigator">
           <div class="navbar-brand" >
             <img id="nav-logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Home'})">
-            <!--<span class="navbar-burger burger" data-target="navbarMenuHeroA"></span>-->
-            <a role="button" class="navbar-burger" data-target="navbarMenuHeroA">
+            <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}" data-target="navbarMenuHeroA">
               <span ></span>
               <span></span>
               <span></span>
-            </a>
+            </div>
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
+          <div id="navbarMenuHeroA" class="navbar-menu" @click="toggleMenu" :class="{'is-active': navIsActive}">
             <div class="navbar-start" >
 
-              <div class="navbar-item has-dropdown is-hoverable" >
+              <a class="navbar-item has-dropdown is-hoverable" >
                 <a class="navbar-link">
-                  <img id="nav-cutlery"  src="../assets/cutlery_bw.svg">
+                  <img id="nav-cutlery" src="../assets/cutlery_bw.svg">
                   Food
                 </a>
-                <div class="navbar-dropdown is-boxed is-display">
+                <div class="navbar-dropdown is-boxed">
                   <a class="navbar-item">
                     Appetizers
                   </a>
@@ -35,7 +34,7 @@
                     Pasta
                   </a>
                 </div>
-              </div>
+              </a>
 
               <a class="navbar-item has-dropdown is-hoverable">
 
@@ -84,9 +83,6 @@
 
             </div>
             <div class="navbar-end">
-              <!--<div class="field has-addons" id="nav-search">-->
-
-              <!--</div>-->
               <a class="navbar-item" @click="navigateTo({name: 'Search'})">
                 Search
                 <img id="search-button" src="../assets/search_bw.svg">
@@ -97,7 +93,7 @@
               <a class="navbar-item">
                 Favourites
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" id="nav-sign-in">
                 <a v-if="$store.state.isUserLoggedIn" @click="logout" class="navbar-item">
                   <span>Sign-Out</span>
                 </a>
@@ -115,7 +111,12 @@
 
 <script>
   export default {
-
+    name: 'navbar',
+    data () {
+      return {
+        navIsActive: false
+      }
+    },
     methods: {
       navigateTo (route) {
         this.$router.push(route)
@@ -126,6 +127,9 @@
         this.$router.push({
           name: 'Home'
         })
+      },
+      toggleMenu: function () {
+        this.navIsActive = !this.navIsActive
       }
     }
   }

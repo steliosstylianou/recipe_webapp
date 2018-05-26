@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight is-mobile body">
+  <section class="hero is-fullheight body">
     <div class="hero-body">
       <div class="container has-text-centered" id="container-home">
         <div class="column is-4 is-offset-4">
@@ -7,7 +7,7 @@
 
             <h3 class="title">LOGIN</h3>
             <img src="../assets/welcomeback_chef.svg">
-            <p class="subtitle has-text-grey">Please enter your details to log in</p>
+            <p class="subtitle-login has-text-grey">Please enter your details to log in</p>
 
             <form>
               <b-notification v-if="error" type="is-danger" @close="error = null">

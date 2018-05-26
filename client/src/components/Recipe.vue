@@ -1,5 +1,5 @@
 <template>
-  <div class="container is-mobile">
+  <div class="container has-text-centered">
     <section class="articles" id="rec-article">
       <div class="column is-10 is-offset-1">
 
@@ -8,7 +8,7 @@
             <p class="title article-title" id="rec-article-title">{{recipe.Title}}</p>
             <p class="subtitle article-subtitle" id="rec-article-subtitle">{{recipe.Author_Id}}</p>
 
-            <div class="columns is-multiline">
+            <div class="columns is-multiline is-mobile">
 
               <div class="column">
                 <strong>Difficulty</strong>
@@ -44,18 +44,6 @@
             </figure>
 
             <div class="columns">
-
-              <div class="column is-three-fifths">
-                <div class="content article-body" id="rec-method">
-                  <h3>Method</h3>
-                  <ol>
-                    <li v-for="(methodline,index) in recipe.Method.split('\n')" :key="index" >
-                      {{methodline}}
-                    </li>
-                  </ol>
-                </div>
-              </div>
-
               <div class="column">
                 <div class="content" id="rec-ingredients">
                   <h3>Ingredients</h3>
@@ -67,8 +55,18 @@
                   </section>
                 </div>
               </div>
-            </div>
 
+              <div class="column is-three-fifths">
+                <div class="content article-body" id="rec-method">
+                  <h3>Method</h3>
+                  <ol>
+                    <li v-for="(methodline,index) in recipe.Method.split('\n')" :key="index" >
+                      {{methodline}}
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
