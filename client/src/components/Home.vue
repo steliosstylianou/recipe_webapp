@@ -31,5 +31,6 @@
       // request to backend for all recipes
       this.recipes = (await Recipes.getAllRecipes()).data
     }
+
   }
 </script>

@@ -9,6 +9,10 @@ export default {
     return Api().get(`recipes/${id}`)
   },
 
+  searchRecipe (query) {
+    return Api().get(`search/${query}`)
+  },
+
   createRecipe (recipe) {
     const config = {
       headers: {

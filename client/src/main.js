@@ -5,7 +5,6 @@ import store from '@/store/store'
 import { sync } from 'vuex-router-sync'
 
 import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
 
 Vue.use(Buefy)
 
