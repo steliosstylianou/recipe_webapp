@@ -12,7 +12,7 @@
               <span></span>
             </div>
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': navIsActive}">
+          <div id="navbarMenuHeroA" class="navbar-menu" @click="toggleMenu" :class="{'is-active': navIsActive}">
             <div class="navbar-start" >
 
               <a class="navbar-item has-dropdown is-hoverable" >
