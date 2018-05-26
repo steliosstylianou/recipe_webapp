@@ -88,12 +88,12 @@
             <div class="navbar-end">
               <a class="navbar-item" @click="navigateTo({name: 'Search'})">
                 Search
-                <img id="search-button" src="../assets/search_bw.svg">
+                <img id="search-button" src="../assets/search.svg">
               </a>
               <a class="navbar-item" v-if="$store.state.isUserLoggedIn" @click="navigateTo({name: 'AddRecipe'})">
                 Create New Recipe
               </a>
-              <a class="navbar-item">
+              <a v-if="$store.state.isUserLoggedIn" class="navbar-item">
                 Favourites
               </a>
               <a class="navbar-item" id="nav-sign-in">

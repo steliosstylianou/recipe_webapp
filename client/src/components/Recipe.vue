@@ -17,6 +17,7 @@
                 <br/>
                 {{recipe.Difficulty}}
               </div>
+
               <div class="column">
                 <strong>Total Time</strong>
                 <br/>
@@ -29,14 +30,22 @@
                 {{recipe.Category}}, {{recipe.SubCategory}}
               </div>
 
-              <div class="column">
-                <button class="button is-medium">
+              <div class="column" v-if="$store.state.isUserLoggedIn">
+                <button class="button is-medium" v-if="isfavorite" @click="unfavorite">
+                  UnFavourite
+                  <figure class="avatar">
+                    <img id="heart" src="../assets/heart_bw.svg">
+                  </figure>
+                </button>
+
+                <button class="button is-medium" v-if="!isfavorite" @click="favorite">
                   Favourite
                   <figure class="avatar">
                     <img id="rec-heart" src="../assets/heart.svg">
                   </figure>
                 </button>
               </div>
+
             </div>
 
             <figure class="media-left" id="rec-media-left">
@@ -51,7 +60,7 @@
                   <h3>Ingredients</h3>
                   <section>
                     <div class="field" v-for="(ingredient,index) in recipe.Ingredients.split(',')"
-                         :key="index" >
+                         :key="index">
                       <b-checkbox>{{ingredient}}</b-checkbox>
                     </div>
                   </section>
@@ -62,7 +71,7 @@
                 <div class="content article-body" id="rec-method">
                   <h3>Method</h3>
                   <ol>
-                    <li v-for="(methodline,index) in recipe.Method.split('\n')" :key="index" >
+                    <li v-for="(methodline,index) in recipe.Method.split('\n')" :key="index">
                       {{methodline}}
                     </li>
                   </ol>
@@ -79,6 +88,7 @@
 
 <script>
   import RecipeAPI from '@/services/Recipes'
+  import FavoriteAPI from '@/services/Favorites'
   import Navigator from '@/components/Navigator.vue'
 
   export default {
@@ -90,24 +100,58 @@
       return {
         recipe: {
           Ingredients: '',
-          Method: ''
-        }
+          Method: '',
+        },
+        error: '',
+        isfavorite: false
       }
     },
     async created () {
       try {
         const recipeId = this.$store.state.route.params.recipeId
-        const response = await RecipeAPI.getRecipe(recipeId)
-        this.recipe = response.data
+        this.recipe = (await RecipeAPI.getRecipe(recipeId)).data
       } catch (e) {
-        console.log('ERROR WHILE FETCHING' + e)
+        this.error = "error while fetching recipe"
+      }
+    },
+
+    async mounted () {
+      if (this.$store.state.isUserLoggedIn) {
+        try {
+          this.isfavorite = (await FavoriteAPI.getFavorite(
+            this.$store.state.user.Id, this.$store.state.route.params.recipeId)).data.Id
+        } catch (e) {
+          this.error = e.response.data.error
+        }
+      }
+      else return
+    },
+  methods: {
+    async favorite () {
+        try {
+          console.log('fav')
+          this.isfavorite = (await FavoriteAPI.postFavorite(
+            this.$store.state.user.Id, this.recipe.Id)).data.id
+        } catch (error) {
+          this.error = error.response.data.error
+        }
+      },
+      async unfavorite() {
+        try {
+          console.log('unfav')
+          const changes = (await FavoriteAPI.deleteFavorite(
+            this.$store.state.user.Id, this.recipe.Id)).data.changes
+          this.isfavorite = false
+        } catch (error) {
+          this.error = error.response.data.error
+        }
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .container{
+  .container {
     opacity: 0.95;
   }
 
@@ -116,3 +160,4 @@
     margin-top: 0;
   }
 </style>
+
