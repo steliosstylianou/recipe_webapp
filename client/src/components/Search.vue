@@ -31,7 +31,7 @@
       recipeBox,
       Recipes
     },
-    data() {
+    data  () {
       return {
         searched: false,
         search: '',
@@ -41,7 +41,7 @@
       }
     },
     methods: {
-      async submit() {
+      async submit () {
         this.searched = true
         try {
           const response = await Recipes.searchRecipe(this.search)

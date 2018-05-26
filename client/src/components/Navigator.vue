@@ -117,11 +117,10 @@
   export default {
 
     methods: {
-      navigateTo(route) {
+      navigateTo (route) {
         this.$router.push(route)
       },
-
-      logout() {
+      logout () {
         this.$store.dispatch('setToken', null)
         this.$store.dispatch('setUser', null)
         this.$router.push({

@@ -74,3 +74,9 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .body {
+    opacity: 0.95;
+  }
+</style>
