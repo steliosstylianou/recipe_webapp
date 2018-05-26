@@ -88,7 +88,7 @@
     components: {
       Navigator,
       BField,
-      PictureInput,
+      PictureInput
     },
 
     methods: {
