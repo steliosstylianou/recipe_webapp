@@ -1,5 +1,5 @@
 <template>
-  <section class="section is-mobile">
+  <section class="section">
     <div class="container has-text-centered">
     <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
     <b-notification v-if="error" type="is-danger" @close="error = null">
