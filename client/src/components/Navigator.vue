@@ -15,9 +15,10 @@
           <div id="navbarMenuHeroA" class="navbar-menu" @click="toggleMenu" :class="{'is-active': navIsActive}">
             <div class="navbar-start" >
 
-              <a class="navbar-item has-dropdown is-hoverable" >
-                <a class="navbar-link">
-                  <img id="nav-cutlery" src="../assets/cutlery_bw.svg">
+              <a class="navbar-item has-dropdown is-hoverable">
+                <a name="cutlery" class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')">
+                  <img id="nav-cutlery" v-if="!cutleryHover" src="../assets/cutlery_bw.svg">
+                  <img id="nav-cutlery" v-if="cutleryHover" src="../assets/cutlery.svg">
                   Food
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -114,7 +115,8 @@
     name: 'navbar',
     data () {
       return {
-        navIsActive: false
+        navIsActive: false,
+        cutleryHover: false
       }
     },
     methods: {
@@ -130,6 +132,16 @@
       },
       toggleMenu: function () {
         this.navIsActive = !this.navIsActive
+      },
+      setHover: function (name) {
+        if (name === 'cutlery') {
+          this.cutleryHover = true
+        }
+      },
+      setUnhover: function (name) {
+        if (name === 'cutlery') {
+          this.cutleryHover = false
+        }
       }
     }
   }
