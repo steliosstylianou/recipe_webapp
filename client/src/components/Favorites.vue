@@ -40,13 +40,12 @@
       },
     methods: {
       favRecipe(id) {
-        try {
-          const fav = await Recipes.getRecipe(rec.Id)
-          this.favorites.append(fav)
-          }
-        } catch (e) {
-          this.error = e.response.data.error
-        }
+        // try {
+        //   const fav = await Recipes.getRecipe(rec.Id)
+        //   this.favorites.append(fav)
+        //   } catch (e) {
+        //   this.error = e.response.data.error
+        // }
       }
     }
   }
