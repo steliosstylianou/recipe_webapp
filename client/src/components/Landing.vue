@@ -1,16 +1,7 @@
-<!--<template>-->
-  <!--<div class="tile has-text-centered " id="tile-landing">-->
-    <!--<figure class="image" >-->
-      <!--<img src="../assets/landing2.png" id="landing-image">-->
-      <!--<a class="button" @click = "go" id="show-recipes">Show More</a>-->
-
-    <!--</figure>-->
-  <!--</div>-->
-<!--</template>-->
 <template>
   <div class="container" id="container-landing">
   <div id="tile-landing">
-    <a class="button" @click="navigateTo({name: 'Home'})" id="show-recipes">Show More</a>
+    <a class="button" @click="navigateTo ({name: 'Home'})" id="show-recipes">Show More</a>
   </div>
   </div>
 </template>
@@ -20,12 +11,11 @@
       name: 'Landing',
 
       methods: {
-        navigateTo(route) {
+        navigateTo (route) {
           this.$router.push(route)
         }
       }
     }
-
 
 </script>
 
@@ -64,6 +54,5 @@
   #container-landing #show-recipes:hover {
     background-color: gray;
   }
-
 
 </style>

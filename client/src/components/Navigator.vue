@@ -4,16 +4,17 @@
 
       <nav class="navbar" id="navigator-navbar">
         <div class="container" id="container-navigator">
-          <div class="navbar-brand" >
+          <div class="navbar-brand">
             <img id="nav-logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Home'})">
-            <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}" data-target="navbarMenuHeroA">
-              <span ></span>
+            <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}"
+                 data-target="navbarMenuHeroA">
+              <span></span>
               <span></span>
               <span></span>
             </div>
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu" @click="toggleMenu" :class="{'is-active': navIsActive}">
-            <div class="navbar-start" >
+            <div class="navbar-start">
 
               <a class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')">
@@ -158,4 +159,3 @@
     }
   }
 </script>
-
