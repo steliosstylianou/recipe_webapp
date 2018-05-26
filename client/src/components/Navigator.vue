@@ -6,14 +6,13 @@
         <div class="container" id="container-navigator">
           <div class="navbar-brand" >
             <img id="nav-logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Home'})">
-            <!--<span class="navbar-burger burger" data-target="navbarMenuHeroA"></span>-->
-            <a role="button" class="navbar-burger" data-target="navbarMenuHeroA">
+            <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}" data-target="navbarMenuHeroA">
               <span ></span>
               <span></span>
               <span></span>
-            </a>
+            </div>
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
+          <div id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': navIsActive}">
             <div class="navbar-start" >
 
               <div class="navbar-item has-dropdown is-hoverable" >
@@ -21,7 +20,7 @@
                   <img id="nav-cutlery"  src="../assets/cutlery_bw.svg">
                   Food
                 </a>
-                <div class="navbar-dropdown is-boxed is-display">
+                <div class="navbar-dropdown is-boxed">
                   <a class="navbar-item">
                     Appetizers
                   </a>
@@ -115,7 +114,12 @@
 
 <script>
   export default {
-
+    name: 'navbar',
+    data () {
+      return {
+        navIsActive: false
+      }
+    },
     methods: {
       navigateTo (route) {
         this.$router.push(route)
@@ -126,6 +130,9 @@
         this.$router.push({
           name: 'Home'
         })
+      },
+      toggleMenu: function () {
+        this.navIsActive = !this.navIsActive
       }
     }
   }
