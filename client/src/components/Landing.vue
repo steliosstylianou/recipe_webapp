@@ -10,22 +10,29 @@
 <template>
   <div class="container" id="container-landing">
   <div id="tile-landing">
-    <a class="button" id="show-recipes">Show More</a>
+    <a class="button" @click="navigateTo({name: 'Home'})" id="show-recipes">Show More</a>
   </div>
   </div>
 </template>
 
 <script>
     export default {
-        name: 'Landing'
+      name: 'Landing',
+
+      methods: {
+        navigateTo(route) {
+          this.$router.push(route)
+        }
+      }
     }
+
+
 </script>
 
 <style>
   #container-landing {
     position: relative;
     width: 10px;
-
   }
 
   html {
@@ -34,9 +41,29 @@
     overflow: auto;
     background-size: cover;
     margin-top:100px;
-    /*margin-bottom:10px;*/
   }
 
+  #container-landing #show-recipes {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    opacity: 0.75;
+    padding: 12px 24px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  #container-landing #show-recipes:hover {
+    background-color: gray;
+  }
 
 
 </style>
