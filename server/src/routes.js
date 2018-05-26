@@ -4,6 +4,8 @@ const RecipesController =
     require('./controllers/RecipesController');
 const loginValidator =
     require('./controllers/AuthenticationValitor');
+const FavoritesController =
+    require('./controllers/FavoritesController');
 
 module.exports = (app) => {
     app.post('/register',
@@ -21,6 +23,18 @@ module.exports = (app) => {
 
     app.get('/search/:query',
         RecipesController.searchRecipe);
+
+    app.post('/bookmarks/:user/:recipe',
+        FavoritesController.createFavorite);
+
+    app.get('/bookmarks/:user/:recipe',
+        FavoritesController.getFavorite);
+
+    app.get('/bookmarks/:user',
+        FavoritesController.getAllFavorites);
+
+    app.delete('/bookmarks/:user/:recipe',
+        FavoritesController.removeFavorite);
 
     // app.all('*', function(req, res) {
     //     throw new Error('Bad request');
