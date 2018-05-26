@@ -14,9 +14,15 @@ $colors: (
   "danger": ($danger, $danger-invert),
 );
 
+#container-navigator {
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
 
-.hero-body {
-  padding-top: 0px;
+#navigator-navbar {
+  z-index: 1000; //MUST KEEP THIS FOR WORKING BURGER
 }
 
 .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
@@ -34,6 +40,15 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   border-right-style: none;
 }
 
+.hero-body {
+  padding-top: 0px;
+}
+
+.dropdown-item {
+  text-align: left;
+  z-index: 999; //MUST KEEP THIS FOR WORKING BURGER
+}
+
 #nav-sign-in {
   padding-left: 0px;
   padding-right: 0px;
@@ -41,6 +56,10 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 
 .navbar {
   height: 100px;
+}
+
+.navbar-item, .navbar-link {
+  color: black;
 }
 
 #nav-search {
@@ -75,13 +94,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 
 #search-button {
   height: 30px;
-}
-
-#container-navigator {
-  margin-top: 10px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 10px;
 }
 
 #search-field {
@@ -233,12 +245,5 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   -moz-transition: all 0.6s ease-in-out;
   -ms-transition: all 0.6s ease-in-out;
   -o-transition: all 0.6s ease-in-out;
-}
-
-.container {
-  margin-top: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 20px;
 }
 
