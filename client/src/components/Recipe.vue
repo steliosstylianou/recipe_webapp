@@ -32,18 +32,18 @@
                 <button class="button is-medium" v-if="isfavorite" @click="unfavorite">
                   UnFavourite
                   <figure class="avatar">
-                    <img id="heart" src="../assets/heart.svg">
+                    <img id="heart" src="../assets/heart_bw.svg">
                   </figure>
                 </button>
 
-                <button class="button is-medium" v-else @click="favorite">
+                <button class="button is-medium" v-if="!isfavorite" @click="favorite">
                   Favourite
                   <figure class="avatar">
                     <img id="rec-heart" src="../assets/heart.svg">
                   </figure>
                 </button>
+                </div>
 
-              </div>
             </div>
 
             <figure class="media-left" id="rec-media-left">
