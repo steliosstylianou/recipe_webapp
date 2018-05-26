@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <navigator></navigator>
+    <!--<navigator></navigator>-->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Navigator from '@/components/Navigator.vue'
+  // import Navigator from '@/components/Navigator.vue'
 
   export default {
-  name: 'app',
-    components: {
-      Navigator
-    }
+  name: 'app'
+    // components: {
+    //   Navigator
+    // }
   }
 </script>
 

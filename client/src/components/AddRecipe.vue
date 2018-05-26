@@ -1,5 +1,6 @@
 <template>
   <section class="section">
+    <navigator></navigator>
     <div class="container has-text-centered">
     <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
     <b-notification v-if="error" type="is-danger" @close="error = null">
@@ -80,11 +81,13 @@
   import BField from 'buefy/src/components/field/Field'
   import PictureInput from 'vue-picture-input'
   import Recipes from '@/services/Recipes'
+  import Navigator from './Navigator'
 
   export default {
     components: {
       BField,
-      PictureInput
+      PictureInput,
+      Navigator
     },
 
     methods: {

@@ -1,5 +1,6 @@
 <template>
   <div class="container" id="home-container">
+    <navigator></navigator>
     <div class="columns" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
       <recipe-box v-for="item in
       recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
@@ -14,12 +15,14 @@
 <script>
   import recipeBox from './recipeBox'
   import Recipes from '@/services/Recipes'
+  import Navigator from '@/components/Navigator.vue'
 
   export default {
     name: 'Home',
     components: {
       recipeBox,
-      Recipes
+      Recipes,
+      Navigator
     },
     data () {
       return {

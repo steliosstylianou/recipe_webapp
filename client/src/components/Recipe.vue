@@ -1,5 +1,6 @@
 <template>
   <div class="container has-text-centered">
+    <navigator></navigator>
     <section class="articles" id="rec-article">
       <div class="column is-10 is-offset-1">
 
@@ -76,9 +77,13 @@
 
 <script>
   import RecipeAPI from '@/services/Recipes'
+  import Navigator from '@/components/Navigator.vue'
 
   export default {
     name: 'Recipe',
+    components: {
+      Navigator
+    },
     data () {
       return {
         recipe: {

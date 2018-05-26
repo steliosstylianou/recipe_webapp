@@ -1,5 +1,6 @@
 <template>
   <section class="hero is-fullheight body">
+    <navigator></navigator>
     <div class="hero-body">
       <div class="container has-text-centered" id="container-login">
         <div class="column is-4 is-offset-4">
@@ -42,9 +43,13 @@
 <script>
   import particlesJS from './ParticlesJS'
   import Authentication from '@/services/Authentication'
+  import Navigator from './Navigator.vue'
 
   export default {
-    components: {particlesJS},
+    components: {
+      particlesJS,
+      Navigator
+    },
     data () {
       return {
         email: '',
