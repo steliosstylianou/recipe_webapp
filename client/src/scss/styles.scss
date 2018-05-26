@@ -23,6 +23,7 @@ $colors: (
 
 #navigator-navbar {
   z-index: 1000; //MUST KEEP THIS FOR WORKING BURGER
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
