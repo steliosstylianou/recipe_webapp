@@ -31,15 +31,6 @@
       // request to backend for all recipes
       this.recipes = (await Recipes.getAllRecipes()).data
     }
+
   }
 </script>
-
-<style scoped>
-  .container {
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 20px;
-  }
-
-</style>

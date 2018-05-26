@@ -19,6 +19,9 @@ module.exports = (app) => {
     app.get('/recipes/:recipeId',
         RecipesController.getRecipe);
 
+    app.get('/search/:query',
+        RecipesController.searchRecipe);
+
     // app.all('*', function(req, res) {
     //     throw new Error('Bad request');
     // });

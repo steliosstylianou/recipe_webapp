@@ -67,22 +67,23 @@ module.exports = {
                 res.send(row);
             }
         });
-    }
-// updateRecipe (req, res) {
-//
-//     db.run('UPDATE recipe SET $field WHERE $value)', {
-//         $id: req.params.id
-//     }, (err, row) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send({
-//                 error: "Error while fetching recipe with id " + req.params.id
-//             });
-//         }
-//         else {
-//             res.send(row);
-//         }
-//     });
-// },
+    },
 
+    searchRecipe(req, res) {
+        db.all('SELECT * FROM recipe WHERE ' +
+            'Category = $query OR Title = $query OR Ingredients = $query' +
+            'Difficulty = $query OR SubCategory = $query  ', {
+            $query: req.params.query
+        }, (err, rows) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).send({
+                    error: "Error while trying to search for" + req.params.query
+                });
+            }
+            else {
+                res.send(rows);
+            }
+        });
+    }
 };
