@@ -88,7 +88,8 @@
     components: {
       Navigator,
       BField,
-      PictureInput
+      PictureInput,
+      Recipes
     },
 
     methods: {
@@ -97,7 +98,7 @@
           const formData = new FormData()
           formData.append('recipe', this.recipe.file)
           formData.append('title', this.recipe.title)
-          formData.append('author', this.this.$store.state.user.Id)
+          formData.append('author', this.$store.state.user.Id)
           formData.append('category', this.recipe.category)
           formData.append('subcategory', this.recipe.subcategory)
           formData.append('difficulty', this.recipe.difficulty)
@@ -106,7 +107,7 @@
           formData.append('method', this.recipe.method)
 
           await Recipes.createRecipe(formData)
-          this.$router.push({name: 'Recipe', params: {recipeId: this.recipe.id}})
+          this.$router.push({name: 'Home'})
         } catch (error) {
           console.log('This is the error')
           console.log(error)
