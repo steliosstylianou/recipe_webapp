@@ -21,6 +21,7 @@
 #app {
   background: url("assets/image2.png");
   background-size: cover;
+  overflow: auto;
 }
 
 </style>

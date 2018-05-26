@@ -10,7 +10,7 @@
     </div>
 
     <h1 class="title is-3" v-if="this.searched">Search Results </h1>
-    <div class="columns" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
+    <div class="columns is-mobile" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
       <recipe-box v-for="item in
       recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
                   :key="item.Id" :title="item.Title"
