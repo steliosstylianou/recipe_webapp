@@ -1,7 +1,8 @@
 <template>
-  <section class="hero is-fullheight body-register">
+  <div class="body">
     <navigator></navigator>
-    <div class="hero-body">
+  <section class="hero is-fullheight body-register">
+    <div class="hero-body" id="register-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
           <div class="box" id="register-box">
@@ -40,6 +41,7 @@
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script>
@@ -81,7 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .body {
+  #register-body {
     opacity: 0.95;
   }
 </style>

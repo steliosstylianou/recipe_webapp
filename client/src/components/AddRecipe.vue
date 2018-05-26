@@ -1,80 +1,81 @@
 <template>
+  <div class="body">
+    <navigator id="add-nav"></navigator>
   <section class="section">
-    <navigator></navigator>
-    <div class="container has-text-centered">
-    <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
-    <b-notification v-if="error" type="is-danger" @close="error = null">
-      <div v-html="error" ></div>
-    </b-notification>
+      <div class="container has-text-centered">
+      <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
+      <b-notification v-if="error" type="is-danger" @close="error = null">
+        <div v-html="error" ></div>
+      </b-notification>
 
-    <div class="columns is-multiline is-mobile">
-      <div class="column add-column">
+      <div class="columns is-multiline is-mobile">
+        <div class="column add-column">
 
-        <b-field>
-          <b-input required placeholder="Recipe Title" v-model="recipe.title">
-          </b-input>
-        </b-field>
+          <b-field>
+            <b-input required placeholder="Recipe Title" v-model="recipe.title">
+            </b-input>
+          </b-field>
 
-        <b-field>
-          <b-input required placeholder="Time needed? (in minutes)" v-model="recipe.time"></b-input>
-        </b-field>
+          <b-field>
+            <b-input required placeholder="Time needed? (in minutes)" v-model="recipe.time"></b-input>
+          </b-field>
 
-        <b-field>
-          <b-select required name="difficulty" placeholder="Select difficulty" v-model="recipe.difficulty">
-            <option value="0">Beginner</option>
-            <option value="1">Intermediate</option>
-            <option value="2">Expert</option>
-          </b-select>
-        </b-field>
+          <b-field>
+            <b-select required name="difficulty" placeholder="Select difficulty" v-model="recipe.difficulty">
+              <option value="0">Beginner</option>
+              <option value="1">Intermediate</option>
+              <option value="2">Expert</option>
+            </b-select>
+          </b-field>
 
-        <b-field>
-          <b-select required name="category" placeholder="Select category" v-model="recipe.category">
-            <option v-for="(category_obj, category) in categories" :key="category">{{category}}</option>
-          </b-select>
+          <b-field>
+            <b-select required name="category" placeholder="Select category" v-model="recipe.category">
+              <option v-for="(category_obj, category) in categories" :key="category">{{category}}</option>
+            </b-select>
 
-          <b-select required name="subcategory" placeholder="select sub-category" v-model="recipe.subcategory">
-            <option v-for="(sub_cat, subcat) in subcats" :key="subcat">{{sub_cat}}</option>
-          </b-select>
-        </b-field>
+            <b-select required name="subcategory" placeholder="select sub-category" v-model="recipe.subcategory">
+              <option v-for="(sub_cat, subcat) in subcats" :key="subcat">{{sub_cat}}</option>
+            </b-select>
+          </b-field>
 
-        <picture-input
-          ref="pictureInput"
-          width="500"
-          height="500"
-          accept="image/jpeg,image/png"
-          size="5"
-          removeButtonClass="button is-danger is-outlined"
-          buttonClass="button is-link is-outlined"
-          :removable="true"
-          :custom-strings="{
-            upload: '<h1>Upload!</h1>',
-            drag: 'Upload a picture of the recipe!'
-         }"
-          @change="onChange"
-          @remove="onRemoved"
-        >
-        </picture-input>
+          <picture-input
+            ref="pictureInput"
+            width="500"
+            height="500"
+            accept="image/jpeg,image/png"
+            size="5"
+            removeButtonClass="button is-danger is-outlined"
+            buttonClass="button is-link is-outlined"
+            :removable="true"
+            :custom-strings="{
+              upload: '<h1>Upload!</h1>',
+              drag: 'Upload a picture of the recipe!'
+            }"
+            @change="onChange"
+            @remove="onRemoved">
+          </picture-input>
 
+        </div>
+
+        <div class="column add-column">
+          <b-field>
+            <textarea class="input" id="add-ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." v-model="recipe.ingredients">
+            </textarea>
+          </b-field>
+
+          <b-field>
+            <textarea class="input" id="add-method"
+                      placeholder="Please describe the method in steps e.g.: 1: Preheat the oven. 2: Mix the ingredients together. etc."
+                      v-model="recipe.method">
+            </textarea>
+          </b-field>
+
+        </div>
       </div>
-
-      <div class="column add-column">
-        <b-field>
-          <textarea class="input" id="add-ingredients" placeholder="Ingredients list e.g.: 100g plain flour, 5 apples, etc." v-model="recipe.ingredients">
-          </textarea>
-        </b-field>
-
-        <b-field>
-          <textarea class="input" id="add-method"
-                    placeholder="Please describe the method in steps e.g.: 1: Preheat the oven. 2: Mix the ingredients together. etc."
-                    v-model="recipe.method">
-          </textarea>
-        </b-field>
-
+      <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
       </div>
-    </div>
-    <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
-    </div>
   </section>
+  </div>
 </template>
 
 <script>
@@ -85,9 +86,9 @@
 
   export default {
     components: {
+      Navigator,
       BField,
       PictureInput,
-      Navigator
     },
 
     methods: {
@@ -167,7 +168,7 @@
     watch: {
     'recipe.category': function () {
         // Clear previously selected values
-        this.subcats = []
+        this.subcats = ['']
         // Populate list of countries in the second dropdown
         if (this.recipe.category.length > 0) {
           this.subcats = this.categories[this.recipe.category]

@@ -185,6 +185,10 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 }
 
 //ADD RECIPE
+
+//#add-nav{
+//  padding-top: 0px;
+//}
 .add-column {
   margin-top: 2%;
   margin-right: 10%;
@@ -194,7 +198,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 #add-ingredients {
   width: 100%;
   height: 100px;
-
 }
 
 #add-method {
@@ -202,9 +205,9 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   width: 100%;
 }
 
-#im {
-  color: black;
-}
+//#im {
+//  color: black;
+//}
 
 //RECIPE BOX
 .text-block {

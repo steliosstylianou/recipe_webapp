@@ -1,6 +1,7 @@
 <template>
-  <div class="container has-text-centered">
+  <div class="body">
     <navigator></navigator>
+  <div class="container has-text-centered">
     <section class="articles" id="rec-article">
       <div class="column is-10 is-offset-1">
 
@@ -72,6 +73,7 @@
         </div>
       </div>
     </section>
+  </div>
   </div>
 </template>
 
