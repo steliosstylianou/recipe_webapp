@@ -87,8 +87,8 @@
                 Search
                 <img id="search-button" src="../assets/search_bw.svg">
               </a>
-              <a class="navbar-item">
-                Profile
+              <a class="navbar-item" v-if="$store.state.isUserLoggedIn" @click="navigateTo({name: 'AddRecipe'})">
+                Create New Recipe
               </a>
               <a class="navbar-item">
                 Favourites

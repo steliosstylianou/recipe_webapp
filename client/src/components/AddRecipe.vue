@@ -93,7 +93,7 @@
           const formData = new FormData()
           formData.append('recipe', this.recipe.file)
           formData.append('title', this.recipe.title)
-          formData.append('author', this.recipe.author)
+          formData.append('author', this.this.$store.state.user.Id)
           formData.append('category', this.recipe.category)
           formData.append('subcategory', this.recipe.subcategory)
           formData.append('difficulty', this.recipe.difficulty)
