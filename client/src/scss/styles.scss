@@ -24,7 +24,7 @@ $colors: (
 }
 
 .button:hover {
-  background: lightblue;
+  background: lightgrey;
   color: black;
 }
 
@@ -34,7 +34,7 @@ $colors: (
 }
 
 .dropdown-item:hover {
-  background: $primary;
+  background: lightgrey;
 }
 
 .navbar {
@@ -44,12 +44,6 @@ $colors: (
 .navbar-item:hover {
   background: lightgrey;
   color: black;
-}
-
-#nav-item {
-  background: none;
-  border: none;
-  padding-bottom: 10px;
 }
 
 #nav-search {

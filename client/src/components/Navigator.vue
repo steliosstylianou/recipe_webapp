@@ -15,9 +15,9 @@
           <div id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': navIsActive}">
             <div class="navbar-start" >
 
-              <div class="navbar-item has-dropdown is-hoverable" >
+              <a class="navbar-item has-dropdown is-hoverable" >
                 <a class="navbar-link">
-                  <img id="nav-cutlery"  src="../assets/cutlery_bw.svg">
+                  <img id="nav-cutlery" src="../assets/cutlery_bw.svg">
                   Food
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -34,7 +34,7 @@
                     Pasta
                   </a>
                 </div>
-              </div>
+              </a>
 
               <a class="navbar-item has-dropdown is-hoverable">
 
