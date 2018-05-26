@@ -16,7 +16,7 @@
             <div class="navbar-start" >
 
               <a class="navbar-item has-dropdown is-hoverable">
-                <a name="cutlery" class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')">
+                <a class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')">
                   <img id="nav-cutlery" v-if="!cutleryHover" src="../assets/cutlery_bw.svg">
                   <img id="nav-cutlery" v-if="cutleryHover" src="../assets/cutlery.svg">
                   Food
@@ -39,9 +39,10 @@
 
               <a class="navbar-item has-dropdown is-hoverable">
 
-                <a class="navbar-link">
+                <a class="navbar-link" v-on:mouseover="setHover('desserts')" v-on:mouseleave="setUnhover('desserts')">
 
-                  <img id="nav-desserts" src="../assets/desserts_bw.svg">
+                  <img id="nav-desserts" v-if="!dessertsHover" src="../assets/desserts_bw.svg">
+                  <img id="nav-desserts" v-if="dessertsHover" src="../assets/desserts.svg">
                   Desserts
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -62,8 +63,9 @@
 
               <a class="navbar-item has-dropdown is-hoverable">
 
-                <a class="navbar-link">
-                  <img id="nav-beverages" src="../assets/beverages_bw.svg">
+                <a class="navbar-link" v-on:mouseover="setHover('beverages')" v-on:mouseleave="setUnhover('beverages')">
+                  <img id="nav-beverages" v-if="!beveragesHover" src="../assets/beverages_bw.svg">
+                  <img id="nav-beverages" v-if="beveragesHover" src="../assets/beverages.svg">
                   Beverages
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -116,7 +118,9 @@
     data () {
       return {
         navIsActive: false,
-        cutleryHover: false
+        cutleryHover: false,
+        dessertsHover: false,
+        beveragesHover: false
       }
     },
     methods: {
@@ -136,11 +140,19 @@
       setHover: function (name) {
         if (name === 'cutlery') {
           this.cutleryHover = true
+        } else if (name === 'desserts') {
+          this.dessertsHover = true
+        } else {
+          this.beveragesHover = true
         }
       },
       setUnhover: function (name) {
         if (name === 'cutlery') {
           this.cutleryHover = false
+        } else if (name === 'desserts') {
+          this.dessertsHover = false
+        } else {
+          this.beveragesHover = false
         }
       }
     }
