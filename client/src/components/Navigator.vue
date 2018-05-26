@@ -17,7 +17,7 @@
 
               <a class="navbar-item has-dropdown is-hoverable" >
                 <a class="navbar-link">
-                  <img id="nav-cutlery" src="../assets/cutlery_bw.svg">
+                  <img id="nav-cutlery">
                   Food
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -40,7 +40,7 @@
 
                 <a class="navbar-link">
 
-                  <img id="nav-desserts" src="../assets/desserts_bw.svg">
+                  <img id="nav-desserts" src="../assets/desserts.svg">
                   Desserts
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -62,7 +62,7 @@
               <a class="navbar-item has-dropdown is-hoverable">
 
                 <a class="navbar-link">
-                  <img id="nav-beverages" src="../assets/beverages_bw.svg">
+                  <img id="nav-beverages" src="../assets/beverages.svg">
                   Beverages
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -85,12 +85,12 @@
             <div class="navbar-end">
               <a class="navbar-item" @click="navigateTo({name: 'Search'})">
                 Search
-                <img id="search-button" src="../assets/search_bw.svg">
+                <img id="search-button" src="../assets/search.svg">
               </a>
               <a class="navbar-item">
                 Profile
               </a>
-              <a class="navbar-item">
+              <a v-if="$store.state.isUserLoggedIn" class="navbar-item">
                 Favourites
               </a>
               <a class="navbar-item" id="nav-sign-in">

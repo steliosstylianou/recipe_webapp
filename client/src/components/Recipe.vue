@@ -42,7 +42,7 @@
                     <img id="rec-heart" src="../assets/heart.svg">
                   </figure>
                 </button>
-                </div>
+              </div>
 
             </div>
 

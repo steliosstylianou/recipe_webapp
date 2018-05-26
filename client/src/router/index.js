@@ -6,6 +6,7 @@ import AddRecipe from '@/components/AddRecipe'
 import Recipe from '@/components/Recipe'
 import Home from '@/components/Home'
 import Search from '@/components/Search'
+import Favorites from '@/components/Favorites'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/favorites',
+      name: 'Favorites',
+      component: Favorites
     },
     { path: '/',
       redirect: '/index'

@@ -1,23 +1,29 @@
 const db = require('../config/database');
-const config = require('../config/config');
+const Recipe = require('./RecipesController');
 
 module.exports = {
 
     getAllFavorites(req, res) {
-
-        db.all('SELECT * FROM bookmarks WHERE User = $user', {
+        var recipesList = []
+        var rows = db.each('SELECT Recipe FROM bookmarks WHERE User = $user', {
             $user: req.params.user
-        }, (err, rows) => {
+        }, (err, row) => {
             if (err) {
-                console.log(err)
-                return res.status(500).send({
-                    error: "Error while fetching recipes"
-                });
+                console.log("error" + err)
+                return res.status(500).send({error: 'Error while fetching favorites'})
             }
-            else {
-                res.send(rows);
-            }
-        });
+            db.get('SELECT * FROM recipe WHERE Id = $row', {
+                $row: row.Recipe
+            }, (error, row) => {
+                console.log("Row1")
+                console.log(row)
+                if (error) {
+                    console.log("error" + error)
+                    return res.status(500).send({error: 'Error while fetching favorites'})
+                }
+                recipesList.push(row)
+            })
+        })
     },
 
     getFavorite(req, res) {
@@ -36,7 +42,8 @@ module.exports = {
                 res.send(row);
             }
         });
-    },
+    }
+    ,
 
     createFavorite(req, res) {
 
@@ -53,9 +60,10 @@ module.exports = {
                 });
             }
             console.log(this.lastID)
-            res.send({ id: this.lastID });
+            res.send({id: this.lastID});
         });
-    },
+    }
+    ,
 
     removeFavorite(req, res) {
         db.run('DELETE FROM bookmarks WHERE ' +
@@ -70,8 +78,9 @@ module.exports = {
                 });
             }
             else {
-                res.send({ changes: this.changes});
+                res.send({changes: this.changes});
             }
         });
     }
-};
+}
+;
