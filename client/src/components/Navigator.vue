@@ -15,9 +15,10 @@
           <div id="navbarMenuHeroA" class="navbar-menu" @click="toggleMenu" :class="{'is-active': navIsActive}">
             <div class="navbar-start" >
 
-              <a class="navbar-item has-dropdown is-hoverable" >
-                <a class="navbar-link">
-                  <img id="nav-cutlery" src="../assets/cutlery_bw.svg">
+              <a class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')">
+                  <img id="nav-cutlery" v-if="!cutleryHover" src="../assets/cutlery_bw.svg">
+                  <img id="nav-cutlery" v-if="cutleryHover" src="../assets/cutlery.svg">
                   Food
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -38,9 +39,10 @@
 
               <a class="navbar-item has-dropdown is-hoverable">
 
-                <a class="navbar-link">
+                <a class="navbar-link" v-on:mouseover="setHover('desserts')" v-on:mouseleave="setUnhover('desserts')">
 
-                  <img id="nav-desserts" src="../assets/desserts_bw.svg">
+                  <img id="nav-desserts" v-if="!dessertsHover" src="../assets/desserts_bw.svg">
+                  <img id="nav-desserts" v-if="dessertsHover" src="../assets/desserts.svg">
                   Desserts
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -61,8 +63,9 @@
 
               <a class="navbar-item has-dropdown is-hoverable">
 
-                <a class="navbar-link">
-                  <img id="nav-beverages" src="../assets/beverages_bw.svg">
+                <a class="navbar-link" v-on:mouseover="setHover('beverages')" v-on:mouseleave="setUnhover('beverages')">
+                  <img id="nav-beverages" v-if="!beveragesHover" src="../assets/beverages_bw.svg">
+                  <img id="nav-beverages" v-if="beveragesHover" src="../assets/beverages.svg">
                   Beverages
                 </a>
                 <div class="navbar-dropdown is-boxed">
@@ -87,8 +90,8 @@
                 Search
                 <img id="search-button" src="../assets/search_bw.svg">
               </a>
-              <a class="navbar-item">
-                Profile
+              <a class="navbar-item" v-if="$store.state.isUserLoggedIn" @click="navigateTo({name: 'AddRecipe'})">
+                Create New Recipe
               </a>
               <a class="navbar-item">
                 Favourites
@@ -114,7 +117,10 @@
     name: 'navbar',
     data () {
       return {
-        navIsActive: false
+        navIsActive: false,
+        cutleryHover: false,
+        dessertsHover: false,
+        beveragesHover: false
       }
     },
     methods: {
@@ -130,6 +136,24 @@
       },
       toggleMenu: function () {
         this.navIsActive = !this.navIsActive
+      },
+      setHover: function (name) {
+        if (name === 'cutlery') {
+          this.cutleryHover = true
+        } else if (name === 'desserts') {
+          this.dessertsHover = true
+        } else {
+          this.beveragesHover = true
+        }
+      },
+      setUnhover: function (name) {
+        if (name === 'cutlery') {
+          this.cutleryHover = false
+        } else if (name === 'desserts') {
+          this.dessertsHover = false
+        } else {
+          this.beveragesHover = false
+        }
       }
     }
   }

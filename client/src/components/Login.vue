@@ -1,7 +1,7 @@
 <template>
   <section class="hero is-fullheight body">
     <div class="hero-body">
-      <div class="container has-text-centered" id="container-home">
+      <div class="container has-text-centered" id="container-login">
         <div class="column is-4 is-offset-4">
           <div class="box">
 
