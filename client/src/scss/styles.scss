@@ -118,21 +118,25 @@ $colors: (
 }
 
 #rec-method {
-  margin-left: 40px;
+  margin-left: 7%;
+  margin-right: 7%;
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.4;
 }
 
 #rec-ingredients {
-  margin-right: 40px;
+  margin-right: 7%;
+  margin-left: 7%;
   text-align: left;
   text-justify: inter-word;
 }
 
 #rec-article {
-  margin-top: 4rem;
-  padding-bottom: 3rem;
+  margin-top: 3%;
+  padding-bottom: 4%;
+  margin-left: 0%;
+  margin-right: 0%;
   opacity: 0.95;
 }
 
