@@ -1,4 +1,6 @@
 <template>
+  <div class="body">
+    <navigator></navigator>
   <div class="container has-text-centered">
     <div>
       <input class="input" type="search"
@@ -19,15 +21,18 @@
       </recipe-box>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
   import recipeBox from './recipeBox'
   import Recipes from '@/services/Recipes'
+  import Navigator from './Navigator'
 
   export default {
     name: 'Search',
     components: {
+      Navigator,
       recipeBox,
       Recipes
     },
