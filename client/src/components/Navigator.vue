@@ -83,9 +83,6 @@
 
             </div>
             <div class="navbar-end">
-              <!--<div class="field has-addons" id="nav-search">-->
-
-              <!--</div>-->
               <a class="navbar-item" @click="navigateTo({name: 'Search'})">
                 Search
                 <img id="search-button" src="../assets/search_bw.svg">
