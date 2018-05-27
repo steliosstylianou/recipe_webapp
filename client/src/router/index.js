@@ -85,7 +85,7 @@ export default new Router({
       meta: {
           title: 'Favorites page'
       }
-    },
+    }
     // { path: '/',
     //   redirect: '/index'
     // }

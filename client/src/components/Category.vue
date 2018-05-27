@@ -37,7 +37,6 @@
         try {
           const categoryId = this.$store.state.route.params.categoryId
           this.recipes = (await Recipes.searchRecipe(categoryId)).data
-          console.log('Got in')
         } catch (e) {
           console.log('ERROR WHILE FETCHING' + e)
         }

@@ -107,6 +107,7 @@
           formData.append('method', this.recipe.method)
 
           await Recipes.createRecipe(formData)
+          this.$router.push({name: 'Home'})
         } catch (error) {
           console.log(error)
           this.error = error.response.data.error
@@ -182,7 +183,7 @@
     },
     created () {
       if (!this.$store.state.isUserLoggedIn) {
-      //  TODO: DO SOMETHING
+       this.$router.push({name: 'Login'})
       }
     }
   }
