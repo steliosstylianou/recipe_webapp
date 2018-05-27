@@ -27,21 +27,19 @@ module.exports = {
             $name: user.name,
             $email: user.email,
             $password: user.password
-        }, err => {
+        }, function (err) {
             if (err) {
                 console.log(err);
                 return res.status(400).send({
                     error: "Email already in use"
                 });
             }
-            else {
-                user.Id = this.lastID
-                consle.log(user)
+            user.Id = this.lastID;
+            console.log(user)
                 res.send({
                     user: user,
                     token: getJwt(user)
                 });
-            }
         });
     },
 
