@@ -31,6 +31,8 @@ app.post('/recipes', Authenticate,
     (req, res) => {
     upload(req, res, function(err) {
         if (req.file === undefined || req.file === null || err) {
+            console.log(err);
+            console.log(req.file);
             return res.status(400).send({error: 'Please upload a valid file'});
         }
         RecipeValidator.create(req, res, function(error) {
