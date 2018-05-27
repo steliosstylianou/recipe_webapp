@@ -82,32 +82,4 @@
   #login-body {
     opacity: 0.95;
   }
-
-  .hero, .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .box {
-    margin-top: 2rem;
-  }
-
-  input {
-    font-weight: 300;
-  }
-
-  p {
-    font-weight: 700;
-  }
-
-  p.subtitle {
-    padding-top: 2rem;
-  }
-
-  .button{
-    background-color: grey;
-    color: white;
-    width: fit-content;
-  }
-
 </style>
