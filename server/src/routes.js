@@ -6,6 +6,7 @@ const loginValidator =
     require('./controllers/AuthenticationValitor');
 const FavoritesController =
     require('./controllers/FavoritesController');
+const Authenticate = require('./policies/isAuth');
 
 module.exports = (app) => {
     app.post('/register',
@@ -25,15 +26,19 @@ module.exports = (app) => {
         RecipesController.searchRecipe);
 
     app.post('/bookmarks/:user/:recipe',
+        Authenticate,
         FavoritesController.createFavorite);
 
     app.get('/bookmarks/:user/:recipe',
+        Authenticate,
         FavoritesController.getFavorite);
 
     app.get('/bookmarks/:user',
+        Authenticate,
         FavoritesController.getAllFavorites);
 
     app.delete('/bookmarks/:user/:recipe',
+        Authenticate,
         FavoritesController.removeFavorite);
 
     // app.all('*', function(req, res) {
