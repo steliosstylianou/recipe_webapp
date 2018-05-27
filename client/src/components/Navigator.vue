@@ -23,16 +23,16 @@
                   Food
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Appetizers'}})">
                     Appetizers
                   </a>
-                  <a class="navbar-item">
-                    Meat & Poultry
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Meat'}})">
+                    Meat
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Fish'}})">
                     Fish
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Pasta'}})">
                     Pasta
                   </a>
                 </div>
@@ -47,17 +47,17 @@
                   Desserts
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Chocolate'}})">
                     Chocolate
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Cakes'}})">
                     Cakes
                   </a>
                   <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Cookies'}})">
                     Cookies
                   </a>
-                  <a class="navbar-item">
-                    Ice Creams
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Tarts'}})">
+                    Tarts
                   </a>
                 </div>
               </a>
@@ -70,16 +70,16 @@
                   Beverages
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Alcoholic'}})">
                     Alcoholic
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Non-Alcoholic'}})">
                     Non-Alcoholic
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Milkshakes'}})">
                     Milkshakes
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Smoothies'}})">
                     Smoothies
                   </a>
                 </div>

@@ -45,7 +45,7 @@ export default new Router({
       component: Search
     },
     {
-      path: '/:categoryId',
+      path: '/category/:categoryId',
       name: 'Category',
       component: Category
     },
