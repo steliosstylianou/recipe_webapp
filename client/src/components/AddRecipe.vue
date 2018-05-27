@@ -44,8 +44,8 @@
             height="500"
             accept="image/jpeg,image/png"
             size="5"
-            removeButtonClass="button is-danger is-outlined"
-            buttonClass="button is-link is-outlined"
+            removeButtonClass="button is-danger"
+            buttonClass="button is-link"
             :removable="true"
             :custom-strings="{
               upload: '<h1>Upload!</h1>',
