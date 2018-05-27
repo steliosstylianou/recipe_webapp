@@ -180,7 +180,11 @@
           this.recipe.difficulty && this.recipe.ingredients && this.recipe.time &&
           this.recipe.method && this.recipe.file)
       }
+    },
+    created () {
+      if (!this.$store.state.isUserLoggedIn) {
+      //  TODO: DO SOMETHING
+      }
     }
-
   }
 </script>

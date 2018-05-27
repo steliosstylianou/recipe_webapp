@@ -6,6 +6,7 @@ const config = require('./config/config');
 const multer = require('multer');
 const RecipesController = require('./controllers/RecipesController');
 const RecipeValidator = require('./controllers/RecipeValidation');
+const Authenticate = require('./policies/isAuth');
 
 const upload = multer(config.multer).single('recipe');
 
@@ -26,7 +27,8 @@ app.listen(config.port);
 console.log('Server started on port ' + config.port);
 
 // api for posting recipes
-app.post('/recipes', (req, res) => {
+app.post('/recipes', Authenticate,
+    (req, res) => {
     upload(req, res, function(err) {
         if (req.file === undefined || req.file === null || err) {
             return res.send({error: 'Please upload a valid file'});
