@@ -2,6 +2,7 @@
   <div class="body">
     <navigator></navigator>
     <div class="container has-text-centered">
+      <p class="title">{{this.$store.state.route.params.categoryId}}</p>
       <div class="columns is-mobile" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
         <recipe-box v-for="item in
       recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
@@ -28,7 +29,7 @@
     data  () {
       return {
         recipes: [],
-        itemsPerRow: 3
+        itemsPerRow: 3,
       }
     },
     methods: {
