@@ -30,7 +30,7 @@ module.exports = {
             'Difficulty, Time, File, SubCategory) VALUES ' +
             '($title,$author,$category,$ingredients,$method,$date,$difficulty,$time,$file,$subcategory)', {
             $title: recipe.title,
-            $author: recipe.author,
+            $author: req.user.Name,
             $category: recipe.category,
             $ingredients: recipe.ingredients,
             $method: recipe.method,

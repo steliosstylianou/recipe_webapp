@@ -7,7 +7,7 @@ module.exports = {
         var recipesList = []
         var length = 0
         db.all('SELECT Recipe FROM bookmarks WHERE User = $user', {
-            $user: req.params.user
+            $user: req.user.Id
         }, (err, rows) => {
             if (err) {
                 console.log("error" + err)
@@ -34,7 +34,7 @@ module.exports = {
     getFavorite(req, res) {
         db.get('SELECT * FROM bookmarks WHERE User = $user AND ' +
             'Recipe = $recipe', {
-            $user: req.params.user,
+            $user: req.user.Id,
             $recipe: req.params.recipe
         }, (err, row) => {
             if (err) {
@@ -44,6 +44,8 @@ module.exports = {
                 });
             }
             else {
+                console.log('Found row');
+                console.log(row);
                 res.send(row);
             }
         });
@@ -53,7 +55,7 @@ module.exports = {
 
         db.run('INSERT INTO bookmarks(User,Recipe) VALUES ' +
             '($user,$recipe)', {
-            $user: req.params.user,
+            $user: req.user.Id,
             $recipe: req.params.recipe
         }, function (err) {
             if (err) {
@@ -71,7 +73,7 @@ module.exports = {
     removeFavorite(req, res) {
         db.run('DELETE FROM bookmarks WHERE ' +
             'User = $user AND Recipe = $recipe', {
-            $user: req.params.user,
+            $user: req.user.Id,
             $recipe: req.params.recipe
         }, function (err) {
             if (err) {

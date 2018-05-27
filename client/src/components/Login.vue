@@ -74,6 +74,11 @@
           this.error = error.response.data.error
           }
       }
+    },
+    created () {
+      if (this.$store.state.isUserLoggedIn) {
+        this.$router.push({name: 'Home'})
+      }
     }
   }
 </script>

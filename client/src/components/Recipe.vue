@@ -38,7 +38,7 @@
                   </figure>
                 </button>
 
-                <button class="button is-medium" v-if="!isfavorite" @click="favorite">
+                <button class="button is-medium" v-else @click="favorite">
                   Favourite
                   <figure class="avatar">
                     <img id="rec-heart" src="../assets/heart.svg">
@@ -119,7 +119,7 @@
       if (this.$store.state.isUserLoggedIn) {
         try {
           this.isfavorite = (await FavoriteAPI.getFavorite(
-            this.$store.state.user.Id, this.$store.state.route.params.recipeId)).data.Id
+            this.$store.state.route.params.recipeId)).data.Id
         } catch (e) {
           this.error = e.response.data.error
         }
@@ -130,7 +130,7 @@
         try {
           console.log('fav')
           this.isfavorite = (await FavoriteAPI.postFavorite(
-            this.$store.state.user.Id, this.recipe.Id)).data.id
+            this.recipe.Id)).data.id
         } catch (error) {
           this.error = error.response.data.error
         }
@@ -138,7 +138,7 @@
       async unfavorite () {
         try {
           console.log('unfav')
-          await FavoriteAPI.deleteFavorite(this.$store.state.user.Id, this.recipe.Id)
+          await FavoriteAPI.deleteFavorite(this.recipe.Id)
           this.isfavorite = false
         } catch (error) {
           this.error = error.response.data.error
