@@ -5,7 +5,8 @@ module.exports = {
 
     getAllFavorites(req, res) {
         var recipesList = []
-        var rows = db.each('SELECT Recipe FROM bookmarks WHERE User = $user', {
+
+        db.each('SELECT Recipe FROM bookmarks WHERE User = $user', {
             $user: req.params.user
         }, (err, row) => {
             if (err) {
@@ -22,6 +23,7 @@ module.exports = {
                     return res.status(500).send({error: 'Error while fetching favorites'})
                 }
                 recipesList.push(row)
+                console.log(recipesList)
             })
         })
     },
@@ -42,8 +44,7 @@ module.exports = {
                 res.send(row);
             }
         });
-    }
-    ,
+    },
 
     createFavorite(req, res) {
 
@@ -62,8 +63,7 @@ module.exports = {
             console.log(this.lastID)
             res.send({id: this.lastID});
         });
-    }
-    ,
+    },
 
     removeFavorite(req, res) {
         db.run('DELETE FROM bookmarks WHERE ' +
@@ -82,5 +82,4 @@ module.exports = {
             }
         });
     }
-}
-;
+};
