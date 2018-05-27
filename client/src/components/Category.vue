@@ -36,7 +36,7 @@
       async updatePage () {
         try {
           const categoryId = this.$store.state.route.params.categoryId
-          this.recipes = (await Recipes.searchRecipe(categoryId)).data
+          this.recipes = (await Recipes.searchCategory(categoryId)).data
         } catch (e) {
           console.log('ERROR WHILE FETCHING' + e)
         }

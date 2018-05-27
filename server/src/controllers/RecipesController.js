@@ -85,5 +85,24 @@ module.exports = {
                 res.send(rows);
             }
         });
+    },
+
+    searchCategory(req, res) {
+        db.all('SELECT * FROM recipe WHERE ' +
+            'Category = $query OR Title = $query OR Ingredients = $query' +
+            'Difficulty = $query OR SubCategory = $query', {
+            $query:  req.params.category
+        }, (err, rows) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).send({
+                    error: "Error while trying to search for" + req.params.category
+                });
+            }
+            else {
+                res.send(rows);
+            }
+        });
     }
+
 };

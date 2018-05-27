@@ -25,6 +25,9 @@ module.exports = (app) => {
     app.get('/search/:query',
         RecipesController.searchRecipe);
 
+    app.get('/category/:category',
+        RecipesController.searchCategory);
+
     app.post('/bookmarks/:recipe',
         Authenticate,
         FavoritesController.createFavorite);

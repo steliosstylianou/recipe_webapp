@@ -13,6 +13,10 @@ export default {
     return Api().get(`search/${query}`)
   },
 
+  searchCategory (category) {
+    return Api().get(`category/${category}`)
+  },
+
   createRecipe (recipe) {
     const config = {
       headers: {
