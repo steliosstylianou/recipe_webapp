@@ -32,16 +32,16 @@
 
               <div class="column" v-if="$store.state.isUserLoggedIn">
                 <button class="button is-medium" v-if="isfavorite" @click="unfavorite">
-                  UnFavourite
+                  Favourite
                   <figure class="avatar">
-                    <img id="heart" src="../assets/heart_bw.svg">
+                    <img id="heart" src="../assets/heart.svg">
                   </figure>
                 </button>
 
                 <button class="button is-medium" v-else @click="favorite">
                   Favourite
                   <figure class="avatar">
-                    <img id="rec-heart" src="../assets/heart.svg">
+                    <img id="rec-heart" src="../assets/heart_bw.svg">
                   </figure>
                 </button>
               </div>

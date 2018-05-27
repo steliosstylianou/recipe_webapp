@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <navigator></navigator>
-    <div class="container has-text-centered">
+    <div class="container has-text-centered" id="favorites-container">
       <h1 class="title is-3">Favourites</h1>
       <div v-if="error">
         <b-notification has-icon v-if="error" type="is-danger" :closable="false" >
@@ -9,7 +9,7 @@
         </b-notification>
       </div>
       <div v-else>
-        <div class="columns is-mobile" v-for="i in Math.ceil(favorites.length / itemsPerRow)" :key="i">
+        <div class="columns" v-for="i in Math.ceil(favorites.length / itemsPerRow)" :key="i">
           <recipe-box v-for="item in
       favorites.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
                       :key="item.Id" :title="item.Title"

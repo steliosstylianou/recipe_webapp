@@ -146,6 +146,12 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   height: 25px;
 }
 
+#heart {
+  padding-top: 5px;
+  padding-left: 10px;
+  height: 25px;
+}
+
 #rec-method {
   margin-left: 7%;
   margin-right: 7%;
@@ -269,6 +275,14 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 
 
 #category-container{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+
+#favorites-container{
   padding-top: 5%;
   padding-bottom: 5%;
   padding-right: 5%;

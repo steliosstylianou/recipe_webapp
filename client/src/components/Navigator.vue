@@ -97,7 +97,7 @@
               <a class="navbar-item" v-if="$store.state.isUserLoggedIn" @click="navigateTo({name: 'AddRecipe'})">
                 Create New Recipe
               </a>
-              <a v-if="$store.state.isUserLoggedIn" @click="navigateTo({name: 'Favorites'})" class="navbar-item">
+              <a v-if="$store.state.isUserLoggedIn" @click="go ()" class="navbar-item">
                 Favourites
               </a>
               <a class="navbar-item" id="nav-sign-in">
@@ -158,6 +158,10 @@
         } else {
           this.beveragesHover = false
         }
+      },
+      async go () {
+        this.$router.push({name: 'Favorites'})
+        window.location.reload()
       }
     }
   }
