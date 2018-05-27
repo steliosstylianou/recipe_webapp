@@ -100,7 +100,7 @@
       return {
         recipe: {
           Ingredients: '',
-          Method: '',
+          Method: ''
         },
         error: '',
         isfavorite: false
@@ -111,7 +111,7 @@
         const recipeId = this.$store.state.route.params.recipeId
         this.recipe = (await RecipeAPI.getRecipe(recipeId)).data
       } catch (e) {
-        this.error = "error while fetching recipe"
+        this.error = 'error while fetching recipe'
       }
     },
 
@@ -124,7 +124,6 @@
           this.error = e.response.data.error
         }
       }
-      else return
     },
   methods: {
     async favorite () {
@@ -136,11 +135,10 @@
           this.error = error.response.data.error
         }
       },
-      async unfavorite() {
+      async unfavorite () {
         try {
           console.log('unfav')
-          const changes = (await FavoriteAPI.deleteFavorite(
-            this.$store.state.user.Id, this.recipe.Id)).data.changes
+          await FavoriteAPI.deleteFavorite(this.$store.state.user.Id, this.recipe.Id)
           this.isfavorite = false
         } catch (error) {
           this.error = error.response.data.error
@@ -160,4 +158,3 @@
     margin-top: 0;
   }
 </style>
-

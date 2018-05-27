@@ -5,25 +5,28 @@ module.exports = {
 
     getAllFavorites(req, res) {
         var recipesList = []
-
-        db.each('SELECT Recipe FROM bookmarks WHERE User = $user', {
+        var length = 0
+        db.all('SELECT Recipe FROM bookmarks WHERE User = $user', {
             $user: req.params.user
-        }, (err, row) => {
+        }, (err, rows) => {
             if (err) {
                 console.log("error" + err)
                 return res.status(500).send({error: 'Error while fetching favorites'})
             }
-            db.get('SELECT * FROM recipe WHERE Id = $row', {
-                $row: row.Recipe
-            }, (error, row) => {
-                console.log("Row1")
-                console.log(row)
-                if (error) {
-                    console.log("error" + error)
-                    return res.status(500).send({error: 'Error while fetching favorites'})
-                }
-                recipesList.push(row)
-                console.log(recipesList)
+            length = rows.length
+            rows.forEach((row) => {
+                db.get('SELECT * FROM recipe WHERE Id = $row', {
+                    $row: row.Recipe
+                }, (error, row) => {
+                    if (error) {
+                        console.log("error" + error)
+                        return res.status(500).send({error: 'Error while fetching favorites'})
+                    }
+                    recipesList.push(row)
+                    if (recipesList.length === length){
+                        res.send(recipesList)
+                    }
+                })
             })
         })
     },
