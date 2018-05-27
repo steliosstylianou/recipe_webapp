@@ -32,27 +32,4 @@
     background-size: cover;
     margin-top:100px;
   }
-
-  #container-landing #show-recipes {
-    position: absolute;
-    top: 300px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 16px;
-    opacity: 0.75;
-    padding: 12px 24px;
-    width: 200px;
-    height: 50px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  #container-landing #show-recipes:hover {
-    background-color: gray;
-  }
-
 </style>
