@@ -29,7 +29,7 @@
     data  () {
       return {
         recipes: [],
-        itemsPerRow: 3,
+        itemsPerRow: 3
       }
     },
     methods: {
