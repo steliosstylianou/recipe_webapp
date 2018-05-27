@@ -35,6 +35,8 @@ module.exports = {
                 });
             }
             else {
+                user.Id = this.lastID
+                consle.log(user)
                 res.send({
                     user: user,
                     token: getJwt(user)
@@ -63,10 +65,13 @@ module.exports = {
                         error: "Invalid Password"
                     });
                 }
-                else res.send({
-                    user: row,
-                    token: getJwt(row)
-                });
+                else {
+                    console.log(row)
+                    res.send({
+                        user: row,
+                        token: getJwt(row)
+                    });
+                }
             });
         });
     }
