@@ -14,7 +14,7 @@
 <style lang="scss">
   @import "scss/styles.scss";
 #app {
-  background: url("assets/image2.png");
+  background: url("assets/backround6.png");
   background-size: cover;
   /*overflow: auto;*/
 }
