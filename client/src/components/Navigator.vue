@@ -58,8 +58,8 @@
                   <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Cookies'}})">
                     Cookies
                   </a>
-                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Tarts'}})">
-                    Tarts
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Waffles'}})">
+                    Waffles
                   </a>
                 </div>
               </a>

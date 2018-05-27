@@ -22,9 +22,9 @@
 
           <b-field>
             <b-select required name="difficulty" placeholder="Select difficulty" v-model="recipe.difficulty">
-              <option value="0">Beginner</option>
-              <option value="1">Intermediate</option>
-              <option value="2">Expert</option>
+              <option >Beginner</option>
+              <option >Intermediate</option>
+              <option >Expert</option>
             </b-select>
           </b-field>
 
@@ -149,10 +149,10 @@
             'Pasta'
           ],
           'Desserts': [
-            'Chocolates',
+            'Chocolate',
             'Cakes',
             'Cookies',
-            'Ice Creams'
+            'Waffles'
           ],
           'Beverages': [
             'Alcoholic',

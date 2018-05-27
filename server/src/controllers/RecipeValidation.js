@@ -7,7 +7,7 @@ module.exports = {
             author: Joi.string().min(3).required(),
             category: Joi.string().min(3).required(),
             subcategory: Joi.string().min(3).required(),
-            difficulty: Joi.number().integer().required(),
+            difficulty: Joi.string().required(),
             time: Joi.number().integer().required(),
             ingredients: Joi.string().required(),
             method: Joi.string().required(),

@@ -9,7 +9,7 @@ module.exports = {
 
     getAllRecipes(req, res) {
 
-        db.all("SELECT * FROM recipe LIMIT 15", (err, rows) => {
+        db.all("SELECT * FROM recipe", (err, rows) => {
             if (err) {
                 console.log(err)
                 return res.status(500).send({
