@@ -9,6 +9,7 @@ passport.use(new JwtStrategy({
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: config.authentication.jwtSecret,
     }, async function(jwtPayload, done) {
+    console.log(jwtPayload);
         const query = 'SELECT * from users WHERE Id = ' + jwtPayload.Id;
         await (db.get(query, (err, row) => {
             if (err) {
