@@ -18,11 +18,14 @@ app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 require('./routes')(app);
-require('./passport');
+
+require('./passportValidation');
+
 app.listen(config.port);
 
 console.log('Server started on port ' + config.port);
 
+// api for posting recipes
 app.post('/recipes', (req, res) => {
     upload(req, res, function(err) {
         if (req.file === undefined || req.file === null || err) {

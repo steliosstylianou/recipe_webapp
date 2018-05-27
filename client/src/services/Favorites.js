@@ -1,16 +1,16 @@
 import Api from '@/services/Api'
 
 export default {
-  getAllFavorites (user) {
-    return Api().get(`bookmarks/${user}`)
+  getAllFavorites () {
+    return Api().get(`bookmarks/`)
   },
-  getFavorite (user, recipe) {
-    return Api().get(`bookmarks/${user}/${recipe}`)
+  getFavorite (recipe) {
+    return Api().get(`bookmarks/${recipe}`)
   },
-  deleteFavorite (user, recipe) {
-    return Api().delete(`bookmarks/${user}/${recipe}`)
+  deleteFavorite (recipe) {
+    return Api().delete(`bookmarks/${recipe}`)
   },
-  postFavorite (user, recipe) {
-    return Api().post(`bookmarks/${user}/${recipe}`)
+  postFavorite (recipe) {
+    return Api().post(`bookmarks/${recipe}`)
   }
 }

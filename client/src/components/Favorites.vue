@@ -34,8 +34,7 @@
     },
     async created () {
       try {
-        const userId = this.$store.state.user.Id
-        const response = await FavoriteAPI.getAllFavorites(userId)
+        const response = await FavoriteAPI.getAllFavorites()
         this.favorites = response.data
       } catch (e) {
         this.error = 'error while fetching recipe'

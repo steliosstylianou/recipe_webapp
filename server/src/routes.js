@@ -25,19 +25,19 @@ module.exports = (app) => {
     app.get('/search/:query',
         RecipesController.searchRecipe);
 
-    app.post('/bookmarks/:user/:recipe',
+    app.post('/bookmarks/:recipe',
         Authenticate,
         FavoritesController.createFavorite);
 
-    app.get('/bookmarks/:user/:recipe',
+    app.get('/bookmarks/:recipe',
         Authenticate,
         FavoritesController.getFavorite);
 
-    app.get('/bookmarks/:user',
+    app.get('/bookmarks',
         Authenticate,
         FavoritesController.getAllFavorites);
 
-    app.delete('/bookmarks/:user/:recipe',
+    app.delete('/bookmarks/:recipe',
         Authenticate,
         FavoritesController.removeFavorite);
 

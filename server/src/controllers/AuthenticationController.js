@@ -43,20 +43,6 @@ module.exports = {
         });
     },
 
-    findUser (id) {
-
-        db.get('SELECT * from users WHERE Id = $id', {
-            $id: id
-        }, (row, err) => {
-            if (err) {
-                return null
-            }
-            else {
-                return row
-            }
-        });
-    },
-
     login (req, res) {
         const query = "select * from users where email = '" + req.body.email + "'";
 
