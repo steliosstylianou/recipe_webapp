@@ -52,7 +52,7 @@ module.exports = {
 
             db.get(query,function (err, row) {
 
-                if (row === undefined){
+                if (row === undefined || row === null){
                     return res.status(402).send({
                         error: "Invalid email"
                     });
