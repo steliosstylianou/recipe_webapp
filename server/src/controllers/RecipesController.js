@@ -71,9 +71,9 @@ module.exports = {
 
     searchRecipe(req, res) {
         db.all('SELECT * FROM recipe WHERE ' +
-            'Category = $query OR Title = $query OR Ingredients = $query' +
-            'Difficulty = $query OR SubCategory = $query  ', {
-            $query: req.params.query
+            'Category LIKE $query OR Title LIKE $query OR Ingredients LIKE $query' +
+            'Difficulty LIKE $query OR SubCategory LIKE $query  ', {
+            $query: '%' + req.params.query + '%'
         }, (err, rows) => {
             if (err) {
                 console.log(err);
