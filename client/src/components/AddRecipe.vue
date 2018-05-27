@@ -107,7 +107,7 @@
           formData.append('method', this.recipe.method)
 
           await Recipes.createRecipe(formData)
-          this.$router.push({name: 'Home'})
+          // this.$router.push({name: 'Home'})
         } catch (error) {
           console.log('This is the error')
           console.log(error)

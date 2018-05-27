@@ -53,7 +53,7 @@
                   <a class="navbar-item">
                     Cakes
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" @click="navigateTo({name: 'Category', params: {categoryId: 'Cookies'}})">
                     Cookies
                   </a>
                   <a class="navbar-item">
