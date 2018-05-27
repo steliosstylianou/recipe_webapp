@@ -3,13 +3,20 @@
     <navigator></navigator>
     <div class="container has-text-centered">
       <h1 class="title is-3">Favourites</h1>
-      <div class="columns is-mobile" v-for="i in Math.ceil(favorites.length / itemsPerRow)" :key="i">
-        <recipe-box v-for="item in
+      <div v-if="error">
+        <b-notification has-icon v-if="error" type="is-danger" :closable="false" >
+          <div v-html="error" ></div>
+        </b-notification>
+      </div>
+      <div v-else>
+        <div class="columns is-mobile" v-for="i in Math.ceil(favorites.length / itemsPerRow)" :key="i">
+          <recipe-box v-for="item in
       favorites.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
-                    :key="item.Id" :title="item.Title"
-                    :author="item.Author_Id" :description="item.Method"
-                    :img="item.File" :idkey="item.Id">
-        </recipe-box>
+                      :key="item.Id" :title="item.Title"
+                      :author="item.Author_Id" :description="item.Method"
+                      :img="item.File" :idkey="item.Id">
+          </recipe-box>
+        </div>
       </div>
     </div>
   </div>
@@ -29,7 +36,8 @@
     data () {
       return {
         favorites: [],
-        itemsPerRow: 3
+        itemsPerRow: 3,
+        error: null
       }
     },
     async created () {
@@ -37,7 +45,7 @@
         const response = await FavoriteAPI.getAllFavorites()
         this.favorites = response.data
       } catch (e) {
-        this.error = 'error while fetching recipe'
+        this.error = e.response.data.error
       }
     }
   }
