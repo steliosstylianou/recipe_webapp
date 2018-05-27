@@ -3,7 +3,6 @@ import App from './App'
 import router from './router'
 import store from '@/store/store'
 import { sync } from 'vuex-router-sync'
-
 import Buefy from 'buefy'
 
 Vue.use(Buefy)
