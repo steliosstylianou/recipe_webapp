@@ -98,7 +98,7 @@
           const formData = new FormData()
           formData.append('recipe', this.recipe.file)
           formData.append('title', this.recipe.title)
-          formData.append('author', this.$store.state.user.Name)
+          formData.append('author', this.$store.state.user.name)
           formData.append('category', this.recipe.category)
           formData.append('subcategory', this.recipe.subcategory)
           formData.append('difficulty', this.recipe.difficulty)
@@ -107,9 +107,8 @@
           formData.append('method', this.recipe.method)
 
           await Recipes.createRecipe(formData)
-          // this.$router.push({name: 'Home'})
+          this.$router.push({name: 'Home'})
         } catch (error) {
-          console.log('This is the error')
           console.log(error)
           this.error = error.response.data.error
         }
