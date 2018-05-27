@@ -71,7 +71,7 @@ export default new Router({
       }
     },
     {
-      path: '/landing',
+      path: '/',
       name: 'Landing',
       component: Landing,
       meta: {
@@ -86,8 +86,8 @@ export default new Router({
           title: 'Favorites page'
       }
     },
-    { path: '/',
-      redirect: '/index'
-    }
+    // { path: '/',
+    //   redirect: '/index'
+    // }
   ]
 })
