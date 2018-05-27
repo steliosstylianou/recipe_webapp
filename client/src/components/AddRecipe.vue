@@ -65,7 +65,7 @@
 
           <b-field>
             <textarea class="input" id="add-method"
-                      placeholder="Please describe the method in steps e.g.: 1: Preheat the oven. 2: Mix the ingredients together. etc."
+                      placeholder="Please describe the method in steps (each step separated by a new line) e.g.: Preheat the oven. Mix the ingredients together. etc."
                       v-model="recipe.method">
             </textarea>
           </b-field>
