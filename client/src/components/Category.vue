@@ -31,15 +31,23 @@
         itemsPerRow: 3
       }
     },
-    async created () {
-      try {
-        const categoryId = this.$store.state.route.params.categoryId
-        this.recipes = (await Recipes.searchRecipe(categoryId)).data
-        console.log('I got in bitchez')
-        // this.recipes = response.data
-      } catch (e) {
-        console.log('ERROR WHILE FETCHING' + e)
+    methods: {
+      async updatePage () {
+        try {
+          const categoryId = this.$store.state.route.params.categoryId
+          this.recipes = (await Recipes.searchRecipe(categoryId)).data
+          console.log('Got in')
+        } catch (e) {
+          console.log('ERROR WHILE FETCHING' + e)
+        }
       }
+    },
+    created () {
+      this.updatePage()
+    },
+    beforeRouteUpdate (to, from, next) {
+      next()
+      this.updatePage()
     }
   }
 </script>

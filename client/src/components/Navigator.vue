@@ -17,7 +17,8 @@
             <div class="navbar-start">
 
               <a class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')">
+                <a class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')"
+                   @click="navigateTo({name: 'Category', params: {categoryId: 'Food'}})">
                   <img id="nav-cutlery" v-if="!cutleryHover" src="../assets/cutlery_bw.svg">
                   <img id="nav-cutlery" v-if="cutleryHover" src="../assets/cutlery.svg">
                   Food
@@ -40,7 +41,8 @@
 
               <a class="navbar-item has-dropdown is-hoverable">
 
-                <a class="navbar-link" v-on:mouseover="setHover('desserts')" v-on:mouseleave="setUnhover('desserts')">
+                <a class="navbar-link" v-on:mouseover="setHover('desserts')" v-on:mouseleave="setUnhover('desserts')"
+                   @click="navigateTo({name: 'Category', params: {categoryId: 'Desserts'}})">
 
                   <img id="nav-desserts" v-if="!dessertsHover" src="../assets/desserts_bw.svg">
                   <img id="nav-desserts" v-if="dessertsHover" src="../assets/desserts.svg">
@@ -64,7 +66,8 @@
 
               <a class="navbar-item has-dropdown is-hoverable">
 
-                <a class="navbar-link" v-on:mouseover="setHover('beverages')" v-on:mouseleave="setUnhover('beverages')">
+                <a class="navbar-link" v-on:mouseover="setHover('beverages')" v-on:mouseleave="setUnhover('beverages')"
+                   @click="navigateTo({name: 'Category', params: {categoryId: 'Beverages'}})">
                   <img id="nav-beverages" v-if="!beveragesHover" src="../assets/beverages_bw.svg">
                   <img id="nav-beverages" v-if="beveragesHover" src="../assets/beverages.svg">
                   Beverages

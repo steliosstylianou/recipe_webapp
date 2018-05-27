@@ -145,7 +145,7 @@
         categories: {
           'Food': [
             'Appetizers',
-            'Meat & Poultry',
+            'Meat',
             'Fish',
             'Pasta'
           ],
