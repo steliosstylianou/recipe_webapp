@@ -72,7 +72,10 @@
 
         </div>
       </div>
-      <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
+      <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">
+        <img src="../assets/upload.svg" id="add-upload-button">
+        Upload your lovely recipe!
+      </button>
       </div>
     </section>
   </div>
