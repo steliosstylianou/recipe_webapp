@@ -11,7 +11,7 @@
       <div v-else>
         <div class="columns" v-for="i in Math.ceil(favorites.length / itemsPerRow)" :key="i">
           <recipe-box v-for="item in
-      favorites.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
+          favorites.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
                       :key="item.Id" :title="item.Title"
                       :author="item.Author_Id" :description="item.Method"
                       :img="item.File" :idkey="item.Id">

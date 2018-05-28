@@ -4,11 +4,7 @@
       <div class="card-image">
         <figure class="image is-4by3">
           <div class="image-hover img-inner-shadow">
-            <a @click="navigateTo({
-            name: 'Recipe',
-            params: {
-              recipeId: idkey
-            }})">
+            <a @click="navigateTo({name: 'Recipe', params: {recipeId: idkey}})">
               <img :src="img" class="image-hover img-inner-shadow" >
               <div class="layer"></div>
             </a>
@@ -24,7 +20,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>

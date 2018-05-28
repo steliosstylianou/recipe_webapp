@@ -1,8 +1,8 @@
 <template>
   <div class="container" id="container-landing">
-  <div id="tile-landing">
-    <a class="button" @click="go ()" id="show-recipes">Show More</a>
-  </div>
+    <div id="tile-landing">
+      <a class="button" @click="go ()" id="show-recipes">Show More</a>
+    </div>
   </div>
 </template>
 
@@ -16,7 +16,6 @@
         }
       }
     }
-
 </script>
 
 <style>
@@ -27,5 +26,4 @@
     background-size: cover;
     margin-top:100px;
   }
-
 </style>

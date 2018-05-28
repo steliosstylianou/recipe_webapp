@@ -1,22 +1,22 @@
 <template>
   <section class="hero body">
     <div class="hero-head">
-
       <nav class="navbar" id="navigator-navbar">
         <div class="container" id="container-navigator">
           <div class="navbar-brand">
             <img id="nav-logo" src="../assets/logo_chef.svg" @click="navigateTo({name: 'Home'})">
-            <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}"
-                 data-target="navbarMenuHeroA">
+
+            <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}" data-target="navbarMenuHeroA">
               <span></span>
               <span></span>
               <span></span>
             </div>
           </div>
+
           <div id="navbarMenuHeroA" class="navbar-menu" @click="toggleMenu" :class="{'is-active': navIsActive}">
             <div class="navbar-start">
-
               <a class="navbar-item has-dropdown is-hoverable">
+
                 <a class="navbar-link" v-on:mouseover="setHover('cutlery')" v-on:mouseleave="setUnhover('cutlery')"
                    @click="navigateTo({name: 'Category', params: {categoryId: 'Food'}})">
                   <img id="nav-cutlery" v-if="!cutleryHover" src="../assets/cutlery_bw.svg">
@@ -40,10 +40,8 @@
               </a>
 
               <a class="navbar-item has-dropdown is-hoverable">
-
                 <a class="navbar-link" v-on:mouseover="setHover('desserts')" v-on:mouseleave="setUnhover('desserts')"
                    @click="navigateTo({name: 'Category', params: {categoryId: 'Desserts'}})">
-
                   <img id="nav-desserts" v-if="!dessertsHover" src="../assets/desserts_bw.svg">
                   <img id="nav-desserts" v-if="dessertsHover" src="../assets/desserts.svg">
                   Desserts
@@ -65,7 +63,6 @@
               </a>
 
               <a class="navbar-item has-dropdown is-hoverable">
-
                 <a class="navbar-link" v-on:mouseover="setHover('beverages')" v-on:mouseleave="setUnhover('beverages')"
                    @click="navigateTo({name: 'Category', params: {categoryId: 'Beverages'}})">
                   <img id="nav-beverages" v-if="!beveragesHover" src="../assets/beverages_bw.svg">
@@ -89,17 +86,22 @@
               </a>
 
             </div>
+
             <div class="navbar-end">
+
               <a class="navbar-item" @click="navigateTo({name: 'Search'})">
                 Search
                 <img id="search-button" src="../assets/search.svg">
               </a>
+
               <a class="navbar-item" v-if="$store.state.isUserLoggedIn" @click="navigateTo({name: 'AddRecipe'})">
                 Create New Recipe
               </a>
+
               <a v-if="$store.state.isUserLoggedIn" @click="go ()" class="navbar-item">
                 Favourites
               </a>
+
               <a class="navbar-item" id="nav-sign-in">
                 <a v-if="$store.state.isUserLoggedIn" @click="logout" class="navbar-item">
                   <span>Sign-Out</span>
@@ -108,6 +110,7 @@
                   <span>Sign In/Register</span>
                 </a>
               </a>
+
             </div>
           </div>
         </div>

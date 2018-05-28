@@ -5,7 +5,7 @@
       <p class="title">{{this.$store.state.route.params.categoryId}}</p>
       <div class="columns" v-for="i in Math.ceil(recipes.length / itemsPerRow)" :key="i">
         <recipe-box v-for="item in
-      recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
+        recipes.slice((i - 1) * itemsPerRow, i * itemsPerRow)"
                     :key="item.Id" :title="item.Title"
                     :author="item.Author_Id" :description="item.Method"
                     :img="item.File" :idkey="item.Id">

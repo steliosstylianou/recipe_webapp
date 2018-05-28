@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <navigator id="add-nav"></navigator>
-  <section class="section">
+    <section class="section">
       <div class="container has-text-centered">
       <h1 class="title add-title">Uploading a new recipe? How exciting!</h1>
       <b-notification v-if="error" type="is-danger" @close="error = null">
@@ -74,7 +74,7 @@
       </div>
       <button class="button is-medium add-button" :disabled="!isComplete" id="upload" @click="upload">Upload your lovely recipe!</button>
       </div>
-  </section>
+    </section>
   </div>
 </template>
 
@@ -174,6 +174,7 @@
         }
       }
     },
+
     computed: {
       isComplete () {
         return (this.recipe.title && this.recipe.category && this.recipe.subcategory &&

@@ -1,46 +1,43 @@
 <template>
   <div class="body">
     <navigator></navigator>
-  <section class="hero is-fullheight body-register">
-    <div class="hero-body" id="register-body">
-      <div class="container has-text-centered">
-        <div class="column is-4 is-offset-4">
-          <div class="box" id="register-box">
+    <section class="hero is-fullheight body-register">
+      <div class="hero-body" id="register-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <div class="box" id="register-box">
+              <h3 class="title has-text-black">REGISTER</h3>
+              <img src="../assets/welcome_chef.svg">
+              <p class="subtitle has-text-grey">Please enter your details to register</p>
+              <form>
+                <b-field>
+                  <b-input required v-model="name" placeholder="Name"></b-input>
+                </b-field>
 
-            <h3 class="title has-text-black">REGISTER</h3>
-            <img src="../assets/welcome_chef.svg">
-            <p class="subtitle has-text-grey">Please enter your details to register</p>
+                <b-notification v-if="error" type="is-danger" @close="error = null">
+                  <div v-html="error" ></div>
+                </b-notification>
 
-            <form>
-              <b-field>
-                <b-input required v-model="name" placeholder="Name"></b-input>
-              </b-field>
+                <b-field>
+                  <b-input required type="email" v-model="email" placeholder="Email Address"></b-input>
+                </b-field>
 
-              <b-notification v-if="error" type="is-danger" @close="error = null">
-                <div v-html="error" ></div>
-              </b-notification>
+                <b-field>
+                  <b-input required type="password" v-model="password" placeholder="Password" password-reveal></b-input>
+                </b-field>
 
-              <b-field>
-                <b-input required type="email" v-model="email" placeholder="Email Address"></b-input>
-              </b-field>
+                <button @click="register" class="button is-medium is-fullwidth" id="reg-register">Register</button>
+                <br/>
 
-              <b-field>
-                <b-input required type="password" v-model="password" placeholder="Password" password-reveal></b-input>
-              </b-field>
-
-              <button @click="register" class="button is-medium is-fullwidth" id="reg-register">Register</button>
-              <br/>
-
-              <div class="has-text-centered">
-                <router-link to="login">Already have an account? Sign in!</router-link>
-              </div>
-            </form>
-
+                <div class="has-text-centered">
+                  <router-link to="login">Already have an account? Sign in!</router-link>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 </template>
 
