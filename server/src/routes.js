@@ -44,18 +44,18 @@ module.exports = (app) => {
         Authenticate,
         FavoritesController.removeFavorite);
 
-    // app.all('*', function(req, res) {
-    //     throw new Error('Bad request');
-    // });
-    //
-    // app.use(function(e, req, res, next) {
-    //     if (e.message === 'Bad request') {
-    //         res.status(404).send({
-    //             error: {
-    //                 msg: e.message,
-    //                 // stack: e.stack,
-    //             },
-    //         });
-    //     }
-    // });
+    app.all('*', function(req, res) {
+        throw new Error('Bad request');
+    });
+
+    app.use(function(e, req, res, next) {
+        if (e.message === 'Bad request') {
+            res.status(404).send({
+                error: {
+                    msg: e.message,
+                    // stack: e.stack,
+                },
+            });
+        }
+    });
 };
