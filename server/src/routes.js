@@ -43,5 +43,4 @@ module.exports = (app) => {
     app.delete('/bookmarks/:recipe',
         Authenticate,
         FavoritesController.removeFavorite);
-
 };
